@@ -10,7 +10,7 @@ with open('test.csv', mode='w') as testfile:
     testwriter = csv.writer(testfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
     # every year in range
-    for datey in range(2015,2016):
+    for datey in range(1986,2016):
         datey = f'{datey:04d}'
 
         # every month in range
