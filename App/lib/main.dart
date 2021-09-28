@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
 import 'src/locations.dart' as locations;
 
 void main() {
@@ -12,6 +13,9 @@ class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
+
+
+
 
 class _MyAppState extends State<MyApp> {
   late BitmapDescriptor pinLocationIcon;
@@ -50,11 +54,40 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Google Office Locations'),
-          backgroundColor: Colors.green[700],
+          backgroundColor: Color(0xfffeaa9c),
         ),
+        floatingActionButton: Builder(
+          builder: (context) => FloatingActionButton(
+              child: const Icon(Icons.file_upload_outlined),
+              backgroundColor: Color(0xffFEAA9c),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => TextfieldGeneralWidget()));
+              }
+
+          ),
+        ),
+
+       /*   floatingActionButton: FloatingActionButton(
+
+          onPressed: () {
+
+           Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => TextfieldGeneralWidget()),
+            );
+
+          },
+          child: const Icon(Icons.file_upload_outlined),
+          backgroundColor: Color(0xffFEAA9c),
+
+        ), */
+        floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
         body: GoogleMap(
           onMapCreated: _onMapCreated,
           initialCameraPosition: const CameraPosition(
@@ -67,3 +100,8 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+
+
+
+
