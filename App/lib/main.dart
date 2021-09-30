@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'dart:math';
+import 'package:firebase_database/firebase_database.dart';
 import 'src/locations.dart' as locations;
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding
+      .ensureInitialized(); // shld use future builder here instead
   runApp(const MyApp());
 }
 
@@ -13,9 +18,6 @@ class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
-
-
-
 
 class _MyAppState extends State<MyApp> {
   late BitmapDescriptor pinLocationIcon;
@@ -33,6 +35,10 @@ class _MyAppState extends State<MyApp> {
 
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
+    DatabaseReference _testRef =
+        FirebaseDatabase.instance.reference().child("test");
+    _testRef.set("Hello world ${Random().nextInt(100)}");
+
     final googleOffices = await locations.getGoogleOffices();
     setState(() {
       _markers.clear();
@@ -65,15 +71,14 @@ class _MyAppState extends State<MyApp> {
               child: const Icon(Icons.file_upload_outlined),
               backgroundColor: Color(0xffFEAA9c),
               onPressed: () {
-                Navigator.push(context,
+                Navigator.push(
+                    context,
                     MaterialPageRoute(
                         builder: (context) => TextfieldGeneralWidget()));
-              }
-
-          ),
+              }),
         ),
 
-       /*   floatingActionButton: FloatingActionButton(
+        /*   floatingActionButton: FloatingActionButton(
 
           onPressed: () {
 
@@ -100,8 +105,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-
-
-
-
