@@ -1,11 +1,17 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'dart:math';
+import 'package:firebase_database/firebase_database.dart';
 import 'src/locations.dart' as locations;
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding
+      .ensureInitialized(); // shld use future builder here instead
   runApp(const MyApp());
 }
 
@@ -36,6 +42,10 @@ class _MyAppState extends State<MyApp> {
 
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
+    DatabaseReference _testRef =
+        FirebaseDatabase.instance.reference().child("test");
+    _testRef.set("Hello world ${Random().nextInt(100)}");
+
     final googleOffices = await locations.getGoogleOffices();
     setState(() {
       _markers.clear();
@@ -57,6 +67,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
             title: const Text('Google Office Locations'),
@@ -580,6 +591,46 @@ class Grid2 extends StatelessWidget {
                     image: AssetImage('assets/bird9.jpeg'), fit: BoxFit.cover)),
           ),
         ],
+
+        appBar: AppBar(
+          title: const Text('Google Office Locations'),
+          backgroundColor: Color(0xfffeaa9c),
+        ),
+        floatingActionButton: Builder(
+          builder: (context) => FloatingActionButton(
+              child: const Icon(Icons.file_upload_outlined),
+              backgroundColor: Color(0xffFEAA9c),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => TextfieldGeneralWidget()));
+              }),
+        ),
+
+        /*   floatingActionButton: FloatingActionButton(
+
+          onPressed: () {
+
+           Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => TextfieldGeneralWidget()),
+            );
+
+          },
+          child: const Icon(Icons.file_upload_outlined),
+          backgroundColor: Color(0xffFEAA9c),
+
+        ), */
+        floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+        body: GoogleMap(
+          onMapCreated: _onMapCreated,
+          initialCameraPosition: const CameraPosition(
+            target: LatLng(0, 0),
+            zoom: 2,
+          ),
+          markers: _markers.values.toSet(),
+        ),
       ),
     );
   }
