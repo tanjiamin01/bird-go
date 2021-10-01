@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  sliding_up_panel: ^2.0.0+1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -31,6 +32,8 @@ dependencies:
   google_maps_flutter: ^2.0.8
   http: ^0.13.3
   json_serializable: ^4.1.4
+  flutter_staggered_grid_view: ^0.4.0
+  url_launcher: ^6.0.10
 
 dev_dependencies:
   build_runner: ^2.1.2
@@ -53,6 +56,15 @@ flutter:
   assets:
     - assets/locations.json
     - assets/marker.png
+    - assets/bird1.jpeg
+    - assets/bird2.jpeg
+    - assets/bird3.jpeg
+    - assets/bird4.jpeg
+    - assets/bird5.jpeg
+    - assets/bird6.jpeg
+    - assets/bird7.jpeg
+    - assets/bird8.jpeg
+    - assets/bird9.jpeg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
