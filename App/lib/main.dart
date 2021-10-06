@@ -2,13 +2,18 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'src/allBirds.dart';
+import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'dart:math';
+import 'package:firebase_database/firebase_database.dart';
 import 'src/locations.dart' as locations;
-// import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'src/specificBirdGallery.dart';
 import 'src/topThreeBirds.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding
+      .ensureInitialized(); // shld use future builder here instead
   runApp(const MyApp());
 }
 
@@ -39,6 +44,10 @@ class _MyAppState extends State<MyApp> {
 
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
+    DatabaseReference _testRef =
+        FirebaseDatabase.instance.reference().child("test");
+    _testRef.set("Hello world ${Random().nextInt(100)}");
+
     final googleOffices = await locations.getGoogleOffices();
     setState(() {
       _markers.clear();
@@ -60,6 +69,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
             title: const Text('Google Office Locations'),
