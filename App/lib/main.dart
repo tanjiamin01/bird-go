@@ -5,7 +5,10 @@ import 'src/locations.dart' as locations;
 import 'mappage.dart';
 import 'search.dart';
 
-void main() {
+
+Future<void> main() async {
+  WidgetsFlutterBinding
+      .ensureInitialized(); // shld use future builder here instead
   runApp(const MyApp());
 }
 
@@ -18,6 +21,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late BitmapDescriptor pinLocationIcon;
+
+  bool allBirdsWidgetIsVisible = false;
+  bool topThreeBirdsWidgetIsVisible = true;
+  bool specificBirdGalleryWidgetIsVisible = false;
 
   @override
   void initState() {
