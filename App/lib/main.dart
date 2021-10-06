@@ -4,11 +4,11 @@ import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
 import 'src/locations.dart' as locations;
 import 'mappage.dart';
 import 'search.dart';
+import 'src/specificBirdGallery.dart';
+import 'src/topThreeBirds.dart';
+import 'src/allBirds.dart';
 
-
-Future<void> main() async {
-  WidgetsFlutterBinding
-      .ensureInitialized(); // shld use future builder here instead
+void main() {
   runApp(const MyApp());
 }
 
@@ -59,6 +59,49 @@ class _MyAppState extends State<MyApp> {
           children: [
             MapPage(),
             buildFloatingSearchBar(),
+            Positioned(
+              top: 100,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            topThreeBirdsWidgetIsVisible = true;
+                            allBirdsWidgetIsVisible = false;
+                            specificBirdGalleryWidgetIsVisible = false;
+                          });
+                        },
+                        child: Text('show top three birds', style: TextStyle(fontSize: 12))),
+                    ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            allBirdsWidgetIsVisible = true;
+                            specificBirdGalleryWidgetIsVisible = false;
+                            topThreeBirdsWidgetIsVisible = false;
+                          });
+                        },
+                        child: Text('show all birds', style: TextStyle(fontSize: 12))),
+                    ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            specificBirdGalleryWidgetIsVisible = true;
+                            topThreeBirdsWidgetIsVisible = false;
+                            allBirdsWidgetIsVisible = false;
+                          });
+                        },
+                        child: Text('show specific bird', style: TextStyle(fontSize: 12))),
+                  ],
+                ),
+            ),
+              Visibility(
+                  visible: specificBirdGalleryWidgetIsVisible,
+                  child: SpecificBirdGallery()),
+              Visibility(visible: allBirdsWidgetIsVisible, child: AllBirds()),
+              Visibility(
+                  visible: topThreeBirdsWidgetIsVisible,
+                  child: TopThreeBirds()),
           ],
         ),
         drawer: Drawer(
