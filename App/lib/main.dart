@@ -7,6 +7,7 @@ import 'search.dart';
 import 'src/specificBirdGallery.dart';
 import 'src/topThreeBirds.dart';
 import 'src/allBirds.dart';
+import 'list of bird.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +26,10 @@ class _MyAppState extends State<MyApp> {
   bool allBirdsWidgetIsVisible = false;
   bool topThreeBirdsWidgetIsVisible = true;
   bool specificBirdGalleryWidgetIsVisible = false;
+
+  final int num_species = 401;
+  // final items = List<String>.generate(10000, (i) => "Item $i");
+
 
   @override
   void initState() {
@@ -104,14 +109,30 @@ class _MyAppState extends State<MyApp> {
                   child: TopThreeBirds()),
           ],
         ),
+
         drawer: Drawer(
-          child: SafeArea(
-            right: false,
-            child: Center(
-              child: Text('Drawer content'),
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade100,
+                ),
+                padding: const EdgeInsets.all(16.0),
+                child: Flexible(
+                  child: new Text("ALL BIRDS IN SINGAPORE (${num_species})",
+                    softWrap: true,
+                    textAlign: TextAlign.left,
+                    style: new TextStyle(fontSize: 32, color: Colors.black),
+                    textDirection: TextDirection.ltr,),
+                ),
+              ),
+
+              Expanded(child: BirdList()),
+            ],
           ),
         ),
+
       ),
     );
   }
