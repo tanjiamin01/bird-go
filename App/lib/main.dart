@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'src/locations.dart' as locations;
 import 'mappage.dart';
 import 'search.dart';
@@ -29,7 +31,6 @@ class _MyAppState extends State<MyApp> {
 
   final int num_species = 401;
   // final items = List<String>.generate(10000, (i) => "Item $i");
-
 
   @override
   void initState() {
@@ -67,49 +68,50 @@ class _MyAppState extends State<MyApp> {
             Positioned(
               top: 100,
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            topThreeBirdsWidgetIsVisible = true;
-                            allBirdsWidgetIsVisible = false;
-                            specificBirdGalleryWidgetIsVisible = false;
-                          });
-                        },
-                        child: Text('show top three birds', style: TextStyle(fontSize: 12))),
-                    ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            allBirdsWidgetIsVisible = true;
-                            specificBirdGalleryWidgetIsVisible = false;
-                            topThreeBirdsWidgetIsVisible = false;
-                          });
-                        },
-                        child: Text('show all birds', style: TextStyle(fontSize: 12))),
-                    ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            specificBirdGalleryWidgetIsVisible = true;
-                            topThreeBirdsWidgetIsVisible = false;
-                            allBirdsWidgetIsVisible = false;
-                          });
-                        },
-                        child: Text('show specific bird', style: TextStyle(fontSize: 12))),
-                  ],
-                ),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          topThreeBirdsWidgetIsVisible = true;
+                          allBirdsWidgetIsVisible = false;
+                          specificBirdGalleryWidgetIsVisible = false;
+                        });
+                      },
+                      child: Text('show top three birds',
+                          style: TextStyle(fontSize: 12))),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          allBirdsWidgetIsVisible = true;
+                          specificBirdGalleryWidgetIsVisible = false;
+                          topThreeBirdsWidgetIsVisible = false;
+                        });
+                      },
+                      child: Text('show all birds',
+                          style: TextStyle(fontSize: 12))),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          specificBirdGalleryWidgetIsVisible = true;
+                          topThreeBirdsWidgetIsVisible = false;
+                          allBirdsWidgetIsVisible = false;
+                        });
+                      },
+                      child: Text('show specific bird',
+                          style: TextStyle(fontSize: 12))),
+                ],
+              ),
             ),
-              Visibility(
-                  visible: specificBirdGalleryWidgetIsVisible,
-                  child: SpecificBirdGallery()),
-              Visibility(visible: allBirdsWidgetIsVisible, child: AllBirds()),
-              Visibility(
-                  visible: topThreeBirdsWidgetIsVisible,
-                  child: TopThreeBirds()),
+            Visibility(
+                visible: specificBirdGalleryWidgetIsVisible,
+                child: SpecificBirdGallery()),
+            Visibility(visible: allBirdsWidgetIsVisible, child: AllBirds()),
+            Visibility(
+                visible: topThreeBirdsWidgetIsVisible, child: TopThreeBirds()),
           ],
         ),
-
         drawer: Drawer(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -120,19 +122,19 @@ class _MyAppState extends State<MyApp> {
                 ),
                 padding: const EdgeInsets.all(16.0),
                 child: Flexible(
-                  child: new Text("ALL BIRDS IN SINGAPORE (${num_species})",
+                  child: new Text(
+                    "ALL BIRDS IN SINGAPORE (${num_species})",
                     softWrap: true,
                     textAlign: TextAlign.left,
                     style: new TextStyle(fontSize: 32, color: Colors.black),
-                    textDirection: TextDirection.ltr,),
+                    textDirection: TextDirection.ltr,
+                  ),
                 ),
               ),
-
               Expanded(child: BirdList()),
             ],
           ),
         ),
-
       ),
     );
   }

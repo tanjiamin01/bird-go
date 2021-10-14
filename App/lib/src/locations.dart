@@ -2,6 +2,11 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:json_annotation/json_annotation.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'message_dao.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
+import 'dart:convert';
 
 part 'locations.g.dart';
 
@@ -79,9 +84,14 @@ class Locations {
 }
 
 Future<Locations> getGoogleOffices() async {
-  return Locations.fromJson(
-    json.decode(
-      await rootBundle.loadString('assets/locations.json'),
-    ),
-  );
+  await Firebase.initializeApp();
+  DataSnapshot snap =
+      await FirebaseDatabase.instance.reference().child('locations').once();
+
+  String test = await rootBundle.loadString('assets/locations.json');
+
+  print(snap.value.runtimeType);
+  print(snap.value);
+
+  return Locations.fromJson(json.decode(jsonEncode(snap.value)));
 }
