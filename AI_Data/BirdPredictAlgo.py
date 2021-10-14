@@ -51,30 +51,29 @@ for birdls in birdy:
         check = row[2].strip().lower()
         check = str(check)
         if check == bird:
+            try:
+                # first period of november
+                if datenormalisation(row[8]) == 20:
 
-            # first period of november
-            print(datenormalisation(row[8]))
-            print(type(datenormalisation(row[8])))
-            if datenormalisation(row[8]) == 21:
-                print('yes')
+                    yearUnedit = row[8].split('/')[2]
+                    year = yearUnedit[:4]
+                    yearMultiplier = yrMTPY(year)
 
-                yearUnedit = row[8].split('/')[2]
-                year = yearUnedit[:4]
-                yearMultiplier = yrMTPY(year)
-
-                loc = quadrants(float(row[3]), float(row[4]))
-                if loc == 1:
-                    if quad1 < 1:
-                        quad1 += yearMultiplier
-                elif loc == 2:
-                    if quad2 < 1:
-                        quad2 += yearMultiplier
-                elif loc == 3:
-                    if quad3 < 1:
-                        quad3 += yearMultiplier
-                elif loc == 4:
-                    if quad4 < 1:
-                        quad4 += yearMultiplier
+                    loc = quadrants(float(row[3]), float(row[4]))
+                    if loc == 1:
+                        if quad1 + yearMultiplier < 1:
+                            quad1 += yearMultiplier
+                    elif loc == 2:
+                        if quad2 + yearMultiplier < 1:
+                            quad2 += yearMultiplier
+                    elif loc == 3:
+                        if quad3 + yearMultiplier < 1:
+                            quad3 += yearMultiplier
+                    elif loc == 4:
+                        if quad4 + yearMultiplier < 1:
+                            quad4 += yearMultiplier
+            except:
+                continue
 
     finalData.append([birdls[0], birdls[1], birdls[2], quad1, quad2, quad3, quad4])
 
