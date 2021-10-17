@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'gridSpecificBirdGallery.dart';
 
 void main() => runApp(SpecificBirdGallery());
@@ -10,8 +12,8 @@ class SpecificBirdGallery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SlidingUpPanel(
-        minHeight: 190,
-        maxHeight: 1000,
+        minHeight: 220,
+        maxHeight: 630,
         panel: Stack(
           children: <Widget>[
             Column(
@@ -20,7 +22,7 @@ class SpecificBirdGallery extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     Container(
-                      height: 170,
+                      height: 200,
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: Card(
                           shape: RoundedRectangleBorder(
@@ -34,7 +36,7 @@ class SpecificBirdGallery extends StatelessWidget {
                                   fit: BoxFit.cover))),
                     ),
                     Container(
-                      height: 170,
+                      height: 200,
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: Container(
                         margin: EdgeInsets.all(10),
@@ -92,6 +94,29 @@ class SpecificBirdGallery extends StatelessWidget {
                                   ),
                                 ),
                               ],
+                            ),
+                            RichText(text: 
+                              TextSpan(
+                                children: [
+                                  TextSpan(
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                    text: 'More Info',
+                                    recognizer: TapGestureRecognizer()..onTap =  () async{
+                                      const url = 'https://en.wikipedia.org/wiki/Pied_kingfisher';
+                                      if (await canLaunch(url)) {
+                                        await launch(url);
+                                      } else {
+                                        throw 'Could not launch $url';
+                                      }
+                                    }
+                                  )
+                                ]
+                              ),
                             )
                           ],
                         ),
@@ -102,7 +127,7 @@ class SpecificBirdGallery extends StatelessWidget {
               ],
             ),
             Positioned(
-              top: 200,
+              top: 220,
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.2,
                 margin: EdgeInsets.all(10),
@@ -124,7 +149,7 @@ class SpecificBirdGallery extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 180,
+              top: 210,
               right: 0,
               child: SizedBox(
                 height: 500,
@@ -132,14 +157,6 @@ class SpecificBirdGallery extends StatelessWidget {
                 child: Grid2()
               ),
             ),
-            // Positioned(
-            //   top: 180,
-            //   right: 0,
-            //   child: SizedBox(
-            //     width: MediaQuery.of(context).size.width * 0.8,
-            //     child: Grid2()
-            //   ),
-            // ),
           ],
         ));
   }

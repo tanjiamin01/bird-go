@@ -49,26 +49,15 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         resizeToAvoidBottomInset: false,
-        floatingActionButton: Builder(
-          builder: (context) => FloatingActionButton(
-              child: const Icon(Icons.file_upload_outlined),
-              backgroundColor: Color(0xffFEAA9c),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => TextfieldGeneralWidget()));
-              }),
-        ),
         body: Stack(
-          fit: StackFit.expand,
+          //fit: StackFit.expand,
           children: [
             MapPage(),
             buildFloatingSearchBar(),
-            Positioned(
-              top: 100,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ElevatedButton(
@@ -79,6 +68,7 @@ class _MyAppState extends State<MyApp> {
                           specificBirdGalleryWidgetIsVisible = false;
                         });
                       },
+                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFEAA9C))),
                       child: Text('show top three birds',
                           style: TextStyle(fontSize: 12))),
                   ElevatedButton(
@@ -89,6 +79,7 @@ class _MyAppState extends State<MyApp> {
                           topThreeBirdsWidgetIsVisible = false;
                         });
                       },
+                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFEAA9C))),
                       child: Text('show all birds',
                           style: TextStyle(fontSize: 12))),
                   ElevatedButton(
@@ -99,9 +90,26 @@ class _MyAppState extends State<MyApp> {
                           allBirdsWidgetIsVisible = false;
                         });
                       },
+                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFEAA9C))),
                       child: Text('show specific bird',
                           style: TextStyle(fontSize: 12))),
                 ],
+              ),
+            ),
+            Positioned(
+              left: 10,
+              bottom: 237,
+              child: Builder(
+                builder: (context) => FloatingActionButton(
+                  backgroundColor: Color(0xffFEAA9c),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TextfieldGeneralWidget()));
+                    },
+                  child: const Icon(Icons.file_upload_outlined)
+                ),
               ),
             ),
             Visibility(
