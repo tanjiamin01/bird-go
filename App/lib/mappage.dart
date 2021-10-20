@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'src/locations.dart' as locations;
+import 'src/topThreeBirds.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({Key? key}) : super(key: key);
@@ -34,6 +35,12 @@ class _MapPageState extends State<MapPage> {
           markerId: MarkerId(office.name),
           position: LatLng(office.lat, office.lng),
           icon: pinLocationIcon,
+          onTap: () {
+            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => TopThreeBirds()),
+            );
+            },
           infoWindow: InfoWindow(
             title: office.name,
             snippet: office.address,
