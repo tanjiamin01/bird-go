@@ -6,6 +6,10 @@ void main() => runApp(TopThreeBirds());
 
 class TopThreeBirds extends StatelessWidget {
   const TopThreeBirds({Key? key}) : super(key: key);
+  static const TextStyle birdname_sytle = TextStyle(fontSize: 12, color: Colors.black);
+  static const TextStyle spotted_sytle = TextStyle(fontSize: 12, color: Colors.grey);
+  static const Icon star = Icon(Icons.star, size: 20);
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,17 +40,20 @@ class TopThreeBirds extends StatelessWidget {
                                 image: AssetImage('assets/bird4.jpeg'),
                                 fit: BoxFit.cover))),
                   ),
-                  Text('Pied Kingfisher'),
+                  Text('Pied Kingfisher', style: birdname_sytle,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(Icons.star),
-                      Icon(Icons.star),
-                      Icon(Icons.star),
+                      star,
+                      star,
+                      star,
+                      // Icon(Icons.star),
+                      // Icon(Icons.star),
+                      // Icon(Icons.star),
                     ],
                   ),
-                  Text('spotted 1h ago', style: TextStyle(color: Colors.grey)),
+                  Text('spotted 1h ago', style: spotted_sytle),
                 ],
               )),
               Expanded(
@@ -66,16 +73,18 @@ class TopThreeBirds extends StatelessWidget {
                                 image: AssetImage('assets/bird8.jpeg'),
                                 fit: BoxFit.cover))),
                   ),
-                  Text('Peacock'),
+                  Text('Peacock', style: birdname_sytle),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(Icons.star),
-                      Icon(Icons.star),
+                      // Icon(Icons.star),
+                      // Icon(Icons.star),
+                      star,
+                      star,
                     ],
                   ),
-                  Text('spotted 4h ago', style: TextStyle(color: Colors.grey)),
+                  Text('spotted 4h ago', style: spotted_sytle),
                 ],
               )),
               Expanded(
@@ -95,18 +104,22 @@ class TopThreeBirds extends StatelessWidget {
                                 image: AssetImage('assets/bird9.jpeg'),
                                 fit: BoxFit.cover))),
                   ),
-                  Text('Javan Pond Heron'),
+                  Text('Javan Pond Heron', style: birdname_sytle),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(Icons.star),
-                      Icon(Icons.star),
-                      Icon(Icons.star),
-                      Icon(Icons.star),
+                      star,
+                      star,
+                      star,
+                      star,
+                      // Icon(Icons.star),
+                      // Icon(Icons.star),
+                      // Icon(Icons.star),
+                      // Icon(Icons.star),
                     ],
                   ),
-                  Text('spotted 3h ago', style: TextStyle(color: Colors.grey)),
+                  Text('spotted 3h ago', style: spotted_sytle),
                 ],
               )),
             ],
