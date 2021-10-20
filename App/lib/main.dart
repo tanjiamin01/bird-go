@@ -25,10 +25,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   late BitmapDescriptor pinLocationIcon;
 
-  bool allBirdsWidgetIsVisible = false;
-  bool topThreeBirdsWidgetIsVisible = true;
-  bool specificBirdGalleryWidgetIsVisible = false;
-
   final int num_species = 401;
   // final items = List<String>.generate(10000, (i) => "Item $i");
 
@@ -54,48 +50,6 @@ class _MyAppState extends State<MyApp> {
           children: [
             MapPage(),
             buildFloatingSearchBar(),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          topThreeBirdsWidgetIsVisible = true;
-                          allBirdsWidgetIsVisible = false;
-                          specificBirdGalleryWidgetIsVisible = false;
-                        });
-                      },
-                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFEAA9C))),
-                      child: Text('show top three birds',
-                          style: TextStyle(fontSize: 12))),
-                  ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          allBirdsWidgetIsVisible = true;
-                          specificBirdGalleryWidgetIsVisible = false;
-                          topThreeBirdsWidgetIsVisible = false;
-                        });
-                      },
-                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFEAA9C))),
-                      child: Text('show all birds',
-                          style: TextStyle(fontSize: 12))),
-                  ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          specificBirdGalleryWidgetIsVisible = true;
-                          topThreeBirdsWidgetIsVisible = false;
-                          allBirdsWidgetIsVisible = false;
-                        });
-                      },
-                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFEAA9C))),
-                      child: Text('show specific bird',
-                          style: TextStyle(fontSize: 12))),
-                ],
-              ),
-            ),
             Positioned(
               left: 10,
               bottom: 237,
@@ -112,12 +66,6 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
-            Visibility(
-                visible: specificBirdGalleryWidgetIsVisible,
-                child: SpecificBirdGallery()),
-            Visibility(visible: allBirdsWidgetIsVisible, child: AllBirds()),
-            Visibility(
-                visible: topThreeBirdsWidgetIsVisible, child: TopThreeBirds()),
           ],
         ),
         drawer: Drawer(

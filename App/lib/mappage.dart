@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'src/allBirds.dart';
 import 'src/locations.dart' as locations;
+import 'src/specificBirdGallery.dart';
 import 'src/topThreeBirds.dart';
 
 class MapPage extends StatefulWidget {
@@ -12,6 +14,10 @@ class MapPage extends StatefulWidget {
 
 class _MapPageState extends State<MapPage> {
   late BitmapDescriptor pinLocationIcon;
+
+  bool allBirdsWidgetIsVisible = false;
+  bool topThreeBirdsWidgetIsVisible = true;
+  bool specificBirdGalleryWidgetIsVisible = false;
 
   @override
   void initState() {
@@ -36,11 +42,12 @@ class _MapPageState extends State<MapPage> {
           position: LatLng(office.lat, office.lng),
           icon: pinLocationIcon,
           onTap: () {
-            Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => TopThreeBirds()),
-            );
-            },
+            setState(() {
+              allBirdsWidgetIsVisible = false;
+              specificBirdGalleryWidgetIsVisible = false;
+              topThreeBirdsWidgetIsVisible = true;
+            });
+          },
           infoWindow: InfoWindow(
             title: office.name,
             snippet: office.address,
@@ -55,15 +62,61 @@ class _MapPageState extends State<MapPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        body: Container(
-          child: GoogleMap(
-            onMapCreated: _onMapCreated,
-            initialCameraPosition: const CameraPosition(
-              target: LatLng(1.3483, 103.6831),
-              zoom: 16,
+        body: Stack(
+          children: [
+            Container(
+            child: GoogleMap(
+              onMapCreated: _onMapCreated,
+              initialCameraPosition: const CameraPosition(
+                target: LatLng(1.3483, 103.6831),
+                zoom: 16,
+              ),
+            markers: _markers.values.toSet(),
             ),
-          markers: _markers.values.toSet(),
           ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 80, 10, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            allBirdsWidgetIsVisible = true;
+                            specificBirdGalleryWidgetIsVisible = false;
+                            topThreeBirdsWidgetIsVisible = false;
+                          });
+                        },
+                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFEAA9C))),
+                        child: Text('show all birds',
+                            style: TextStyle(fontSize: 16))),
+                  ),
+                  SizedBox(width:10),
+                  Expanded(
+                    child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            specificBirdGalleryWidgetIsVisible = true;
+                            topThreeBirdsWidgetIsVisible = false;
+                            allBirdsWidgetIsVisible = false;
+                          });
+                        },
+                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFEAA9C))),
+                        child: Text('show specific bird',
+                            style: TextStyle(fontSize: 16))),
+                  ),
+                ],
+              ),
+            ),
+            Visibility(
+                visible: specificBirdGalleryWidgetIsVisible,
+                child: SpecificBirdGallery()),
+            Visibility(visible: allBirdsWidgetIsVisible, child: AllBirds()),
+            Visibility(
+                visible: topThreeBirdsWidgetIsVisible, child: TopThreeBirds()),
+          ]
         )
     );
   }
