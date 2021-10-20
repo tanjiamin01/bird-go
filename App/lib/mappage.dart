@@ -4,6 +4,7 @@ import 'src/allBirds.dart';
 import 'src/locations.dart' as locations;
 import 'src/specificBirdGallery.dart';
 import 'src/topThreeBirds.dart';
+import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({Key? key}) : super(key: key);
@@ -108,6 +109,22 @@ class _MapPageState extends State<MapPage> {
                             style: TextStyle(fontSize: 16))),
                   ),
                 ],
+              ),
+            ),
+            Positioned(
+              left: 10,
+              bottom: 237,
+              child: Builder(
+                builder: (context) => FloatingActionButton(
+                  backgroundColor: Color(0xffFEAA9c),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TextfieldGeneralWidget()));
+                    },
+                  child: const Icon(Icons.file_upload_outlined)
+                ),
               ),
             ),
             Visibility(

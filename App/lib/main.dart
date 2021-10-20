@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'src/locations.dart' as locations;
+// import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_database/firebase_database.dart';
+// import 'src/locations.dart' as locations;
 import 'mappage.dart';
 import 'search.dart';
-import 'src/specificBirdGallery.dart';
-import 'src/topThreeBirds.dart';
-import 'src/allBirds.dart';
+// import 'src/specificBirdGallery.dart';
+// import 'src/topThreeBirds.dart';
+// import 'src/allBirds.dart';
 import 'list of bird.dart';
 
 void main() {
@@ -50,22 +50,7 @@ class _MyAppState extends State<MyApp> {
           children: [
             MapPage(),
             buildFloatingSearchBar(),
-            Positioned(
-              left: 10,
-              bottom: 237,
-              child: Builder(
-                builder: (context) => FloatingActionButton(
-                  backgroundColor: Color(0xffFEAA9c),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => TextfieldGeneralWidget()));
-                    },
-                  child: const Icon(Icons.file_upload_outlined)
-                ),
-              ),
-            ),
+            
           ],
         ),
         drawer: Drawer(
