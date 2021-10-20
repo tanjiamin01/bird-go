@@ -55,7 +55,7 @@ class _MapPageState extends State<MapPage> {
               target: LatLng(1.3483, 103.6831),
               zoom: 16,
             ),
-            markers: _markers.values.toSet(),
+          markers: _markers.values.toSet(),
           ),
         )
     );
