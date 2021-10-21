@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
-class HomePage extends StatefulWidget {
+class SearchPage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _SearchPageState createState() => _SearchPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SearchPageState extends State<SearchPage> {
   static const historyLength = 5;
 
   List<String> _searchHistory = [
