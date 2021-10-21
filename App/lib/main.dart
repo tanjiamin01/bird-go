@@ -49,8 +49,7 @@ class _MyAppState extends State<MyApp> {
           //fit: StackFit.expand,
           children: [
             MapPage(),
-            buildFloatingSearchBar(),
-            
+            HomePage(),
           ],
         ),
         drawer: Drawer(
