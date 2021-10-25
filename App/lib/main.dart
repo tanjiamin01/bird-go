@@ -56,21 +56,25 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade100,
-                ),
-                padding: const EdgeInsets.all(16.0),
-                child: Flexible(
-                  child: new Text(
-                    "ALL BIRDS IN SINGAPORE (${num_species})",
-                    softWrap: true,
-                    textAlign: TextAlign.left,
-                    style: new TextStyle(fontSize: 32, color: Colors.black),
-                    textDirection: TextDirection.ltr,
+              Container(
+                height: 155.0,
+                child: DrawerHeader(
+                  decoration: BoxDecoration(
+                    // color: Colors.blue.shade100,
+                    image: DecorationImage(fit:BoxFit.fitWidth, image: AssetImage('assets/canva-photo-editor.png')),
+                  ),
+                  padding: const EdgeInsets.fromLTRB(16.0,30.0,16.0,5.0),
+                  child: Flexible(
+                    child: new Text(
+                      "ALL BIRDS IN SINGAPORE (${num_species})",
+                      softWrap: true,
+                      textAlign: TextAlign.left,
+                      style: new TextStyle(fontSize: 30, color: Colors.white),
+                      textDirection: TextDirection.ltr,
+                    ),
                   ),
                 ),
-              ),
+                ),
               Expanded(child: BirdList()),
             ],
           ),

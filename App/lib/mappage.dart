@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:googlemapstry/predictionpage.dart';
 import 'src/allBirds.dart';
 import 'src/locations.dart' as locations;
 import 'src/specificBirdGallery.dart';
@@ -124,6 +125,23 @@ class _MapPageState extends State<MapPage> {
                             builder: (context) => TextfieldGeneralWidget()));
                     },
                   child: const Icon(Icons.file_upload_outlined)
+                ),
+              ),
+            ),
+            Positioned(
+              right: 10,
+              bottom: 237,
+              child: Builder(
+                builder: (context) => FloatingActionButton(
+                    backgroundColor: Color(0xffFEAA9c),
+                    onPressed: () { // change to map page
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PredPage()));
+
+                    },
+                    child: const Icon(Icons.lightbulb_outline_rounded)
                 ),
               ),
             ),
