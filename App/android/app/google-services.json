@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:424498221590:android:16da8a75536842295ddb37",
+        "android_client_info": {
+          "package_name": "com.bryan.testflutterfire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424498221590-num1vv0c5f6p6hib353uthlo4hgk6vh9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSuB505ACDD5xG9LBihbFnJovvUxZ5TNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424498221590-num1vv0c5f6p6hib353uthlo4hgk6vh9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:424498221590:android:44bc861afe9e4ff55ddb37",
         "android_client_info": {
           "package_name": "io.birdgo.birdgo"
