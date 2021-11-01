@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 // import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
-// import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
 // import 'package:firebase_database/firebase_database.dart';
 // import 'src/locations.dart' as locations;
 import 'mappage.dart';
@@ -11,7 +11,9 @@ import 'search.dart';
 // import 'src/allBirds.dart';
 import 'list of bird.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

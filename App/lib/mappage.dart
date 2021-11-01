@@ -52,13 +52,19 @@ class _MapPageState extends State<MapPage> {
   final Map<String, Marker> _markers = {};
 
   Future<void> _onMapCreated(GoogleMapController controller) async {
-    final googleOffices = await locations.getGoogleOffices();
+    
+	QuerySnapshot snap =
+        await FirebaseFirestore.instance.collection('locations').get();
+
     setState(() {
       _markers.clear();
-      for (final office in googleOffices.offices) {
+      for (var i = 0; i < snap.size; i++) {
+        var map = (snap.docs[i].data() as LinkedHashMap)!
+            .map((a, b) => MapEntry(a as String, b.toString() as String));
         final marker = Marker(
-          markerId: MarkerId(office.name),
-          position: LatLng(office.lat, office.lng),
+          markerId: MarkerId(map.putIfAbsent('name', () => 'Err')),
+          position: LatLng(double.parse(map.putIfAbsent('lat', () => '0')),
+              double.parse(map.putIfAbsent('lng', () => '0'))),
           icon: pinLocationIcon,
           onTap: () {
             setState(() {
@@ -68,11 +74,11 @@ class _MapPageState extends State<MapPage> {
             });
           },
           infoWindow: InfoWindow(
-            title: office.name,
-            snippet: office.address,
+            title: map.putIfAbsent('name', () => 'Err'),
+            snippet: map.putIfAbsent('address', () => 'Err'),
           ),
         );
-        _markers[office.name] = marker;
+        _markers[map.putIfAbsent('name', () => 'Err')] = marker;
       }
     });
   }
