@@ -1,0 +1,3584 @@
+[
+	{
+		"sciName": "Excalfactoria chinensis",
+		"cmnName": "King Quail",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Gallus gallus",
+		"cmnName": "Red Junglefowl",
+		"rarity": 1,
+		"quad1Pred": 0.9993777277413756,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dendrocygna arcuata",
+		"cmnName": "Wandering Whistling Duck",
+		"rarity": 2,
+		"quad1Pred": 0.03174591204151511,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dendrocygna javanica",
+		"cmnName": "Lesser Whistling Duck",
+		"rarity": 2,
+		"quad1Pred": 0.9813827329780906,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Nettapus coromandelianus",
+		"cmnName": "Cotton Pygmy Goose",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Spatula querquedula",
+		"cmnName": "Garganey",
+		"rarity": 3,
+		"quad1Pred": 1.3969838619232178e-9,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Spatula clypeata",
+		"cmnName": "Northern Shoveler",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Mareca strepera",
+		"cmnName": "Gadwall",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Mareca penelope",
+		"cmnName": "Eurasian Wigeon",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Anas acuta",
+		"cmnName": "Northern Pintail",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Aythya fuligula",
+		"cmnName": "Tufted Duck",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Lyncornis temminckii",
+		"cmnName": "Malaysian Eared Nightjar",
+		"rarity": 3,
+		"quad1Pred": 0.000034334021620452407,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Caprimulgus jotaka",
+		"cmnName": "Grey Nightjar",
+		"rarity": 2,
+		"quad1Pred": 0.5000314752105624,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Caprimulgus macrurus",
+		"cmnName": "Large-tailed Nightjar",
+		"rarity": 1,
+		"quad1Pred": 0.989219278213568,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Caprimulgus affinis",
+		"cmnName": "Savanna Nightjar",
+		"rarity": 1,
+		"quad1Pred": 0.9812517368700355,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hemiprocne longipennis",
+		"cmnName": "Grey-rumped Treeswift",
+		"rarity": 2,
+		"quad1Pred": 0.9658117592334747,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hemiprocne comata",
+		"cmnName": "Whiskered Treeswift",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Collocalia affinis",
+		"cmnName": "Plume-toed Swiftlet",
+		"rarity": 2,
+		"quad1Pred": 0.941497802734375,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Aerodramus maximus",
+		"cmnName": "Black-nest Swiftlet",
+		"rarity": 1,
+		"quad1Pred": 0.35894870781339707,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Aerodramus germani",
+		"cmnName": "Germain's Swiftlet",
+		"rarity": 1,
+		"quad1Pred": 0.9999590814113617,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Rhaphidura leucopygialis",
+		"cmnName": "Silver-rumped Spinetail",
+		"rarity": 3,
+		"quad1Pred": 0.00048828125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hirundapus caudacutus",
+		"cmnName": "White-throated Needletail",
+		"rarity": 2,
+		"quad1Pred": 0.375,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hirundapus cochinchinensis",
+		"cmnName": "Silver-backed Needletail",
+		"rarity": 3,
+		"quad1Pred": 0.7504882829962298,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hirundapus giganteus",
+		"cmnName": "Brown-backed Needletail",
+		"rarity": 2,
+		"quad1Pred": 0.75,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cypsiurus balasiensis",
+		"cmnName": "Asian Palm Swift",
+		"rarity": 2,
+		"quad1Pred": 0.2541570970788598,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Apus apus",
+		"cmnName": "Common Swift",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Apus pacificus",
+		"cmnName": "Pacific Swift",
+		"rarity": 1,
+		"quad1Pred": 0.996785168768838,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Apus nipalensis",
+		"cmnName": "House Swift",
+		"rarity": 2,
+		"quad1Pred": 0.9501927345991135,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Centropus sinensis",
+		"cmnName": "Greater Coucal",
+		"rarity": 2,
+		"quad1Pred": 0.9465789794921875,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Centropus bengalensis",
+		"cmnName": "Lesser Coucal",
+		"rarity": 1,
+		"quad1Pred": 0.9452858418226242,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Phaenicophaeus sumatranus",
+		"cmnName": "Chestnut-bellied Malkoha",
+		"rarity": 2,
+		"quad1Pred": 0.4964495003223419,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Clamator coromandus",
+		"cmnName": "Chestnut-winged Cuckoo",
+		"rarity": 2,
+		"quad1Pred": 0.9580078427679837,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Clamator jacobinus",
+		"cmnName": "Jacobin Cuckoo",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Eudynamys scolopaceus",
+		"cmnName": "Asian Koel",
+		"rarity": 1,
+		"quad1Pred": 0.9999999747378752,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chrysococcyx maculatus",
+		"cmnName": "Asian Emerald Cuckoo",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chrysococcyx xanthorhynchus",
+		"cmnName": "Violet Cuckoo",
+		"rarity": 2,
+		"quad1Pred": 0.21485913346987219,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chrysococcyx basalis",
+		"cmnName": "Horsfield's Bronze Cuckoo",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chrysococcyx minutillus",
+		"cmnName": "Little Bronze Cuckoo",
+		"rarity": 1,
+		"quad1Pred": 0.9396982233738527,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cacomantis sonneratii",
+		"cmnName": "Banded Bay Cuckoo",
+		"rarity": 2,
+		"quad1Pred": 0.8750153188593686,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cacomantis merulinus",
+		"cmnName": "Plaintive Cuckoo",
+		"rarity": 2,
+		"quad1Pred": 0.9414062502328306,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cacomantis sepulcralis",
+		"cmnName": "Rusty-breasted Cuckoo",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Surniculus lugubris",
+		"cmnName": "Square-tailed Drongo-Cuckoo",
+		"rarity": 2,
+		"quad1Pred": 0.496127133956179,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hierococcyx sparverioides",
+		"cmnName": "Large Hawk-Cuckoo",
+		"rarity": 2,
+		"quad1Pred": 0.5,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hierococcyx fugax",
+		"cmnName": "Malaysian Hawk-Cuckoo",
+		"rarity": 2,
+		"quad1Pred": 0.85205078125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hierococcyx nisicolor",
+		"cmnName": "Hodgson's Hawk-Cuckoo",
+		"rarity": 2,
+		"quad1Pred": 0.7929688398726285,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cuculus micropterus",
+		"cmnName": "Indian Cuckoo",
+		"rarity": 2,
+		"quad1Pred": 0.9265900084283203,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cuculus saturatus",
+		"cmnName": "Himalayan Cuckoo",
+		"rarity": 3,
+		"quad1Pred": 0.015625029802322389,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Streptopelia orientalis",
+		"cmnName": "Oriental Turtle Dove",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Streptopelia tranquebarica",
+		"cmnName": "Red Collared Dove",
+		"rarity": 2,
+		"quad1Pred": 0.9897361103212461,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chalcophaps indica",
+		"cmnName": "Common Emerald Dove",
+		"rarity": 2,
+		"quad1Pred": 0.913544774055481,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Geopelia striata",
+		"cmnName": "Zebra Dove",
+		"rarity": 1,
+		"quad1Pred": 0.9999748934060335,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Treron fulvicollis",
+		"cmnName": "Cinnamon-headed Green Pigeon",
+		"rarity": 3,
+		"quad1Pred": 1.341104507446289e-7,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Treron olax",
+		"cmnName": "Little Green Pigeon",
+		"rarity": 3,
+		"quad1Pred": 0.000015259720385074617,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Treron bicinctus",
+		"cmnName": "Orange-breasted Green Pigeon",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Treron curvirostra",
+		"cmnName": "Thick-billed Green Pigeon",
+		"rarity": 2,
+		"quad1Pred": 0.9691077814204618,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ptilinopus jambu",
+		"cmnName": "Jambu Fruit Dove",
+		"rarity": 2,
+		"quad1Pred": 0.9863586471183226,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ducula aenea",
+		"cmnName": "Green Imperial Pigeon",
+		"rarity": 2,
+		"quad1Pred": 0.87890625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ducula badia",
+		"cmnName": "Mountain Imperial Pigeon",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ducula bicolor",
+		"cmnName": "Pied Imperial Pigeon",
+		"rarity": 2,
+		"quad1Pred": 0.9883757829666138,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Heliopais personatus",
+		"cmnName": "Masked Finfoot",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Rallina fasciata",
+		"cmnName": "Red-legged Crake",
+		"rarity": 2,
+		"quad1Pred": 0.7075234055519104,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Rallina eurizonoides",
+		"cmnName": "Slaty-legged Crake",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Lewinia striata",
+		"cmnName": "Slaty-breasted Rail",
+		"rarity": 2,
+		"quad1Pred": 0.9856872560922056,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Amaurornis phoenicurus",
+		"cmnName": "White-breasted Waterhen",
+		"rarity": 1,
+		"quad1Pred": 0.999999912455678,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Zapornia pusilla",
+		"cmnName": "Baillon's Crake",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Zapornia fusca",
+		"cmnName": "Ruddy-breasted Crake",
+		"rarity": 2,
+		"quad1Pred": 0.9417724618688226,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Zapornia paykullii",
+		"cmnName": "Band-bellied Crake",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Poliolimnas cinereus",
+		"cmnName": "White-browed Crake",
+		"rarity": 2,
+		"quad1Pred": 0.5002613083925098,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Gallicrex cinerea",
+		"cmnName": "Watercock",
+		"rarity": 2,
+		"quad1Pred": 0.0009765625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Porphyrio poliocephalus",
+		"cmnName": "Grey-headed Swamphen",
+		"rarity": 3,
+		"quad1Pred": 0.08203232288360596,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Gallinula chloropus",
+		"cmnName": "Common Moorhen",
+		"rarity": 2,
+		"quad1Pred": 0.7558965990319848,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Fulica atra",
+		"cmnName": "Eurasian Coot",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Tachybaptus ruficollis",
+		"cmnName": "Little Grebe",
+		"rarity": 3,
+		"quad1Pred": 0.9432889223098755,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Turnix suscitator",
+		"cmnName": "Barred Buttonquail",
+		"rarity": 2,
+		"quad1Pred": 0.500244140625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Esacus magnirostris",
+		"cmnName": "Beach Stone-curlew",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Himantopus himantopus",
+		"cmnName": "Black-winged Stilt",
+		"rarity": 3,
+		"quad1Pred": 0.001953125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Himantopus leucocephalus",
+		"cmnName": "Pied Stilt",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Vanellus cinereus",
+		"cmnName": "Grey-headed Lapwing",
+		"rarity": 3,
+		"quad1Pred": 0.0625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Vanellus indicus",
+		"cmnName": "Red-wattled Lapwing",
+		"rarity": 1,
+		"quad1Pred": 0.9432687759399414,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pluvialis fulva",
+		"cmnName": "Pacific Golden Plover",
+		"rarity": 1,
+		"quad1Pred": 0.9999997466802597,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pluvialis squatarola",
+		"cmnName": "Grey Plover",
+		"rarity": 2,
+		"quad1Pred": 0.09797292947769165,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0.0078125
+	},
+	{
+		"sciName": "Charadrius hiaticula",
+		"cmnName": "Common Ringed Plover",
+		"rarity": 3,
+		"quad1Pred": 3.4691765904426578e-8,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Charadrius dubius",
+		"cmnName": "Little Ringed Plover",
+		"rarity": 2,
+		"quad1Pred": 0.9730949997901917,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Charadrius alexandrinus",
+		"cmnName": "Kentish Plover",
+		"rarity": 2,
+		"quad1Pred": 0.21914679347537459,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Charadrius dealbatus",
+		"cmnName": "White-faced Plover",
+		"rarity": 2,
+		"quad1Pred": 0.21875,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Charadrius peronii",
+		"cmnName": "Malaysian Plover",
+		"rarity": 2,
+		"quad1Pred": 0.47301120101474228,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Charadrius mongolus",
+		"cmnName": "Lesser Sand Plover",
+		"rarity": 1,
+		"quad1Pred": 0.7031247317790985,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Charadrius leschenaultii",
+		"cmnName": "Greater Sand Plover",
+		"rarity": 2,
+		"quad1Pred": 0.37778860854450616,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Charadrius veredus",
+		"cmnName": "Oriental Plover",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Rostratula benghalensis",
+		"cmnName": "Greater Painted-snipe",
+		"rarity": 3,
+		"quad1Pred": 0.25029194890521469,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hydrophasianus chirurgus",
+		"cmnName": "Pheasant-tailed Jacana",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Numenius phaeopus",
+		"cmnName": "Eurasian Whimbrel",
+		"rarity": 1,
+		"quad1Pred": 0.9999992251396179,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Numenius minutus",
+		"cmnName": "Little Curlew",
+		"rarity": 3,
+		"quad1Pred": 1.1920928955078126e-7,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Numenius madagascariensis",
+		"cmnName": "Far Eastern Curlew",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Numenius arquata",
+		"cmnName": "Eurasian Curlew",
+		"rarity": 3,
+		"quad1Pred": 0.06277674611192197,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Limosa lapponica",
+		"cmnName": "Bar-tailed Godwit",
+		"rarity": 2,
+		"quad1Pred": 0.3243713981937617,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Limosa limosa",
+		"cmnName": "Black-tailed Godwit",
+		"rarity": 2,
+		"quad1Pred": 0.03335777414031327,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Arenaria interpres",
+		"cmnName": "Ruddy Turnstone",
+		"rarity": 2,
+		"quad1Pred": 0.21935859764926136,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0.0078125
+	},
+	{
+		"sciName": "Calidris tenuirostris",
+		"cmnName": "Great Knot",
+		"rarity": 3,
+		"quad1Pred": 0.03125000069849193,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Calidris canutus",
+		"cmnName": "Red Knot",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Calidris pugnax",
+		"cmnName": "Ruff",
+		"rarity": 3,
+		"quad1Pred": 6.984919309616089e-10,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Calidris falcinellus",
+		"cmnName": "Broad-billed Sandpiper",
+		"rarity": 2,
+		"quad1Pred": 0.006591831217519939,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Calidris acuminata",
+		"cmnName": "Sharp-tailed Sandpiper",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Calidris ferruginea",
+		"cmnName": "Curlew Sandpiper",
+		"rarity": 2,
+		"quad1Pred": 0.2021477110683918,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Calidris temminckii",
+		"cmnName": "Temminck's Stint",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Calidris subminuta",
+		"cmnName": "Long-toed Stint",
+		"rarity": 2,
+		"quad1Pred": 0.5625097453594208,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Calidris pygmaea",
+		"cmnName": "Spoon-billed Sandpiper",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Calidris ruficollis",
+		"cmnName": "Red-necked Stint",
+		"rarity": 2,
+		"quad1Pred": 0.1316491961479187,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0.0078125
+	},
+	{
+		"sciName": "Calidris alba",
+		"cmnName": "Sanderling",
+		"rarity": 2,
+		"quad1Pred": 0.12504202558193357,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Calidris minuta",
+		"cmnName": "Little Stint",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Calidris melanotos",
+		"cmnName": "Pectoral Sandpiper",
+		"rarity": 3,
+		"quad1Pred": 4.76837158203125e-7,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Limnodromus semipalmatus",
+		"cmnName": "Asian Dowitcher",
+		"rarity": 3,
+		"quad1Pred": 4.0745362639427189e-9,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Gallinago stenura",
+		"cmnName": "Pin-tailed Snipe",
+		"rarity": 1,
+		"quad1Pred": 0.31274903239682319,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Gallinago megala",
+		"cmnName": "Swinhoe's Snipe",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Gallinago gallinago",
+		"cmnName": "Common Snipe",
+		"rarity": 1,
+		"quad1Pred": 0.5014649671502411,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Xenus cinereus",
+		"cmnName": "Terek Sandpiper",
+		"rarity": 2,
+		"quad1Pred": 0.9497673220466822,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Phalaropus lobatus",
+		"cmnName": "Red-necked Phalarope",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Actitis hypoleucos",
+		"cmnName": "Common Sandpiper",
+		"rarity": 1,
+		"quad1Pred": 0.9999997466802597,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Tringa ochropus",
+		"cmnName": "Green Sandpiper",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Tringa brevipes",
+		"cmnName": "Grey-tailed Tattler",
+		"rarity": 3,
+		"quad1Pred": 0.0004921110812574625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Tringa totanus",
+		"cmnName": "Common Redshank",
+		"rarity": 1,
+		"quad1Pred": 0.9999996945261955,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Tringa stagnatilis",
+		"cmnName": "Marsh Sandpiper",
+		"rarity": 2,
+		"quad1Pred": 0.9677731096744537,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Tringa glareola",
+		"cmnName": "Wood Sandpiper",
+		"rarity": 2,
+		"quad1Pred": 0.9689302742481232,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Tringa erythropus",
+		"cmnName": "Spotted Redshank",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Tringa nebularia",
+		"cmnName": "Common Greenshank",
+		"rarity": 1,
+		"quad1Pred": 0.9990231096744537,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Tringa guttifer",
+		"cmnName": "Nordmann's Greenshank",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Glareola maldivarum",
+		"cmnName": "Oriental Pratincole",
+		"rarity": 2,
+		"quad1Pred": 0.9846812383038923,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Glareola lactea",
+		"cmnName": "Small Pratincole",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chroicocephalus brunnicephalus",
+		"cmnName": "Brown-headed Gull",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chroicocephalus ridibundus",
+		"cmnName": "Black-headed Gull",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Gelochelidon nilotica",
+		"cmnName": "Gull-billed Tern",
+		"rarity": 3,
+		"quad1Pred": 0.003906250232830644,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hydroprogne caspia",
+		"cmnName": "Caspian Tern",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Thalasseus bergii",
+		"cmnName": "Greater Crested Tern",
+		"rarity": 1,
+		"quad1Pred": 0.5853700676234439,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Thalasseus bengalensis",
+		"cmnName": "Lesser Crested Tern",
+		"rarity": 1,
+		"quad1Pred": 0.5194102831883356,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Sternula albifrons",
+		"cmnName": "Little Tern",
+		"rarity": 1,
+		"quad1Pred": 0.9453087747097015,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Onychoprion aleuticus",
+		"cmnName": "Aleutian Tern",
+		"rarity": 2,
+		"quad1Pred": 0.015625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Onychoprion anaethetus",
+		"cmnName": "Bridled Tern",
+		"rarity": 2,
+		"quad1Pred": 0.515625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Sterna sumatrana",
+		"cmnName": "Black-naped Tern",
+		"rarity": 2,
+		"quad1Pred": 0.003908157697878778,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Sterna hirundo",
+		"cmnName": "Common Tern",
+		"rarity": 2,
+		"quad1Pred": 0.000030521536245942119,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chlidonias hybrida",
+		"cmnName": "Whiskered Tern",
+		"rarity": 2,
+		"quad1Pred": 0.880860332865268,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chlidonias leucopterus",
+		"cmnName": "White-winged Tern",
+		"rarity": 1,
+		"quad1Pred": 0.9830371146090329,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Stercorarius parasiticus",
+		"cmnName": "Parasitic Jaeger",
+		"rarity": 3,
+		"quad1Pred": 0.01953125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Stercorarius longicaudus",
+		"cmnName": "Long-tailed Jaeger",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Oceanodroma monorhis",
+		"cmnName": "Swinhoe's Storm Petrel",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ardenna tenuirostris",
+		"cmnName": "Short-tailed Shearwater",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Anastomus oscitans",
+		"cmnName": "Asian Openbill",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Leptoptilos javanicus",
+		"cmnName": "Lesser Adjutant",
+		"rarity": 3,
+		"quad1Pred": 0.875,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Fregata ariel",
+		"cmnName": "Lesser Frigatebird",
+		"rarity": 3,
+		"quad1Pred": 0.00390625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Sula sula",
+		"cmnName": "Red-footed Booby",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Sula leucogaster",
+		"cmnName": "Brown Booby",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Anhinga melanogaster",
+		"cmnName": "Oriental Darter",
+		"rarity": 3,
+		"quad1Pred": 0.015625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Plegadis falcinellus",
+		"cmnName": "Glossy Ibis",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ixobrychus sinensis",
+		"cmnName": "Yellow Bittern",
+		"rarity": 1,
+		"quad1Pred": 0.9984636753797531,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ixobrychus eurhythmus",
+		"cmnName": "Von Schrenck's Bittern",
+		"rarity": 2,
+		"quad1Pred": 0.8281250013969839,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ixobrychus cinnamomeus",
+		"cmnName": "Cinnamon Bittern",
+		"rarity": 2,
+		"quad1Pred": 0.3204355239868164,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ixobrychus flavicollis",
+		"cmnName": "Black Bittern",
+		"rarity": 2,
+		"quad1Pred": 0.15628065168857575,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Gorsachius melanolophus",
+		"cmnName": "Malayan Night Heron",
+		"rarity": 2,
+		"quad1Pred": 2.3283064365386965e-10,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Nycticorax nycticorax",
+		"cmnName": "Black-crowned Night Heron",
+		"rarity": 2,
+		"quad1Pred": 0.9657573746517301,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Butorides striata",
+		"cmnName": "Striated Heron",
+		"rarity": 1,
+		"quad1Pred": 0.9999976754188538,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ardeola grayii",
+		"cmnName": "Indian Pond Heron",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ardeola bacchus",
+		"cmnName": "Chinese Pond Heron",
+		"rarity": 1,
+		"quad1Pred": 0.18753051781095565,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ardeola speciosa",
+		"cmnName": "Javan Pond Heron",
+		"rarity": 2,
+		"quad1Pred": 1.4901161193847657e-8,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Bubulcus coromandus",
+		"cmnName": "Eastern Cattle Egret",
+		"rarity": 1,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ardea cinerea",
+		"cmnName": "Grey Heron",
+		"rarity": 1,
+		"quad1Pred": 0.999999575316906,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ardea sumatrana",
+		"cmnName": "Great-billed Heron",
+		"rarity": 2,
+		"quad1Pred": 0.903564453125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ardea purpurea",
+		"cmnName": "Purple Heron",
+		"rarity": 2,
+		"quad1Pred": 0.9658198659308255,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ardea alba",
+		"cmnName": "Great Egret",
+		"rarity": 1,
+		"quad1Pred": 0.9999666255898774,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ardea intermedia",
+		"cmnName": "Intermediate Egret",
+		"rarity": 2,
+		"quad1Pred": 0.9985103659564629,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Egretta garzetta",
+		"cmnName": "Little Egret",
+		"rarity": 1,
+		"quad1Pred": 0.9999995571561158,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Egretta sacra",
+		"cmnName": "Pacific Reef Heron",
+		"rarity": 2,
+		"quad1Pred": 0.8750058456789702,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Egretta eulophotes",
+		"cmnName": "Chinese Egret",
+		"rarity": 3,
+		"quad1Pred": 0.003942702081985772,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pandion haliaetus",
+		"cmnName": "Western Osprey",
+		"rarity": 1,
+		"quad1Pred": 0.9608422536402941,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Elanus caeruleus",
+		"cmnName": "Black-winged Kite",
+		"rarity": 2,
+		"quad1Pred": 0.9521231949329376,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pernis ptilorhynchus",
+		"cmnName": "Crested Honey Buzzard",
+		"rarity": 1,
+		"quad1Pred": 0.9921790704829618,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Aviceda jerdoni",
+		"cmnName": "Jerdon's Baza",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Aviceda leuphotes",
+		"cmnName": "Black Baza",
+		"rarity": 1,
+		"quad1Pred": 0.41830826201476159,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Gyps himalayensis",
+		"cmnName": "Himalayan Vulture",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Spilornis cheela",
+		"cmnName": "Crested Serpent Eagle",
+		"rarity": 3,
+		"quad1Pred": 0.8169555679196492,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Circaetus gallicus",
+		"cmnName": "Short-toed Snake Eagle",
+		"rarity": 3,
+		"quad1Pred": 0.007843017578125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Macheiramphus alcinus",
+		"cmnName": "Bat Hawk",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Nisaetus cirrhatus",
+		"cmnName": "Changeable Hawk-Eagle",
+		"rarity": 1,
+		"quad1Pred": 0.9843665414955467,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Lophotriorchis kienerii",
+		"cmnName": "Rufous-bellied Eagle",
+		"rarity": 3,
+		"quad1Pred": 0.25006103515625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Clanga clanga",
+		"cmnName": "Greater Spotted Eagle",
+		"rarity": 3,
+		"quad1Pred": 0.2656555213034153,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hieraaetus pennatus",
+		"cmnName": "Booted Eagle",
+		"rarity": 2,
+		"quad1Pred": 0.58203125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Aquila nipalensis",
+		"cmnName": "Steppe Eagle",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Aquila heliaca",
+		"cmnName": "Eastern Imperial Eagle",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Accipiter trivirgatus",
+		"cmnName": "Crested Goshawk",
+		"rarity": 2,
+		"quad1Pred": 0.9863281548023224,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Accipiter badius",
+		"cmnName": "Shikra",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Accipiter soloensis",
+		"cmnName": "Chinese Sparrowhawk",
+		"rarity": 2,
+		"quad1Pred": 0.9983798916218802,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Accipiter gularis",
+		"cmnName": "Japanese Sparrowhawk",
+		"rarity": 1,
+		"quad1Pred": 0.9999916405649856,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Accipiter virgatus",
+		"cmnName": "Besra",
+		"rarity": 3,
+		"quad1Pred": 0.5078125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Accipiter nisus",
+		"cmnName": "Eurasian Sparrowhawk",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Circus spilonotus",
+		"cmnName": "Eastern Marsh Harrier",
+		"rarity": 2,
+		"quad1Pred": 0.8166505447588861,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Circus melanoleucos",
+		"cmnName": "Pied Harrier",
+		"rarity": 3,
+		"quad1Pred": 0.078125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Milvus migrans",
+		"cmnName": "Black Kite",
+		"rarity": 3,
+		"quad1Pred": 0.007874609436839819,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Haliastur indus",
+		"cmnName": "Brahminy Kite",
+		"rarity": 1,
+		"quad1Pred": 0.9999996281694621,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Haliaeetus leucogaster",
+		"cmnName": "White-bellied Sea Eagle",
+		"rarity": 1,
+		"quad1Pred": 0.999999612569809,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Haliaeetus ichthyaetus",
+		"cmnName": "Grey-headed Fish Eagle",
+		"rarity": 2,
+		"quad1Pred": 0.9891244822647423,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Butastur indicus",
+		"cmnName": "Grey-faced Buzzard",
+		"rarity": 2,
+		"quad1Pred": 0.7500152587890625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Buteo buteo",
+		"cmnName": "Common Buzzard",
+		"rarity": 2,
+		"quad1Pred": 0.8284149169921875,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Tyto javanica",
+		"cmnName": "Eastern Barn Owl",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Otus lempiji",
+		"cmnName": "Sunda Scops Owl",
+		"rarity": 1,
+		"quad1Pred": 0.9729127893224359,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Otus sunia",
+		"cmnName": "Oriental Scops Owl",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Bubo sumatranus",
+		"cmnName": "Barred Eagle-owl",
+		"rarity": 3,
+		"quad1Pred": 0.75,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ketupa ketupu",
+		"cmnName": "Buffy Fish Owl",
+		"rarity": 2,
+		"quad1Pred": 0.8520927433855832,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Strix seloputo",
+		"cmnName": "Spotted Wood Owl",
+		"rarity": 2,
+		"quad1Pred": 0.9962196404812858,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Strix leptogrammica",
+		"cmnName": "Brown Wood Owl",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ninox scutulata",
+		"cmnName": "Brown Hawk-Owl",
+		"rarity": 1,
+		"quad1Pred": 0.9418039321899414,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ninox japonica",
+		"cmnName": "Northern Boobook",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Asio flammeus",
+		"cmnName": "Short-eared Owl",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Anthracoceros albirostris",
+		"cmnName": "Oriental Pied Hornbill",
+		"rarity": 1,
+		"quad1Pred": 0.9990568310022354,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Anthracoceros malayanus",
+		"cmnName": "Black Hornbill",
+		"rarity": 3,
+		"quad1Pred": 0.25,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Eurystomus orientalis",
+		"cmnName": "Oriental Dollarbird",
+		"rarity": 1,
+		"quad1Pred": 0.999991417163983,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pelargopsis capensis",
+		"cmnName": "Stork-billed Kingfisher",
+		"rarity": 2,
+		"quad1Pred": 0.9999895244836807,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Halcyon coromanda",
+		"cmnName": "Ruddy Kingfisher",
+		"rarity": 2,
+		"quad1Pred": 0.7818147543584928,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Halcyon smyrnensis",
+		"cmnName": "White-throated Kingfisher",
+		"rarity": 1,
+		"quad1Pred": 0.9999992698431015,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Halcyon pileata",
+		"cmnName": "Black-capped Kingfisher",
+		"rarity": 2,
+		"quad1Pred": 0.9423135850811377,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Alcedo meninting",
+		"cmnName": "Blue-eared Kingfisher",
+		"rarity": 2,
+		"quad1Pred": 0.9375,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Alcedo atthis",
+		"cmnName": "Common Kingfisher",
+		"rarity": 1,
+		"quad1Pred": 0.9999919980764389,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ceyx erithaca",
+		"cmnName": "Oriental Dwarf Kingfisher",
+		"rarity": 2,
+		"quad1Pred": 0.8249513506889343,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ceryle rudis",
+		"cmnName": "Pied Kingfisher",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Merops philippinus",
+		"cmnName": "Blue-tailed Bee-eater",
+		"rarity": 1,
+		"quad1Pred": 0.9999973028898239,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Merops viridis",
+		"cmnName": "Blue-throated Bee-eater",
+		"rarity": 1,
+		"quad1Pred": 0.9833679201547056,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Psilopogon lineatus",
+		"cmnName": "Lineated Barbet",
+		"rarity": 1,
+		"quad1Pred": 0.9978237152099609,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Psilopogon rafflesii",
+		"cmnName": "Red-crowned Barbet",
+		"rarity": 2,
+		"quad1Pred": 0.9727210998535156,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Psilopogon haemacephalus",
+		"cmnName": "Coppersmith Barbet",
+		"rarity": 1,
+		"quad1Pred": 0.9989817148307338,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Yungipicus moluccensis",
+		"cmnName": "Sunda Pygmy Woodpecker",
+		"rarity": 1,
+		"quad1Pred": 0.9999580383300781,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dryocopus javensis",
+		"cmnName": "White-bellied Woodpecker",
+		"rarity": 3,
+		"quad1Pred": 0.000030517810955643657,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chrysophlegma miniaceum",
+		"cmnName": "Banded Woodpecker",
+		"rarity": 1,
+		"quad1Pred": 0.9655342400074005,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Picus puniceus",
+		"cmnName": "Crimson-winged Woodpecker",
+		"rarity": 3,
+		"quad1Pred": 0.0000152587890625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Picus vittatus",
+		"cmnName": "Laced Woodpecker",
+		"rarity": 1,
+		"quad1Pred": 0.9509782802779228,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dinopium javanense",
+		"cmnName": "Common Flameback",
+		"rarity": 1,
+		"quad1Pred": 0.999990020878613,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Micropternus brachyurus",
+		"cmnName": "Rufous Woodpecker",
+		"rarity": 2,
+		"quad1Pred": 0.9887704849243164,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Meiglyptes tristis",
+		"cmnName": "Buff-rumped Woodpecker",
+		"rarity": 3,
+		"quad1Pred": 0.00390625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Mulleripicus pulverulentus",
+		"cmnName": "Great Slaty Woodpecker",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Falco naumanni",
+		"cmnName": "Lesser Kestrel",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Falco tinnunculus",
+		"cmnName": "Common Kestrel",
+		"rarity": 2,
+		"quad1Pred": 0.0000152587890625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Falco amurensis",
+		"cmnName": "Amur Falcon",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Falco subbuteo",
+		"cmnName": "Eurasian Hobby",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Falco peregrinus",
+		"cmnName": "Peregrine Falcon",
+		"rarity": 2,
+		"quad1Pred": 0.8670997967710719,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cacatua goffiniana",
+		"cmnName": "Tanimbar Corella",
+		"rarity": 1,
+		"quad1Pred": 0.9999303872464225,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cacatua sulphurea",
+		"cmnName": "Yellow-crested Cockatoo",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Psittinus cyanurus",
+		"cmnName": "Blue-rumped Parrot",
+		"rarity": 2,
+		"quad1Pred": 0.9414062543073669,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Psittacula alexandri",
+		"cmnName": "Red-breasted Parakeet",
+		"rarity": 1,
+		"quad1Pred": 0.9999914220534265,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Psittacula longicauda",
+		"cmnName": "Long-tailed Parakeet",
+		"rarity": 1,
+		"quad1Pred": 0.9921770098153502,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Psittacula krameri",
+		"cmnName": "Rose-ringed Parakeet",
+		"rarity": 1,
+		"quad1Pred": 0.9419776551658288,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Trichoglossus haematodus",
+		"cmnName": "Coconut Lorikeet",
+		"rarity": 2,
+		"quad1Pred": 0.96881103515625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Loriculus galgulus",
+		"cmnName": "Blue-crowned Hanging Parrot",
+		"rarity": 1,
+		"quad1Pred": 0.9657489067176357,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cymbirhynchus macrorhynchos",
+		"cmnName": "Black-and-red Broadbill",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Calyptomena viridis",
+		"cmnName": "Green Broadbill",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pitta sordida",
+		"cmnName": "Hooded Pitta",
+		"rarity": 2,
+		"quad1Pred": 0.00787353515625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pitta nympha",
+		"cmnName": "Fairy Pitta",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pitta moluccensis",
+		"cmnName": "Blue-winged Pitta",
+		"rarity": 2,
+		"quad1Pred": 0.9765645863953978,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pitta megarhyncha",
+		"cmnName": "Mangrove Pitta",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Gerygone sulphurea",
+		"cmnName": "Golden-bellied Gerygone",
+		"rarity": 1,
+		"quad1Pred": 0.9833879619836807,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hemipus hirundinaceus",
+		"cmnName": "Black-winged Flycatcher-shrike",
+		"rarity": 3,
+		"quad1Pred": 0.25,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Tephrodornis virgatus",
+		"cmnName": "Large Woodshrike",
+		"rarity": 3,
+		"quad1Pred": 0.25,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Aegithina tiphia",
+		"cmnName": "Common Iora",
+		"rarity": 1,
+		"quad1Pred": 0.9999914467334747,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pericrocotus speciosus",
+		"cmnName": "Scarlet Minivet",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pericrocotus divaricatus",
+		"cmnName": "Ashy Minivet",
+		"rarity": 1,
+		"quad1Pred": 0.918310169945471,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Lalage nigra",
+		"cmnName": "Pied Triller",
+		"rarity": 1,
+		"quad1Pred": 0.9999551773071289,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Lalage fimbriata",
+		"cmnName": "Lesser Cuckooshrike",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pachycephala cinerea",
+		"cmnName": "Mangrove Whistler",
+		"rarity": 3,
+		"quad1Pred": 0.001953125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Lanius tigrinus",
+		"cmnName": "Tiger Shrike",
+		"rarity": 1,
+		"quad1Pred": 0.9999906318262219,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Lanius cristatus",
+		"cmnName": "Brown Shrike",
+		"rarity": 1,
+		"quad1Pred": 0.9999977815896273,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Lanius schach",
+		"cmnName": "Long-tailed Shrike",
+		"rarity": 2,
+		"quad1Pred": 0.9838153177406639,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Erpornis zantholeuca",
+		"cmnName": "White-bellied Erpornis",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dicrurus macrocercus",
+		"cmnName": "Black Drongo",
+		"rarity": 3,
+		"quad1Pred": 0.14070526231080295,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dicrurus leucophaeus",
+		"cmnName": "Ashy Drongo",
+		"rarity": 3,
+		"quad1Pred": 0.004425049293786287,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dicrurus annectens",
+		"cmnName": "Crow-billed Drongo",
+		"rarity": 2,
+		"quad1Pred": 0.9989826583769172,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dicrurus hottentottus",
+		"cmnName": "Hair-crested Drongo",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dicrurus paradiseus",
+		"cmnName": "Greater Racket-tailed Drongo",
+		"rarity": 1,
+		"quad1Pred": 0.9990151226520538,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Rhipidura javanica",
+		"cmnName": "Malaysian Pied Fantail",
+		"rarity": 1,
+		"quad1Pred": 0.9999909847974777,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hypothymis azurea",
+		"cmnName": "Black-naped Monarch",
+		"rarity": 3,
+		"quad1Pred": 0.5,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Terpsiphone paradisi",
+		"cmnName": "Indian Paradise Flycatcher",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Terpsiphone affinis",
+		"cmnName": "Blyth's Paradise Flycatcher",
+		"rarity": 2,
+		"quad1Pred": 0.95343017578125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Terpsiphone incei",
+		"cmnName": "Amur Paradise Flycatcher",
+		"rarity": 2,
+		"quad1Pred": 0.9837656915187836,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Terpsiphone atrocaudata",
+		"cmnName": "Japanese Paradise Flycatcher",
+		"rarity": 3,
+		"quad1Pred": 0.50439453125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Corvus splendens",
+		"cmnName": "House Crow",
+		"rarity": 1,
+		"quad1Pred": 0.9999999199062586,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Corvus macrorhynchos",
+		"cmnName": "Large-billed Crow",
+		"rarity": 2,
+		"quad1Pred": 0.9843653738498688,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Parus minor",
+		"cmnName": "Japanese Tit",
+		"rarity": 3,
+		"quad1Pred": 0.00390625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Alauda arvensis",
+		"cmnName": "Eurasian Skylark",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pycnonotus zeylanicus",
+		"cmnName": "Straw-headed Bulbul",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Microtarsus melanoleucos",
+		"cmnName": "Black-and-white Bulbul",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Brachypodius melanocephalos",
+		"cmnName": "Black-headed Bulbul",
+		"rarity": 3,
+		"quad1Pred": 0.00012207170948386192,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Rubigula flaviventris",
+		"cmnName": "Black-crested Bulbul",
+		"rarity": 2,
+		"quad1Pred": 0.5000152625143528,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pycnonotus jocosus",
+		"cmnName": "Red-whiskered Bulbul",
+		"rarity": 2,
+		"quad1Pred": 0.988843088503927,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pycnonotus aurigaster",
+		"cmnName": "Sooty-headed Bulbul",
+		"rarity": 2,
+		"quad1Pred": 0.9572830200195313,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pycnonotus plumosus",
+		"cmnName": "Olive-winged Bulbul",
+		"rarity": 1,
+		"quad1Pred": 0.9687415370717645,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pycnonotus simplex",
+		"cmnName": "Cream-vented Bulbul",
+		"rarity": 2,
+		"quad1Pred": 0.9985199011862278,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pycnonotus brunneus",
+		"cmnName": "Asian Red-eyed Bulbul",
+		"rarity": 2,
+		"quad1Pred": 0.9670906121609733,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Iole crypta",
+		"cmnName": "Buff-vented Bulbul",
+		"rarity": 3,
+		"quad1Pred": 3.725290298461914e-9,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ixos malaccensis",
+		"cmnName": "Streaked Bulbul",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hemixos cinereus",
+		"cmnName": "Cinereous Bulbul",
+		"rarity": 2,
+		"quad1Pred": 0.7656707768328488,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Riparia riparia",
+		"cmnName": "Sand Martin",
+		"rarity": 2,
+		"quad1Pred": 0.8359432225115597,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Hirundo tahitica",
+		"cmnName": "Pacific Swallow",
+		"rarity": 1,
+		"quad1Pred": 0.9999999273568392,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Delichon dasypus",
+		"cmnName": "Asian House Martin",
+		"rarity": 3,
+		"quad1Pred": 0.9023782017175108,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cecropis daurica",
+		"cmnName": "Red-rumped Swallow",
+		"rarity": 2,
+		"quad1Pred": 0.965795565629378,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Phylloscopus inornatus",
+		"cmnName": "Yellow-browed Warbler",
+		"rarity": 3,
+		"quad1Pred": 0.000030517578125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Phylloscopus fuscatus",
+		"cmnName": "Dusky Warbler",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Phylloscopus coronatus",
+		"cmnName": "Eastern Crowned Warbler",
+		"rarity": 1,
+		"quad1Pred": 0.9520159707171843,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Phylloscopus borealoides",
+		"cmnName": "Sakhalin Leaf Warbler",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Phylloscopus borealis",
+		"cmnName": "Arctic Warbler",
+		"rarity": 1,
+		"quad1Pred": 0.9999971836805344,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Acrocephalus orientalis",
+		"cmnName": "Oriental Reed Warbler",
+		"rarity": 1,
+		"quad1Pred": 0.9609376676380634,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Acrocephalus bistrigiceps",
+		"cmnName": "Black-browed Reed Warbler",
+		"rarity": 2,
+		"quad1Pred": 0.53515625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Iduna caligata",
+		"cmnName": "Booted Warbler",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Helopsaltes certhiola",
+		"cmnName": "Pallas's Grasshopper Warbler",
+		"rarity": 1,
+		"quad1Pred": 0.9375305365538225,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Locustella lanceolata",
+		"cmnName": "Lanceolated Warbler",
+		"rarity": 2,
+		"quad1Pred": 0.3125000046566129,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cisticola juncidis",
+		"cmnName": "Zitting Cisticola",
+		"rarity": 1,
+		"quad1Pred": 0.9423217922449112,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Prinia flaviventris",
+		"cmnName": "Yellow-bellied Prinia",
+		"rarity": 1,
+		"quad1Pred": 0.9526128768920898,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Orthotomus sutorius",
+		"cmnName": "Common Tailorbird",
+		"rarity": 1,
+		"quad1Pred": 0.9999971687793732,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Orthotomus atrogularis",
+		"cmnName": "Dark-necked Tailorbird",
+		"rarity": 1,
+		"quad1Pred": 0.9794363975524902,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Orthotomus sericeus",
+		"cmnName": "Rufous-tailed Tailorbird",
+		"rarity": 2,
+		"quad1Pred": 0.9478850369341672,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Orthotomus ruficeps",
+		"cmnName": "Ashy Tailorbird",
+		"rarity": 1,
+		"quad1Pred": 0.9999995566904545,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cyanoderma erythropterum",
+		"cmnName": "Chestnut-winged Babbler",
+		"rarity": 2,
+		"quad1Pred": 0.8125152587890625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Mixornis gularis",
+		"cmnName": "Pin-striped Tit-babbler",
+		"rarity": 1,
+		"quad1Pred": 0.9521398544311523,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Malacocincla abbotti",
+		"cmnName": "Abbott's Babbler",
+		"rarity": 2,
+		"quad1Pred": 0.9748573303222656,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Malacopteron magnirostre",
+		"cmnName": "Moustached Babbler",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pellorneum malaccense",
+		"cmnName": "Short-tailed Babbler",
+		"rarity": 1,
+		"quad1Pred": 0.93829345703125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pellorneum rostratum",
+		"cmnName": "White-chested Babbler",
+		"rarity": 3,
+		"quad1Pred": 6.984919309616089e-10,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Garrulax leucolophus",
+		"cmnName": "White-crested Laughingthrush",
+		"rarity": 1,
+		"quad1Pred": 0.9968167543411255,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Garrulax canorus",
+		"cmnName": "Chinese Hwamei",
+		"rarity": 3,
+		"quad1Pred": 4.656612873077393e-10,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Zosterops simplex",
+		"cmnName": "Swinhoe's White-eye",
+		"rarity": 1,
+		"quad1Pred": 0.9989385604858398,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Irena puella",
+		"cmnName": "Asian Fairy-bluebird",
+		"rarity": 2,
+		"quad1Pred": 0.9807634353637695,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Sitta frontalis",
+		"cmnName": "Velvet-fronted Nuthatch",
+		"rarity": 3,
+		"quad1Pred": 1.1920928955078126e-7,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Gracula religiosa",
+		"cmnName": "Common Hill Myna",
+		"rarity": 2,
+		"quad1Pred": 0.9990154514089227,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Acridotheres cristatellus",
+		"cmnName": "Crested Myna",
+		"rarity": 3,
+		"quad1Pred": 3.725290298461914e-9,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Acridotheres tristis",
+		"cmnName": "Common Myna",
+		"rarity": 1,
+		"quad1Pred": 0.999999649822712,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Acridotheres melanopterus",
+		"cmnName": "Black-winged Starling",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Spodiopsar sericeus",
+		"cmnName": "Red-billed Starling",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Spodiopsar cineraceus",
+		"cmnName": "White-cheeked Starling",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Agropsar sturninus",
+		"cmnName": "Daurian Starling",
+		"rarity": 1,
+		"quad1Pred": 0.9978008322650567,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Agropsar philippensis",
+		"cmnName": "Chestnut-cheeked Starling",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Sturnia sinensis",
+		"cmnName": "White-shouldered Starling",
+		"rarity": 2,
+		"quad1Pred": 0.2656407398171723,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Sturnia pagodarum",
+		"cmnName": "Brahminy Starling",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Pastor roseus",
+		"cmnName": "Rosy Starling",
+		"rarity": 3,
+		"quad1Pred": 0.015625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Geokichla citrina",
+		"cmnName": "Orange-headed Thrush",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Geokichla sibirica",
+		"cmnName": "Siberian Thrush",
+		"rarity": 2,
+		"quad1Pred": 0.5004882849752903,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Turdus mandarinus",
+		"cmnName": "Chinese Blackbird",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Turdus obscurus",
+		"cmnName": "Eyebrowed Thrush",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Copsychus saularis",
+		"cmnName": "Oriental Magpie-Robin",
+		"rarity": 2,
+		"quad1Pred": 0.9999991710064933,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Copsychus malabaricus",
+		"cmnName": "White-rumped Shama",
+		"rarity": 2,
+		"quad1Pred": 0.9799518624786288,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Muscicapa griseisticta",
+		"cmnName": "Grey-streaked Flycatcher",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Muscicapa sibirica",
+		"cmnName": "Dark-sided Flycatcher",
+		"rarity": 2,
+		"quad1Pred": 0.9968719519674778,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Muscicapa dauurica",
+		"cmnName": "Asian Brown Flycatcher",
+		"rarity": 1,
+		"quad1Pred": 0.9999916292726994,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Muscicapa williamsoni",
+		"cmnName": "Brown-streaked Flycatcher",
+		"rarity": 3,
+		"quad1Pred": 0.00048828125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Muscicapa ferruginea",
+		"cmnName": "Ferruginous Flycatcher",
+		"rarity": 2,
+		"quad1Pred": 0.7444610939128324,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cyornis glaucicomans",
+		"cmnName": "Chinese Blue Flycatcher",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cyornis rufigastra",
+		"cmnName": "Mangrove Blue Flycatcher",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cyornis brunneatus",
+		"cmnName": "Brown-chested Jungle Flycatcher",
+		"rarity": 2,
+		"quad1Pred": 0.9986459917854518,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cyanoptila cyanomelana",
+		"cmnName": "Blue-and-white Flycatcher",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cyanoptila cumatilis",
+		"cmnName": "Zappey's Flycatcher",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Eumyias thalassinus",
+		"cmnName": "Verditer Flycatcher",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Larvivora cyane",
+		"cmnName": "Siberian Blue Robin",
+		"rarity": 1,
+		"quad1Pred": 0.9891321414615959,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ficedula zanthopygia",
+		"cmnName": "Yellow-rumped Flycatcher",
+		"rarity": 2,
+		"quad1Pred": 0.9999849700834602,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ficedula narcissina",
+		"cmnName": "Narcissus Flycatcher",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ficedula elisae",
+		"cmnName": "Green-backed Flycatcher",
+		"rarity": 3,
+		"quad1Pred": 0.1250152587890625,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ficedula mugimaki",
+		"cmnName": "Mugimaki Flycatcher",
+		"rarity": 2,
+		"quad1Pred": 0.064453125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ficedula albicilla",
+		"cmnName": "Taiga Flycatcher",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Phoenicurus auroreus",
+		"cmnName": "Daurian Redstart",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Monticola solitarius",
+		"cmnName": "Blue Rock Thrush",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Monticola gularis",
+		"cmnName": "White-throated Rock Thrush",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Saxicola stejnegeri",
+		"cmnName": "Stejneger's Stonechat",
+		"rarity": 3,
+		"quad1Pred": 1.3969838619232178e-9,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chloropsis sonnerati",
+		"cmnName": "Greater Green Leafbird",
+		"rarity": 2,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chloropsis cyanopogon",
+		"cmnName": "Lesser Green Leafbird",
+		"rarity": 3,
+		"quad1Pred": 0.25003052153624596,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chloropsis cochinchinensis",
+		"cmnName": "Blue-winged Leafbird",
+		"rarity": 2,
+		"quad1Pred": 0.9747812011046335,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Prionochilus thoracicus",
+		"cmnName": "Scarlet-breasted Flowerpecker",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dicaeum agile",
+		"cmnName": "Thick-billed Flowerpecker",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dicaeum chrysorrheum",
+		"cmnName": "Yellow-vented Flowerpecker",
+		"rarity": 3,
+		"quad1Pred": 0.5,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dicaeum trigonostigma",
+		"cmnName": "Orange-bellied Flowerpecker",
+		"rarity": 1,
+		"quad1Pred": 0.9833574295043945,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dicaeum cruentatum",
+		"cmnName": "Scarlet-backed Flowerpecker",
+		"rarity": 1,
+		"quad1Pred": 0.9999899864196777,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Chalcoparia singalensis",
+		"cmnName": "Ruby-cheeked Sunbird",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Anthreptes malacensis",
+		"cmnName": "Brown-throated Sunbird",
+		"rarity": 1,
+		"quad1Pred": 0.9999920129776001,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Leptocoma brasiliana",
+		"cmnName": "Van Hasselt's Sunbird",
+		"rarity": 1,
+		"quad1Pred": 0.44451999687589707,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Leptocoma calcostetha",
+		"cmnName": "Copper-throated Sunbird",
+		"rarity": 2,
+		"quad1Pred": 0.994416237808764,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Cinnyris jugularis",
+		"cmnName": "Olive-backed Sunbird",
+		"rarity": 1,
+		"quad1Pred": 0.9999920427799225,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Aethopyga siparaja",
+		"cmnName": "Crimson Sunbird",
+		"rarity": 1,
+		"quad1Pred": 0.9990224838256836,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Arachnothera longirostra",
+		"cmnName": "Little Spiderhunter",
+		"rarity": 2,
+		"quad1Pred": 0.9392595589160919,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Arachnothera crassirostris",
+		"cmnName": "Thick-billed Spiderhunter",
+		"rarity": 3,
+		"quad1Pred": 0.000030517578125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Arachnothera chrysogenys",
+		"cmnName": "Yellow-eared Spiderhunter",
+		"rarity": 3,
+		"quad1Pred": 1.4901161193847657e-8,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Passer domesticus",
+		"cmnName": "House Sparrow",
+		"rarity": 3,
+		"quad1Pred": 0.031536221504211429,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Passer montanus",
+		"cmnName": "Eurasian Tree Sparrow",
+		"rarity": 1,
+		"quad1Pred": 0.9999996442347765,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ploceus manyar",
+		"cmnName": "Streaked Weaver",
+		"rarity": 3,
+		"quad1Pred": 0.003906369209289551,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Ploceus philippinus",
+		"cmnName": "Baya Weaver",
+		"rarity": 2,
+		"quad1Pred": 0.9423713833093643,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Amandava amandava",
+		"cmnName": "Red Avadavat",
+		"rarity": 2,
+		"quad1Pred": 0.023468017578125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Lonchura striata",
+		"cmnName": "White-rumped Munia",
+		"rarity": 3,
+		"quad1Pred": 0.00048828125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Lonchura leucogastroides",
+		"cmnName": "Javan Munia",
+		"rarity": 2,
+		"quad1Pred": 0.9418463706970215,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Lonchura punctulata",
+		"cmnName": "Scaly-breasted Munia",
+		"rarity": 1,
+		"quad1Pred": 0.9999900162220001,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Lonchura atricapilla",
+		"cmnName": "Chestnut Munia",
+		"rarity": 2,
+		"quad1Pred": 0.9559679049998522,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0.0078125
+	},
+	{
+		"sciName": "Lonchura maja",
+		"cmnName": "White-headed Munia",
+		"rarity": 2,
+		"quad1Pred": 0.8911781311035156,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Dendronanthus indicus",
+		"cmnName": "Forest Wagtail",
+		"rarity": 2,
+		"quad1Pred": 0.4478635831037536,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Motacilla tschutschensis",
+		"cmnName": "Eastern Yellow Wagtail",
+		"rarity": 1,
+		"quad1Pred": 0.9910278767347336,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Motacilla citreola",
+		"cmnName": "Citrine Wagtail",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Motacilla cinerea",
+		"cmnName": "Grey Wagtail",
+		"rarity": 2,
+		"quad1Pred": 0.9687863625586033,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Motacilla alba",
+		"cmnName": "White Wagtail",
+		"rarity": 2,
+		"quad1Pred": 0.250030517578125,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Anthus rufulus",
+		"cmnName": "Paddyfield Pipit",
+		"rarity": 1,
+		"quad1Pred": 0.9823732525110245,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Anthus hodgsoni",
+		"cmnName": "Olive-backed Pipit",
+		"rarity": 3,
+		"quad1Pred": 0,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	},
+	{
+		"sciName": "Anthus cervinus",
+		"cmnName": "Red-throated Pipit",
+		"rarity": 2,
+		"quad1Pred": 0.25,
+		"quad2Pred": 0,
+		"quad3Pred": 0,
+		"quad4Pred": 0
+	}
+]
