@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:googlemapstry/predictionpage.dart';
-import 'src/allBirds.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
+//import 'src/allBirds.dart';
 import 'src/locations.dart' as locations;
 import 'src/specificBirdGallery.dart';
 import 'src/topThreeBirds.dart';
 import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
+import 'dart:async';
+
+StreamController<int> streamController = StreamController<int>();
 
 class MapPage extends StatefulWidget {
-  const MapPage({Key? key}) : super(key: key);
+  const MapPage(this.stream);
+  final Stream<int> stream;
 
   @override
   _MapPageState createState() => _MapPageState();
@@ -21,10 +26,22 @@ class _MapPageState extends State<MapPage> {
   bool topThreeBirdsWidgetIsVisible = true;
   bool specificBirdGalleryWidgetIsVisible = false;
 
+  void mySetState(int index) {
+    List booleanList = [true, false];
+    setState(() {
+      specificBirdGalleryWidgetIsVisible = booleanList[index];
+      topThreeBirdsWidgetIsVisible = booleanList[index + 1];
+      allBirdsWidgetIsVisible = booleanList[index + 1];
+    });
+  }
+
   @override
   void initState() {
     super.initState();
     setCustomMapPin();
+    widget.stream.listen((index) {
+      mySetState(index);
+    });
   }
 
   void setCustomMapPin() async {
@@ -64,95 +81,223 @@ class _MapPageState extends State<MapPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        body: Stack(
-          children: [
-            Container(
+        body: Stack(children: [
+          Container(
             child: GoogleMap(
               onMapCreated: _onMapCreated,
               initialCameraPosition: const CameraPosition(
                 target: LatLng(1.3483, 103.6831),
                 zoom: 16,
               ),
-            markers: _markers.values.toSet(),
+              markers: _markers.values.toSet(),
             ),
           ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10, 80, 10, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            allBirdsWidgetIsVisible = true;
-                            specificBirdGalleryWidgetIsVisible = false;
-                            topThreeBirdsWidgetIsVisible = false;
-                          });
-                        },
-                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFEAA9C))),
-                        child: Text('show all birds',
-                            style: TextStyle(fontSize: 16))),
-                  ),
-                  SizedBox(width:10),
-                  Expanded(
-                    child: ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            specificBirdGalleryWidgetIsVisible = true;
-                            topThreeBirdsWidgetIsVisible = false;
-                            allBirdsWidgetIsVisible = false;
-                          });
-                        },
-                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFEAA9C))),
-                        child: Text('show specific bird',
-                            style: TextStyle(fontSize: 16))),
-                  ),
-                ],
-              ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 80, 10, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          allBirdsWidgetIsVisible = true;
+                          specificBirdGalleryWidgetIsVisible = false;
+                          topThreeBirdsWidgetIsVisible = false;
+                        });
+                      },
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFFFEAA9C))),
+                      child: Text('show all birds',
+                          style: TextStyle(fontSize: 16))),
+                ),
+                SizedBox(width: 10),
+                Expanded(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          specificBirdGalleryWidgetIsVisible = true;
+                          topThreeBirdsWidgetIsVisible = false;
+                          allBirdsWidgetIsVisible = false;
+                        });
+                      },
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFFFEAA9C))),
+                      child: Text('show specific bird',
+                          style: TextStyle(fontSize: 16))),
+                ),
+              ],
             ),
-            Positioned(
-              left: 10,
-              bottom: 237,
-              child: Builder(
-                builder: (context) => FloatingActionButton(
+          ),
+          Positioned(
+            left: 10,
+            bottom: 237,
+            child: Builder(
+              builder: (context) => FloatingActionButton(
                   backgroundColor: Color(0xffFEAA9c),
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => TextfieldGeneralWidget()));
-                    },
-                  child: const Icon(Icons.file_upload_outlined)
-                ),
-              ),
+                  },
+                  child: const Icon(Icons.file_upload_outlined)),
             ),
-            Positioned(
-              right: 10,
-              bottom: 237,
-              child: Builder(
-                builder: (context) => FloatingActionButton(
-                    backgroundColor: Color(0xffFEAA9c),
-                    onPressed: () { // change to map page
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => PredPage()));
+          ),
+          Positioned(
+            right: 10,
+            bottom: 237,
+            child: Builder(
+              builder: (context) => FloatingActionButton(
+                  backgroundColor: Color(0xffFEAA9c),
+                  onPressed: () {
+                    // change to map page
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => PredPage()));
+                  },
+                  child: const Icon(Icons.lightbulb_outline_rounded)),
+            ),
+          ),
+          Visibility(
+              visible: specificBirdGalleryWidgetIsVisible,
+              child: SpecificBirdGallery()),
+          Visibility(visible: allBirdsWidgetIsVisible, child: AllBirds()),
+          Visibility(
+              visible: topThreeBirdsWidgetIsVisible, child: TopThreeBirds()),
+        ]));
+  }
+}
 
-                    },
-                    child: const Icon(Icons.lightbulb_outline_rounded)
-                ),
-              ),
+class AllBirds extends StatelessWidget {
+  const AllBirds({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SlidingUpPanel(
+        minHeight: 220,
+        maxHeight: 450,
+        panel: Stack(
+          children: <Widget>[
+            Column(
+              children: [
+                Icon(Icons.drag_handle),
+                Container(
+                    margin: EdgeInsets.all(10),
+                    child: Center(
+                        child: Text(
+                      'All birds in NTU',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ))),
+              ],
             ),
-            Visibility(
-                visible: specificBirdGalleryWidgetIsVisible,
-                child: SpecificBirdGallery()),
-            Visibility(visible: allBirdsWidgetIsVisible, child: AllBirds()),
-            Visibility(
-                visible: topThreeBirdsWidgetIsVisible, child: TopThreeBirds()),
-          ]
-        )
-    );
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 50, 0, 0),
+              child: GridView.count(
+                primary: false,
+                padding: const EdgeInsets.all(20),
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                crossAxisCount: 3,
+                children: <Widget>[
+                  Container(
+                    // padding: const EdgeInsets.all(8),
+                    // color: Colors.teal[100],
+                    child: InkWell(
+                      onTap: () {
+                        streamController.add(0);
+                      },
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image(
+                            image: AssetImage('assets/bird1.jpeg'),
+                            fit: BoxFit.cover,
+                          )),
+                    ),
+                  ),
+                  Container(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                            image: AssetImage('assets/bird2.jpeg'),
+                            fit: BoxFit.cover)),
+                  ),
+                  Container(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                            image: AssetImage('assets/bird3.jpeg'),
+                            fit: BoxFit.cover)),
+                  ),
+                  Container(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                            image: AssetImage('assets/bird4.jpeg'),
+                            fit: BoxFit.cover)),
+                  ),
+                  Container(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                            image: AssetImage('assets/bird5.jpeg'),
+                            fit: BoxFit.cover)),
+                  ),
+                  Container(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                            image: AssetImage('assets/bird6.jpeg'),
+                            fit: BoxFit.cover)),
+                  ),
+                  Container(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                            image: AssetImage('assets/bird7.jpeg'),
+                            fit: BoxFit.cover)),
+                  ),
+                  Container(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                            image: AssetImage('assets/bird8.jpeg'),
+                            fit: BoxFit.cover)),
+                  ),
+                  Container(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                            image: AssetImage('assets/bird9.jpeg'),
+                            fit: BoxFit.cover)),
+                  ),
+                  Container(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                            image: AssetImage('assets/bird9.jpeg'),
+                            fit: BoxFit.cover)),
+                  ),
+                  Container(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                            image: AssetImage('assets/bird9.jpeg'),
+                            fit: BoxFit.cover)),
+                  ),
+                  Container(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                            image: AssetImage('assets/bird9.jpeg'),
+                            fit: BoxFit.cover)),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ));
   }
 }

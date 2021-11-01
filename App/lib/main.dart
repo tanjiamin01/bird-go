@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
         body: Stack(
           //fit: StackFit.expand,
           children: [
-            MapPage(),
+            MapPage(streamController.stream),
             SearchPage(),
           ],
         ),

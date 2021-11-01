@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:googlemapstry/mappage.dart';
 
 void main() => runApp(Grid());
 
@@ -19,12 +20,17 @@ class Grid extends StatelessWidget {
           Container(
             // padding: const EdgeInsets.all(8),
             // color: Colors.teal[100],
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image(
-                  image: AssetImage('assets/bird1.jpeg'),
-                  fit: BoxFit.cover,
-                )),
+            child: InkWell(
+              onTap: () {
+                
+              },
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image(
+                    image: AssetImage('assets/bird1.jpeg'),
+                    fit: BoxFit.cover,
+                  )),
+            ),
           ),
           Container(
             child: ClipRRect(
