@@ -10,15 +10,15 @@ class BirdList extends StatelessWidget {
   // final bird_species = List<String>.generate(10000, (i) => "Bird $i");
 
   Stream<QuerySnapshot> all_bird_species =
-      FirebaseFirestore.instance.collection('AllBirdInfo').snapshots();
+  FirebaseFirestore.instance.collection('AllBirdInfo').snapshots();
 
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
       stream: all_bird_species,
       builder: (
-        BuildContext context,
-        AsyncSnapshot<QuerySnapshot> snapshot,
-      ) {
+          BuildContext context,
+          AsyncSnapshot<QuerySnapshot> snapshot,
+          ) {
         if (snapshot.hasError) {
           return Text('Error');
         }
@@ -41,7 +41,7 @@ class BirdList extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => BirdInfo()),
+                  MaterialPageRoute(builder: (context) => BirdInfo(bird: data.docs[index],)),
                 );
               },
             );

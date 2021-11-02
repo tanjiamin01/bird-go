@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/timothyteh/Desktop/birdGO/App/build/google_maps_flutter/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml",
+            "outputFile": "/Users/limxinyi/OneDrive - Nanyang Technological University/Year 2 Sem 1/CZ2006 Software Engineering/birdGO/App/build/google_maps_flutter/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml",
             "map": [
                 {
-                    "source": "/Users/timothyteh/.gradle/caches/transforms-2/files-2.1/e31537fb3ca3accaea0d4d9ddb9631cc/jetified-play-services-basement-17.0.0/res/values-ka/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "201",
-                        "endOffsets": "448"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1273",
-                        "endColumns": "201",
-                        "endOffsets": "1470"
-                    }
-                },
-                {
-                    "source": "/Users/timothyteh/.gradle/caches/transforms-2/files-2.1/ae66d64a96039d4c8dca038f4348340f/jetified-play-services-base-17.0.0/res/values-ka/values.xml",
+                    "source": "/Users/limxinyi/.gradle/caches/transforms-2/files-2.1/ae66d64a96039d4c8dca038f4348340f/jetified-play-services-base-17.0.0/res/values-ka/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "/Users/timothyteh/.gradle/caches/transforms-2/files-2.1/3c8fd1bfddb99a7a7e21faa1397acdb4/core-1.1.0/res/values-ka/values-ka.xml",
+                    "source": "/Users/limxinyi/.gradle/caches/transforms-2/files-2.1/e31537fb3ca3accaea0d4d9ddb9631cc/jetified-play-services-basement-17.0.0/res/values-ka/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "201",
+                        "endOffsets": "448"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1273",
+                        "endColumns": "201",
+                        "endOffsets": "1470"
+                    }
+                },
+                {
+                    "source": "/Users/limxinyi/.gradle/caches/transforms-2/files-2.1/3c8fd1bfddb99a7a7e21faa1397acdb4/core-1.1.0/res/values-ka/values-ka.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -57,27 +57,10 @@
             ]
         },
         {
-            "outputFile": "/Users/timothyteh/Desktop/birdGO/App/build/google_maps_flutter/intermediates/res/merged/debug/values-ka/values-ka.xml",
+            "outputFile": "/Users/limxinyi/OneDrive - Nanyang Technological University/Year 2 Sem 1/CZ2006 Software Engineering/birdGO/App/build/google_maps_flutter/intermediates/res/merged/debug/values-ka/values-ka.xml",
             "map": [
                 {
-                    "source": "/Users/timothyteh/.gradle/caches/transforms-2/files-2.1/e31537fb3ca3accaea0d4d9ddb9631cc/jetified-play-services-basement-17.0.0/res/values-ka/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "201",
-                        "endOffsets": "448"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1273",
-                        "endColumns": "201",
-                        "endOffsets": "1470"
-                    }
-                },
-                {
-                    "source": "/Users/timothyteh/.gradle/caches/transforms-2/files-2.1/ae66d64a96039d4c8dca038f4348340f/jetified-play-services-base-17.0.0/res/values-ka/values.xml",
+                    "source": "/Users/limxinyi/.gradle/caches/transforms-2/files-2.1/ae66d64a96039d4c8dca038f4348340f/jetified-play-services-base-17.0.0/res/values-ka/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -94,7 +77,24 @@
                     }
                 },
                 {
-                    "source": "/Users/timothyteh/.gradle/caches/transforms-2/files-2.1/3c8fd1bfddb99a7a7e21faa1397acdb4/core-1.1.0/res/values-ka/values-ka.xml",
+                    "source": "/Users/limxinyi/.gradle/caches/transforms-2/files-2.1/e31537fb3ca3accaea0d4d9ddb9631cc/jetified-play-services-basement-17.0.0/res/values-ka/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "201",
+                        "endOffsets": "448"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1273",
+                        "endColumns": "201",
+                        "endOffsets": "1470"
+                    }
+                },
+                {
+                    "source": "/Users/limxinyi/.gradle/caches/transforms-2/files-2.1/3c8fd1bfddb99a7a7e21faa1397acdb4/core-1.1.0/res/values-ka/values-ka.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
