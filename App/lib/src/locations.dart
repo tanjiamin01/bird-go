@@ -88,10 +88,5 @@ Future<Locations> getGoogleOffices() async {
   DataSnapshot snap =
       await FirebaseDatabase.instance.reference().child('locations').once();
 
-  String test = await rootBundle.loadString('assets/locations.json');
-
-  print(snap.value.runtimeType);
-  print(snap.value);
-
   return Locations.fromJson(json.decode(jsonEncode(snap.value)));
 }

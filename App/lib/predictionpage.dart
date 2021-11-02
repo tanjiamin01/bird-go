@@ -131,6 +131,7 @@ class _PredPageState extends State<PredPage> {
             bottom: 237,
             child: Builder(
               builder: (context) => FloatingActionButton(
+                  heroTag: "btn3",
                   backgroundColor: Color(0xffFEAA9c),
                   onPressed: () {
                     Navigator.push(
@@ -146,6 +147,7 @@ class _PredPageState extends State<PredPage> {
             bottom: 237,
             child: Builder(
               builder: (context) => FloatingActionButton(
+                  heroTag: "btn4",
                   backgroundColor: Color(0xffFEAA9c),
                   onPressed: () {
                     // change to map page

@@ -158,6 +158,7 @@ class _MapPageState extends State<MapPage> {
           bottom: 237,
           child: Builder(
             builder: (context) => FloatingActionButton(
+                heroTag: "btn1",
                 backgroundColor: Color(0xffFEAA9c),
                 onPressed: () {
                   Navigator.push(
@@ -173,6 +174,7 @@ class _MapPageState extends State<MapPage> {
           bottom: 237,
           child: Builder(
             builder: (context) => FloatingActionButton(
+                heroTag: "btn2",
                 backgroundColor: Color(0xffFEAA9c),
                 onPressed: () {
                   // change to map page
