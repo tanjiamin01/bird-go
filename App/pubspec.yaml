@@ -35,6 +35,7 @@ dependencies:
   firebase_database: ^8.0.0
   geoflutterfire: ^3.0.1
   cloud_firestore: ^2.5.4
+  dropdown_search: ^2.0.0
 
   firebase_storage: ^10.0.6
 
@@ -84,6 +85,8 @@ flutter:
     - assets/uploadbg1.png
     - assets/uploadbg2.png
     - assets/canva-photo-editor.png
+    - assets/predMax3.json
+    - assets/redflag.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

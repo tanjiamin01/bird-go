@@ -170,6 +170,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "dropdown_search",
+      "rootUri": "file:///Users/limxinyi/flutter/.pub-cache/hosted/pub.dartlang.org/dropdown_search-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "fake_async",
       "rootUri": "file:///Users/limxinyi/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0",
       "packageUri": "lib/",
@@ -656,7 +662,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-11-02T17:47:54.593080Z",
+  "generated": "2021-11-02T18:14:27.871723Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }

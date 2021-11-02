@@ -31,6 +31,7 @@ class MapPage extends StatefulWidget {
 
 class _MapPageState extends State<MapPage> {
   late BitmapDescriptor pinLocationIcon;
+  late BitmapDescriptor blueLocationIcon;
   // @Bryan
   final int num_species = 401;
 
@@ -60,6 +61,7 @@ class _MapPageState extends State<MapPage> {
   void initState() {
     super.initState();
     setCustomMapPin();
+    setBlueMapPin();
     widget.stream.listen((index) {
       mySetState(index);
     });
@@ -68,6 +70,10 @@ class _MapPageState extends State<MapPage> {
   void setCustomMapPin() async {
     pinLocationIcon = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(devicePixelRatio: 2.5), 'assets/marker.png');
+  }
+  void setBlueMapPin() async {
+    blueLocationIcon = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(devicePixelRatio: 2.5), 'assets/redflag.png');
   }
 
   final Map<String, Marker> _markers = {};
@@ -78,6 +84,8 @@ class _MapPageState extends State<MapPage> {
 
     setState(() {
       _markers.clear();
+
+
       for (var i = 0; i < snap.size; i++) {
         var map = (snap.docs[i].data() as LinkedHashMap)!
             .map((a, b) => MapEntry(a as String, b.toString() as String));
@@ -100,7 +108,141 @@ class _MapPageState extends State<MapPage> {
         );
         _markers[map.putIfAbsent('name', () => 'Err')] = marker;
       }
+      _markers["NTU"] = Marker(
+        markerId: MarkerId("NTU"),
+        position: LatLng(1.347432,103.6831),
+        icon: blueLocationIcon, // BitmapDescriptor.defaultMarker,
+        onTap: () {
+          setState(() {
+            allBirdsWidgetIsVisible = true;
+            specificBirdGalleryWidgetIsVisible = false;
+            topThreeBirdsWidgetIsVisible = false;
+          });
+        },
+        infoWindow: InfoWindow(
+          title: "Nanyang Technological University",
+        ),
+      );
+
+      _markers["SDC"] = Marker(
+        markerId: MarkerId("SDC"),
+        position: LatLng(1.3327,103.6789),
+        icon: blueLocationIcon,
+        infoWindow: InfoWindow(
+          title: "Singapore Discovery Center",
+        ),
+      );
+
+      _markers["WCP"] = Marker(
+        markerId: MarkerId("WCP"),
+        position: LatLng(1.2914,103.7667),
+        icon: blueLocationIcon,
+        infoWindow: InfoWindow(
+          title: "West Coast Park",
+        ),
+      );
+
+      _markers["CNP"] = Marker(
+        markerId: MarkerId("CNP"),
+        position: LatLng(1.3716796,103.779897),
+        icon: blueLocationIcon,
+        infoWindow: InfoWindow(
+          title: "Chestnut Nature Park",
+        ),
+      );
+
+      _markers["USRP"] = Marker(
+        markerId: MarkerId("USRP"),
+        position: LatLng(1.4009,103.8070),
+        icon: blueLocationIcon,
+        infoWindow: InfoWindow(
+          title: "Upper Seletar Reservoir Park",
+        ),
+      );
+
+      _markers["WWP"] = Marker(
+        markerId: MarkerId("WWP"),
+        position: LatLng(1.4530,103.7803),
+        icon: blueLocationIcon,
+        infoWindow: InfoWindow(
+          title: "Woodlands Waterfront Park",
+        ),
+      );
+
+      _markers["HP"] = Marker(
+        markerId: MarkerId("HP"),
+        position: LatLng(1.2791,103.7999),
+        icon: blueLocationIcon,
+        infoWindow: InfoWindow(
+          title: "Hort Park",
+        ),
+      );
+
+      _markers["SBG"] = Marker(
+        markerId: MarkerId("SBG"),
+        position: LatLng(1.3138,103.8159),
+        icon: blueLocationIcon,
+        infoWindow: InfoWindow(
+          title: "Singapore Botanic Gardens",
+        ),
+      );
+
+      _markers["SP"] = Marker(
+        markerId: MarkerId("SP"),
+        position: LatLng(1.4617,103.8369),
+        icon: blueLocationIcon,
+        infoWindow: InfoWindow(
+          title: "Sembawang Park",
+        ),
+      );
+
+      _markers["JCP"] = Marker(
+        markerId: MarkerId("JCP"),
+        position: LatLng(1.36535,103.876795),
+        icon: blueLocationIcon,
+        infoWindow: InfoWindow(
+          title: "Japanese Cemetary Park",
+        ),
+      );
+
+      _markers["PP"] = Marker(
+        markerId: MarkerId("PP"),
+        position: LatLng(1.3777,103.8977),
+        icon: blueLocationIcon,
+        infoWindow: InfoWindow(
+          title: "Punggol Park",
+        ),
+      );
+
+      _markers["PWP"] = Marker(
+        markerId: MarkerId("PWP"),
+        position: LatLng(1.4111,103.9045),
+        icon: blueLocationIcon,
+        infoWindow: InfoWindow(
+          title: "Punggol Waterway Park",
+        ),
+      );
+
+      _markers["CBP"] = Marker(
+        markerId: MarkerId("CBP"),
+        position: LatLng(1.4111,103.9045),
+        icon: blueLocationIcon,
+        infoWindow: InfoWindow(
+          title: "Changi Beach Park",
+        ),
+      );
+
+
+
+
+
+
+
+
+
+
     });
+
   }
 
   @override

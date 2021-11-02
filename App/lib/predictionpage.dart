@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:googlemapstry/search.dart';
@@ -6,6 +8,7 @@ import 'src/locations.dart' as locations;
 import 'src/specificBirdGallery.dart';
 import 'src/topThreeBirds.dart';
 import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PredPage extends StatefulWidget {
   const PredPage({Key? key}) : super(key: key);
@@ -44,10 +47,33 @@ class _PredPageState extends State<PredPage> {
   final Map<String, Marker> _markers = {};
 
   Future<void> _onMapCreated(GoogleMapController controller) async {
-    final googleOffices = await locations.getGoogleOffices();
+    QuerySnapshot snap =
+    await FirebaseFirestore.instance.collection('predMax3').get();
     setState(() {
       _markers.clear();
-      for (final office in googleOffices.offices) {
+      for (var i = 0; i < snap.size; i++) {
+        var map = (snap.docs[i].data() as LinkedHashMap)!
+            .map((a, b) => MapEntry(a as String, b.toString() as String));
+        final marker = Marker(
+          markerId: MarkerId(map.putIfAbsent('name', () => 'Err')),
+          position: LatLng(double.parse(map.putIfAbsent('lat', () => '0')),
+              double.parse(map.putIfAbsent('lng', () => '0'))),
+          icon: pinLocationIcon,
+          onTap: () {
+            setState(() {
+              allBirdsWidgetIsVisible = false;
+              specificBirdGalleryWidgetIsVisible = false;
+              topThreeBirdsWidgetIsVisible = true;
+            });
+          },
+          infoWindow: InfoWindow(
+            title: map.putIfAbsent('name', () => 'Err'),
+            snippet: map.putIfAbsent('quadPred', () => 'Err'),
+          ),
+        );
+        _markers[map.putIfAbsent('name', () => 'Err')] = marker;
+      }
+      /*for (final office in googleOffices.offices) {
         final marker = Marker(
           markerId: MarkerId(office.name),
           position: LatLng(office.lat, office.lng),
@@ -65,7 +91,7 @@ class _PredPageState extends State<PredPage> {
           ),
         );
         _markers[office.name] = marker;
-      }
+      }*/
     });
   }
 
