@@ -21,6 +21,15 @@ class _PredPageState extends State<PredPage> {
   bool topThreeBirdsWidgetIsVisible = true;
   bool specificBirdGalleryWidgetIsVisible = false;
 
+  // @Bryan
+  void callbackFunction() {
+    setState(() {
+      allBirdsWidgetIsVisible = false;
+      topThreeBirdsWidgetIsVisible = false;
+      specificBirdGalleryWidgetIsVisible = true;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -42,7 +51,7 @@ class _PredPageState extends State<PredPage> {
         final marker = Marker(
           markerId: MarkerId(office.name),
           position: LatLng(office.lat, office.lng),
-          icon:  BitmapDescriptor.defaultMarker,// pinLocationIcon,
+          icon: BitmapDescriptor.defaultMarker, // pinLocationIcon,
           onTap: () {
             setState(() {
               allBirdsWidgetIsVisible = false;
@@ -64,94 +73,94 @@ class _PredPageState extends State<PredPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        body: Stack(
-            children: [
-              SearchPage(),
-              Container(
-                child: GoogleMap(
-                  onMapCreated: _onMapCreated,
-                  initialCameraPosition: const CameraPosition(
-                    target: LatLng(1.3483, 103.6831),
-                    zoom: 16,
-                  ),
-                  markers: _markers.values.toSet(),
-                ),
+        body: Stack(children: [
+          // @Bryan : removed duplicate SearchPage
+          Container(
+            child: GoogleMap(
+              onMapCreated: _onMapCreated,
+              initialCameraPosition: const CameraPosition(
+                target: LatLng(1.3483, 103.6831),
+                zoom: 16,
               ),
-              SearchPage(),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(10, 80, 10, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              allBirdsWidgetIsVisible = true;
-                              specificBirdGalleryWidgetIsVisible = false;
-                              topThreeBirdsWidgetIsVisible = false;
-                            });
-                          },
-                          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFEAA9C))),
-                          child: Text('show all birds',
-                              style: TextStyle(fontSize: 16))),
-                    ),
-                    SizedBox(width:10),
-                    Expanded(
-                      child: ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              specificBirdGalleryWidgetIsVisible = true;
-                              topThreeBirdsWidgetIsVisible = false;
-                              allBirdsWidgetIsVisible = false;
-                            });
-                          },
-                          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFEAA9C))),
-                          child: Text('show specific bird',
-                              style: TextStyle(fontSize: 16))),
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                left: 10,
-                bottom: 237,
-                child: Builder(
-                  builder: (context) => FloatingActionButton(
-                      backgroundColor: Color(0xffFEAA9c),
+              markers: _markers.values.toSet(),
+            ),
+          ),
+          // @Bryan : moved SearchPage to bottom
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 80, 10, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => TextfieldGeneralWidget()));
+                        setState(() {
+                          allBirdsWidgetIsVisible = true;
+                          specificBirdGalleryWidgetIsVisible = false;
+                          topThreeBirdsWidgetIsVisible = false;
+                        });
                       },
-                      child: const Icon(Icons.file_upload_outlined)
-                  ),
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFFFEAA9C))),
+                      child: Text('show all birds',
+                          style: TextStyle(fontSize: 16))),
                 ),
-              ),
-              Positioned(
-                right: 10,
-                bottom: 237,
-                child: Builder(
-                  builder: (context) => FloatingActionButton(
-                      backgroundColor: Color(0xffFEAA9c),
-                      onPressed: () { // change to map page
-                        Navigator.pop(context);
-
+                SizedBox(width: 10),
+                Expanded(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          specificBirdGalleryWidgetIsVisible = true;
+                          topThreeBirdsWidgetIsVisible = false;
+                          allBirdsWidgetIsVisible = false;
+                        });
                       },
-                      child: const Icon(Icons.remove_red_eye_outlined)
-                  ),
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFFFEAA9C))),
+                      child: Text('show specific bird',
+                          style: TextStyle(fontSize: 16))),
                 ),
-              ),
-              Visibility(
-                  visible: specificBirdGalleryWidgetIsVisible,
-                  child: SpecificBirdGallery()),
-              Visibility(visible: allBirdsWidgetIsVisible, child: AllBirds()),
-              Visibility(
-                  visible: topThreeBirdsWidgetIsVisible, child: TopThreeBirds()),
-            ]
-        )
-    );
+              ],
+            ),
+          ),
+          Positioned(
+            left: 10,
+            bottom: 237,
+            child: Builder(
+              builder: (context) => FloatingActionButton(
+                  backgroundColor: Color(0xffFEAA9c),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TextfieldGeneralWidget()));
+                  },
+                  child: const Icon(Icons.file_upload_outlined)),
+            ),
+          ),
+          Positioned(
+            right: 10,
+            bottom: 237,
+            child: Builder(
+              builder: (context) => FloatingActionButton(
+                  backgroundColor: Color(0xffFEAA9c),
+                  onPressed: () {
+                    // change to map page
+                    Navigator.pop(context);
+                  },
+                  child: const Icon(Icons.remove_red_eye_outlined)),
+            ),
+          ),
+          Visibility(
+              visible: specificBirdGalleryWidgetIsVisible,
+              child: SpecificBirdGallery()),
+          Visibility(visible: allBirdsWidgetIsVisible, child: AllBirds()),
+          Visibility(
+              visible: topThreeBirdsWidgetIsVisible, child: TopThreeBirds()),
+          SearchPage(callbackFunction),
+        ]));
   }
 }

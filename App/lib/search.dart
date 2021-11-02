@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
 class SearchPage extends StatefulWidget {
+  final Function callback;
+  SearchPage(this.callback);
   @override
   _SearchPageState createState() => _SearchPageState();
 }
@@ -74,101 +76,108 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return FloatingSearchBar(
-        controller: controller,
-        body: FloatingSearchBarScrollNotifier(
-          child: SearchResultsListView(
-            searchTerm: selectedTerm,
-          ),
+      controller: controller,
+      body: FloatingSearchBarScrollNotifier(
+        child: SearchResultsListView(
+          searchTerm: selectedTerm,
         ),
-        transition: CircularFloatingSearchBarTransition(),
-        physics: BouncingScrollPhysics(),
-        hint: 'Search for a specific bird',
-        actions: [
-          FloatingSearchBarAction.searchToClear(),
-        ],
-        onQueryChanged: (query) {
-          setState(() {
-            filteredSearchHistory = filterSearchTerms(filter: query);
-          });
-        },
-        onSubmitted: (query) {
-          setState(() {
-            addSearchTerm(query);
-            selectedTerm = query;
-          });
-          controller.close();
-        },
-        builder: (context, transition) {
-          return ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Material(
-              color: Colors.white,
-              elevation: 4,
-              child: Builder(
-                builder: (context) {
-                  if (filteredSearchHistory.isEmpty &&
-                      controller.query.isEmpty) {
-                    return Container(
-                      height: 56,
-                      width: double.infinity,
-                      alignment: Alignment.center,
-                      child: Text(
-                        'Start searching',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.caption,
-                      ),
-                    );
-                  } else if (filteredSearchHistory.isEmpty) {
-                    return ListTile(
-                      title: Text(controller.query),
-                      leading: const Icon(Icons.search),
-                      onTap: () {
-                        setState(() {
-                          addSearchTerm(controller.query);
-                          selectedTerm = controller.query;
-                        });
-                        controller.close();
-                      },
-                    );
-                  } else {
-                    return Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: filteredSearchHistory
-                          .map(
-                            (term) => ListTile(
-                          title: Text(
-                            term,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          leading: const Icon(Icons.history),
-                          trailing: IconButton(
-                            icon: const Icon(Icons.clear),
-                            onPressed: () {
+      ),
+      transition: CircularFloatingSearchBarTransition(),
+      physics: BouncingScrollPhysics(),
+      hint: 'Search for a specific bird',
+      actions: [
+        FloatingSearchBarAction.searchToClear(),
+      ],
+      onQueryChanged: (query) {
+        setState(() {
+          filteredSearchHistory = filterSearchTerms(filter: query);
+        });
+      },
+      onSubmitted: (query) {
+        setState(() {
+          addSearchTerm(query);
+          selectedTerm = query;
+        });
+        // @Bryan
+        if (query.toLowerCase() == "pied kingfisher") {
+          widget.callback();
+        }
+        controller.close();
+      },
+      builder: (context, transition) {
+        return ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Material(
+            color: Colors.white,
+            elevation: 4,
+            child: Builder(
+              builder: (context) {
+                if (filteredSearchHistory.isEmpty && controller.query.isEmpty) {
+                  return Container(
+                    height: 56,
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Start searching',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.caption,
+                    ),
+                  );
+                } else if (filteredSearchHistory.isEmpty) {
+                  return ListTile(
+                    title: Text(controller.query),
+                    leading: const Icon(Icons.search),
+                    onTap: () {
+                      setState(() {
+                        addSearchTerm(controller.query);
+                        selectedTerm = controller.query;
+                      });
+                      controller.close();
+                    },
+                  );
+                } else {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: filteredSearchHistory
+                        .map(
+                          (term) => ListTile(
+                            title: Text(
+                              term,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            leading: const Icon(Icons.history),
+                            trailing: IconButton(
+                              icon: const Icon(Icons.clear),
+                              onPressed: () {
+                                setState(() {
+                                  deleteSearchTerm(term);
+                                });
+                              },
+                            ),
+                            onTap: () {
                               setState(() {
-                                deleteSearchTerm(term);
+                                putSearchTermFirst(term);
+                                selectedTerm = term;
+                                if (selectedTerm!.toLowerCase() ==
+                                    "pied kingfisher") {
+                                  widget.callback();
+                                }
                               });
+                              controller.close();
                             },
                           ),
-                          onTap: () {
-                            setState(() {
-                              putSearchTermFirst(term);
-                              selectedTerm = term;
-                            });
-                            controller.close();
-                          },
-                        ),
-                      )
-                          .toList(),
-                    );
-                  }
-                },
-              ),
+                        )
+                        .toList(),
+                  );
+                }
+              },
             ),
-          );
-        },
-      );
+          ),
+        );
+      },
+    );
   }
 }
 
@@ -194,10 +203,7 @@ class SearchResultsListView extends StatelessWidget {
             ),
             Text(
               'Start searching',
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .headline5,
+              style: Theme.of(context).textTheme.headline5,
             )
           ],
         ),
@@ -210,11 +216,12 @@ class SearchResultsListView extends StatelessWidget {
     // if (searchTerm == birdName) {
     //    LOGIC i.e. CALL SHOW SPECIFIC BIRD FUNCTION
     // }
-    return Container();ListView(
+    return Container();
+    ListView(
       padding: EdgeInsets.only(top: fsb.height + fsb.margins.vertical),
       children: List.generate(
         50,
-            (index) => ListTile(
+        (index) => ListTile(
           title: Text('$searchTerm search result'),
           subtitle: Text(index.toString()),
           onTap: () {},

@@ -10,11 +10,19 @@ import 'search.dart';
 // import 'src/topThreeBirds.dart';
 // import 'src/allBirds.dart';
 import 'list of bird.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:async';
 
-void main() async {
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp();
+//   runApp(const MyApp());
+// }
+
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -27,7 +35,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   late BitmapDescriptor pinLocationIcon;
 
-  final int num_species = 401;
+  // final int num_species = 401;
   // final items = List<String>.generate(10000, (i) => "Item $i");
 
   @override
@@ -51,10 +59,11 @@ class _MyAppState extends State<MyApp> {
           //fit: StackFit.expand,
           children: [
             MapPage(streamController.stream),
-            SearchPage(),
+            // @Bryan
           ],
         ),
-        drawer: Drawer(
+        // @Bryan
+        /*drawer: Drawer(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -80,7 +89,7 @@ class _MyAppState extends State<MyApp> {
               Expanded(child: BirdList()),
             ],
           ),
-        ),
+        ),*/
       ),
     );
   }
