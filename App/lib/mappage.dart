@@ -22,8 +22,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'globals.dart' as globals;
 
-StreamController<int> streamController = StreamController<int>();
-StreamController<int> streamController2 = StreamController<int>.broadcast();
+StreamController<int> streamController = StreamController<int>.broadcast();
+//StreamController<int> streamController2 = StreamController<int>.broadcast();
 
 class MapPage extends StatefulWidget {
   const MapPage(this.stream);
@@ -378,6 +378,11 @@ class SpecificBirdGallery extends StatelessWidget {
   //     .where('name', isEqualTo: globals.slide_spec_bird.get('name'))
   //     .snapshots();
 
+  Stream<QuerySnapshot> all_bird_species = FirebaseFirestore.instance
+      .collection('AllBirdInfo')
+      .orderBy('rarity', descending: true)
+      .snapshots();
+
   //const SpecificBirdGallery({Key? key}) : super(key: key);
 
   // SpecificBirdGallery({Key? key, required this.spec_bird}) : super(key: key);
@@ -417,315 +422,325 @@ class SpecificBirdGallery extends StatelessWidget {
     // Stream<QuerySnapshot> _allBirdSpeciesStream =
     // FirebaseFirestore.instance.collection('AllBirdInfo').where('name', isEqualTo: spec_bird.get('name')).snapshots();
 
-    // return StreamBuilder<QuerySnapshot>(
-    //     stream: _allBirdSpeciesStream,
-    //     builder: (
-    //       BuildContext context,
-    //       AsyncSnapshot<QuerySnapshot> snapshot,
-    //     ) {
-    //       if (snapshot.hasError) {
-    //         return Text('Error');
-    //       }
-    //
-    //       if (snapshot.connectionState == ConnectionState.waiting) {
-    //         return Text('...Loading...');
-    //       }
-    //
-    //       final data = snapshot.requireData;
+    return StreamBuilder<QuerySnapshot>(
+        stream: all_bird_species,
+        builder: (
+          BuildContext context,
+          AsyncSnapshot<QuerySnapshot> snapshot,
+        ) {
+          if (snapshot.hasError) {
+            return Text('Error');
+          }
 
-    return SlidingUpPanel(
-        minHeight: 220,
-        maxHeight: 630,
-        panel: Stack(
-          children: <Widget>[
-            Column(
-              children: [
-                Icon(Icons.drag_handle),
-                Row(
-                  children: <Widget>[
-                    Container(
-                      height: 200,
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(100),
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text('...Loading...');
+          }
+
+          final data = snapshot.requireData;
+
+          return SlidingUpPanel(
+              minHeight: 220,
+              maxHeight: 630,
+              panel: Stack(
+                children: <Widget>[
+                  Column(
+                    children: [
+                      Icon(Icons.drag_handle),
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            height: 200,
+                            width: MediaQuery.of(context).size.width * 0.5,
+                            child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                margin: EdgeInsets.all(10),
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(globals
+                                            .slide_spec_bird
+                                            .get('imgurl')),
+                                        // image: NetworkImage(
+                                        //     data.docs[birdIndex]['imgurl']),
+                                        fit: BoxFit.cover))),
                           ),
-                          margin: EdgeInsets.all(10),
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                  image: NetworkImage(
-                                      globals.slide_spec_bird.get('imgurl')),
-                                  // image: NetworkImage(
-                                  //     data.docs[birdIndex]['imgurl']),
-                                  fit: BoxFit.cover))),
-                    ),
-                    Container(
-                      height: 200,
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      child: Container(
-                        margin: EdgeInsets.all(10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(globals.slide_spec_bird.get('name'),
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Color(0xFF345071),
-                                    fontWeight: FontWeight.bold)),
-                            Text(
-                              globals.slide_spec_bird.get('sciname'),
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  color: Color(0xFF75E6E7),
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                for (int i = 0;
-                                    i < globals.slide_spec_bird.get('rarity');
-                                    i++)
-                                  Icon(Icons.star),
-                                // Icon(Icons.star),
-                                // Icon(Icons.star),
-                                Text('spotted 1h ago',
+                          Container(
+                            height: 200,
+                            width: MediaQuery.of(context).size.width * 0.5,
+                            child: Container(
+                              margin: EdgeInsets.all(10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(globals.slide_spec_bird.get('name'),
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color: Color(0xFF345071),
+                                          fontWeight: FontWeight.bold)),
+                                  Text(
+                                    globals.slide_spec_bird.get('sciname'),
                                     style: TextStyle(
-                                        fontSize: 15, color: Colors.grey))
-
-                                //TRIED DYNAMIC SOMEHOW GOT ERROR, NO TIME DEBUG YET
-                                // Expanded(
-                                //   child: StreamBuilder<QuerySnapshot>(
-                                //       stream: _birdOccurrenceStream,
-                                //       builder: (
-                                //         context,
-                                //         AsyncSnapshot<QuerySnapshot> snapshot,
-                                //       ) {
-                                //         if (snapshot.hasError) {
-                                //           return Text('Error');
-                                //         }
-                                //
-                                //         if (snapshot.connectionState ==
-                                //             ConnectionState.waiting) {
-                                //           return Text('...Loading...');
-                                //         }
-                                //
-                                //         final bird_occurrence =
-                                //             snapshot.requireData;
-                                //
-                                //         return new Scaffold(
-                                //             body: Column(
-                                //           children: [
-                                //             Text(
-                                //                 'spotted ${bird_occurrence.docs[0]['timestamp']} '),
-                                //           ],
-                                //         ));
-                                //       }),
-                                // ),
-                              ],
-                            ),
-                            Text('Abundance: Rare'),
-                            Text('Status: Vistor'),
-                            Row(
-                              children: [
-                                Container(
-                                    margin: EdgeInsets.fromLTRB(0, 10, 10, 0),
-                                    child: Text('82%',
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            color: Color(0xFF75E6E7),
-                                            fontWeight: FontWeight.bold))),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                                  child: Column(
+                                        fontSize: 12,
+                                        color: Color(0xFF75E6E7),
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        CrossAxisAlignment.center,
                                     children: [
-                                      Text('chance of appearing',
+                                      for (int i = 0;
+                                          i <
+                                              globals.slide_spec_bird
+                                                  .get('rarity');
+                                          i++)
+                                        Icon(Icons.star),
+                                      // Icon(Icons.star),
+                                      // Icon(Icons.star),
+                                      Text('spotted 1h ago',
                                           style: TextStyle(
-                                              color: Color(0xFF3E9DAD))),
-                                      Text('in this location',
-                                          style: TextStyle(
-                                              color: Color(0xFF3E9DAD)))
+                                              fontSize: 15, color: Colors.grey))
+
+                                      //TRIED DYNAMIC SOMEHOW GOT ERROR, NO TIME DEBUG YET
+                                      // Expanded(
+                                      //   child: StreamBuilder<QuerySnapshot>(
+                                      //       stream: _birdOccurrenceStream,
+                                      //       builder: (
+                                      //         context,
+                                      //         AsyncSnapshot<QuerySnapshot> snapshot,
+                                      //       ) {
+                                      //         if (snapshot.hasError) {
+                                      //           return Text('Error');
+                                      //         }
+                                      //
+                                      //         if (snapshot.connectionState ==
+                                      //             ConnectionState.waiting) {
+                                      //           return Text('...Loading...');
+                                      //         }
+                                      //
+                                      //         final bird_occurrence =
+                                      //             snapshot.requireData;
+                                      //
+                                      //         return new Scaffold(
+                                      //             body: Column(
+                                      //           children: [
+                                      //             Text(
+                                      //                 'spotted ${bird_occurrence.docs[0]['timestamp']} '),
+                                      //           ],
+                                      //         ));
+                                      //       }),
+                                      // ),
                                     ],
                                   ),
-                                ),
-                              ],
+                                  Text('Abundance: Rare'),
+                                  Text('Status: Vistor'),
+                                  Row(
+                                    children: [
+                                      Container(
+                                          margin:
+                                              EdgeInsets.fromLTRB(0, 10, 10, 0),
+                                          child: Text('82%',
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Color(0xFF75E6E7),
+                                                  fontWeight:
+                                                      FontWeight.bold))),
+                                      Container(
+                                        margin:
+                                            EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text('chance of appearing',
+                                                style: TextStyle(
+                                                    color: Color(0xFF3E9DAD))),
+                                            Text('in this location',
+                                                style: TextStyle(
+                                                    color: Color(0xFF3E9DAD)))
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black,
+                                            decoration:
+                                                TextDecoration.underline,
+                                          ),
+                                          text: 'More Info',
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () async {
+                                              const url =
+                                                  'https://en.wikipedia.org/wiki/Pied_kingfisher';
+                                              if (await canLaunch(url)) {
+                                                await launch(url);
+                                              } else {
+                                                throw 'Could not launch $url';
+                                              }
+                                            })
+                                    ]),
+                                  )
+                                ],
+                              ),
                             ),
-                            RichText(
-                              text: TextSpan(children: [
-                                TextSpan(
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black,
-                                      decoration: TextDecoration.underline,
-                                    ),
-                                    text: 'More Info',
-                                    recognizer: TapGestureRecognizer()
-                                      ..onTap = () async {
-                                        const url =
-                                            'https://en.wikipedia.org/wiki/Pied_kingfisher';
-                                        if (await canLaunch(url)) {
-                                          await launch(url);
-                                        } else {
-                                          throw 'Could not launch $url';
-                                        }
-                                      })
-                              ]),
-                            )
-                          ],
-                        ),
+                          )
+                        ],
                       ),
-                    )
-                  ],
-                ),
-              ],
-            ),
-            Positioned(
-              top: 220,
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.2,
-                margin: EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('Gallery',
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Color(0xFF3E9DAD),
-                            fontWeight: FontWeight.bold)),
-                    Container(
-                        margin: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                        child: Text(
-                            'Photos by other users in the same location',
-                            style: TextStyle(fontSize: 10, color: Colors.grey)))
-                  ],
-                ),
-              ),
-            ),
-            // Positioned(
-            //   top: 210,
-            //   right: 0,
-            //   child: SizedBox(
-            //       height: 500,
-            //       width: MediaQuery.of(context).size.width * 0.8,
-            //       child: Container(
-            //         child: GridView.count(
-            //           primary: false,
-            //           padding: const EdgeInsets.all(20),
-            //           crossAxisSpacing: 10,
-            //           mainAxisSpacing: 10,
-            //           crossAxisCount: 3,
-            //           children: <Widget>[
-            //             Container(
-            //               // padding: const EdgeInsets.all(8),
-            //               // color: Colors.teal[100],
-            //               child: ClipRRect(
-            //                   borderRadius: BorderRadius.circular(20),
-            //                   child: Image(
-            //                     image:
-            //                         NetworkImage(data.docs[0]['imgurl']),
-            //                     fit: BoxFit.cover,
-            //                   )),
-            //             ),
-            //             Container(
-            //               child: ClipRRect(
-            //                   borderRadius: BorderRadius.circular(20),
-            //                   child: Image(
-            //                       image: NetworkImage(
-            //                           data.docs[1]['imgurl']),
-            //                       fit: BoxFit.cover)),
-            //             ),
-            //             Container(
-            //               child: ClipRRect(
-            //                   borderRadius: BorderRadius.circular(20),
-            //                   child: Image(
-            //                       image: NetworkImage(
-            //                           data.docs[2]['imgurl']),
-            //                       fit: BoxFit.cover)),
-            //             ),
-            //             Container(
-            //               child: ClipRRect(
-            //                   borderRadius: BorderRadius.circular(20),
-            //                   child: Image(
-            //                       image: NetworkImage(
-            //                           data.docs[3]['imgurl']),
-            //                       fit: BoxFit.cover)),
-            //             ),
-            //             Container(
-            //               child: ClipRRect(
-            //                   borderRadius: BorderRadius.circular(20),
-            //                   child: Image(
-            //                       image: NetworkImage(
-            //                           data.docs[4]['imgurl']),
-            //                       fit: BoxFit.cover)),
-            //             ),
-            //             Container(
-            //               child: ClipRRect(
-            //                   borderRadius: BorderRadius.circular(20),
-            //                   child: Image(
-            //                       image: NetworkImage(
-            //                           data.docs[5]['imgurl']),
-            //                       fit: BoxFit.cover)),
-            //             ),
-            //             Container(
-            //               child: ClipRRect(
-            //                   borderRadius: BorderRadius.circular(20),
-            //                   child: Image(
-            //                       image: NetworkImage(
-            //                           data.docs[6]['imgurl']),
-            //                       fit: BoxFit.cover)),
-            //             ),
-            //             Container(
-            //               child: ClipRRect(
-            //                   borderRadius: BorderRadius.circular(20),
-            //                   child: Image(
-            //                       image: NetworkImage(
-            //                           data.docs[7]['imgurl']),
-            //                       fit: BoxFit.cover)),
-            //             ),
-            //             Container(
-            //               child: ClipRRect(
-            //                   borderRadius: BorderRadius.circular(20),
-            //                   child: Image(
-            //                       image: NetworkImage(
-            //                           data.docs[8]['imgurl']),
-            //                       fit: BoxFit.cover)),
-            //             ),
-            //             Container(
-            //               child: ClipRRect(
-            //                   borderRadius: BorderRadius.circular(20),
-            //                   child: Image(
-            //                       image: NetworkImage(
-            //                           data.docs[9]['imgurl']),
-            //                       fit: BoxFit.cover)),
-            //             ),
-            //             Container(
-            //               child: ClipRRect(
-            //                   borderRadius: BorderRadius.circular(20),
-            //                   child: Image(
-            //                       image: NetworkImage(
-            //                           data.docs[10]['imgurl']),
-            //                       fit: BoxFit.cover)),
-            //             ),
-            //             Container(
-            //               child: ClipRRect(
-            //                   borderRadius: BorderRadius.circular(20),
-            //                   child: Image(
-            //                       image: NetworkImage(
-            //                           data.docs[11]['imgurl']),
-            //                       fit: BoxFit.cover)),
-            //             ),
-            //           ],
-            //         ),
-            //       )),
-            // ),
-          ],
-        ));
-    // });
+                    ],
+                  ),
+                  Positioned(
+                    top: 220,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      margin: EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text('Gallery',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Color(0xFF3E9DAD),
+                                  fontWeight: FontWeight.bold)),
+                          Container(
+                              margin: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                              child: Text(
+                                  'Photos by other users in the same location',
+                                  style: TextStyle(
+                                      fontSize: 10, color: Colors.grey)))
+                        ],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 210,
+                    right: 0,
+                    child: SizedBox(
+                        height: 500,
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        child: Container(
+                          child: GridView.count(
+                            primary: false,
+                            padding: const EdgeInsets.all(20),
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 10,
+                            crossAxisCount: 3,
+                            children: <Widget>[
+                              Container(
+                                // padding: const EdgeInsets.all(8),
+                                // color: Colors.teal[100],
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                      image:
+                                          NetworkImage(data.docs[0]['imgurl']),
+                                      fit: BoxFit.cover,
+                                    )),
+                              ),
+                              Container(
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(
+                                            data.docs[1]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(
+                                            data.docs[2]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(
+                                            data.docs[3]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(
+                                            data.docs[4]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(
+                                            data.docs[5]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(
+                                            data.docs[6]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(
+                                            data.docs[7]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(
+                                            data.docs[8]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(
+                                            data.docs[9]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(
+                                            data.docs[10]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(
+                                            data.docs[11]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              ),
+                            ],
+                          ),
+                        )),
+                  ),
+                ],
+              ));
+        });
   }
 }
 
@@ -786,7 +801,7 @@ class AllBirds extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               globals.slide_spec_bird = data.docs[0];
-                              // streamController.add(0);
+                              streamController.add(0);
                               // streamController2.add(0);
                             },
                             child: ClipRRect(
@@ -801,7 +816,7 @@ class AllBirds extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               globals.slide_spec_bird = data.docs[1];
-                              // streamController.add(0);
+                              streamController.add(0);
                               // streamController2.add(1);
                             },
                             child: ClipRRect(
@@ -815,7 +830,7 @@ class AllBirds extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               globals.slide_spec_bird = data.docs[2];
-                              // streamController.add(0);
+                              streamController.add(0);
                               // streamController2.add(1);
                             },
                             child: ClipRRect(
@@ -836,6 +851,7 @@ class AllBirds extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               globals.slide_spec_bird = data.docs[3];
+                              streamController.add(0);
                             },
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
@@ -848,6 +864,7 @@ class AllBirds extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               globals.slide_spec_bird = data.docs[4];
+                              streamController.add(0);
                             },
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
@@ -860,6 +877,7 @@ class AllBirds extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               globals.slide_spec_bird = data.docs[5];
+                              streamController.add(0);
                             },
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
@@ -872,6 +890,7 @@ class AllBirds extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               globals.slide_spec_bird = data.docs[6];
+                              streamController.add(0);
                             },
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
@@ -884,6 +903,7 @@ class AllBirds extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               globals.slide_spec_bird = data.docs[7];
+                              streamController.add(0);
                             },
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
@@ -896,6 +916,7 @@ class AllBirds extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               globals.slide_spec_bird = data.docs[8];
+                              streamController.add(0);
                             },
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
@@ -908,6 +929,7 @@ class AllBirds extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               globals.slide_spec_bird = data.docs[9];
+                              streamController.add(0);
                             },
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
@@ -920,6 +942,7 @@ class AllBirds extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               globals.slide_spec_bird = data.docs[10];
+                              streamController.add(0);
                             },
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
@@ -933,6 +956,7 @@ class AllBirds extends StatelessWidget {
                           child: InkWell(
                             onTap: () {
                               globals.slide_spec_bird = data.docs[11];
+                              streamController.add(0);
                             },
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
@@ -947,6 +971,185 @@ class AllBirds extends StatelessWidget {
                   )
                 ],
               ));
+        });
+  }
+}
+
+class TopThreeBirds extends StatelessWidget {
+  //const TopThreeBirds({Key? key}) : super(key: key);
+  static const TextStyle birdname_style =
+      TextStyle(fontSize: 10, color: Colors.black);
+  static const TextStyle spotted_style =
+      TextStyle(fontSize: 10, color: Colors.grey);
+  static const Icon star = Icon(Icons.star, size: 20);
+
+  Stream<QuerySnapshot> all_bird_species = FirebaseFirestore.instance
+      .collection('AllBirdInfo')
+      .orderBy('rarity', descending: true)
+      .snapshots();
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+        stream: all_bird_species,
+        builder: (
+          BuildContext context,
+          AsyncSnapshot<QuerySnapshot> snapshot,
+        ) {
+          if (snapshot.hasError) {
+            return Text('Error');
+          }
+
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text('...Loading...');
+          }
+
+          final data = snapshot.requireData;
+
+          return SlidingUpPanel(
+            minHeight: 220,
+            maxHeight: 220,
+            panel: Column(
+              children: [
+                Icon(Icons.drag_handle),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Expanded(
+                        child: Column(
+                      children: [
+                        Container(
+                          height: 130,
+                          width: MediaQuery.of(context).size.width * 0.33,
+                          child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                              margin: EdgeInsets.all(10),
+                              child: InkWell(
+                                onTap: () {
+                                  globals.slide_spec_bird = data.docs[0];
+                                  streamController.add(0);
+                                },
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image: NetworkImage(
+                                            data.docs[0]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              )),
+                        ),
+                        Text(
+                          data.docs[0]['name'],
+                          style: birdname_style,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            for (int i = 0; i < data.docs[0]['rarity']; i++)
+                              star,
+                            // star,
+                            // star,
+                            // star,
+                            // Icon(Icons.star),
+                            // Icon(Icons.star),
+                            // Icon(Icons.star),
+                          ],
+                        ),
+                        Text('spotted 1h ago', style: spotted_style),
+                      ],
+                    )),
+                    Expanded(
+                        child: Column(
+                      children: [
+                        Container(
+                          height: 130,
+                          width: MediaQuery.of(context).size.width * 0.33,
+                          child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                              margin: EdgeInsets.all(10),
+                              child: InkWell(
+                                onTap: () {
+                                  globals.slide_spec_bird = data.docs[1];
+                                  streamController.add(0);
+                                },
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image:
+                                            NetworkImage(data.docs[1]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              )),
+                        ),
+                        Text(data.docs[1]['name'], style: birdname_style),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            for (int i = 0; i < data.docs[1]['rarity']; i++)
+                              star,
+                            // Icon(Icons.star),
+                            // Icon(Icons.star),
+                            //star,
+                            //star,
+                          ],
+                        ),
+                        Text('spotted 4h ago', style: spotted_style),
+                      ],
+                    )),
+                    Expanded(
+                        child: Column(
+                      children: [
+                        Container(
+                          height: 130,
+                          width: MediaQuery.of(context).size.width * 0.33,
+                          child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                              margin: EdgeInsets.all(10),
+                              child: InkWell(
+                                onTap: () {
+                                  globals.slide_spec_bird = data.docs[2];
+                                  streamController.add(0);
+                                },
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image(
+                                        image:
+                                            NetworkImage(data.docs[2]['imgurl']),
+                                        fit: BoxFit.cover)),
+                              )),
+                        ),
+                        Text(data.docs[2]['name'], style: birdname_style),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            for (int i = 0; i < data.docs[2]['rarity']; i++)
+                              star,
+                            // star,
+                            // star,
+                            // star,
+                            // star,
+                            // Icon(Icons.star),
+                            // Icon(Icons.star),
+                            // Icon(Icons.star),
+                            // Icon(Icons.star),
+                          ],
+                        ),
+                        Text('spotted 3h ago', style: spotted_style),
+                      ],
+                    )),
+                  ],
+                ),
+              ],
+            ),
+          );
         });
   }
 }
