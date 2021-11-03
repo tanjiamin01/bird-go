@@ -3,6 +3,17 @@ import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'globals.dart' as globals;
+
+extension StringCasingExtension on String {
+  String toCapitalized() =>
+      this.length > 0 ? '${this[0].toUpperCase()}${this.substring(1)}' : '';
+  String toTitleCase() => this
+      .replaceAll(RegExp(' +'), ' ')
+      .split(' ')
+      .map((str) => str.toCapitalized())
+      .join(" ");
+}
 
 class SearchPage extends StatefulWidget {
   final Function callback;
@@ -105,17 +116,27 @@ class _SearchPageState extends State<SearchPage> {
         QuerySnapshot snap =
             await FirebaseFirestore.instance.collection('AllBirdInfo').get();
 
-        var document = await FirebaseFirestore.instance
-            .collection('AllBirdInfo')
-            .doc(query)
-            .get();
+        query = query.toLowerCase().toTitleCase();
 
-        final url = document.get("wikiurl");
-        if (await canLaunch(url))
-          await launch(url);
-        else
-          // can't launch url, there is some error
-          throw "Could not launch $url";
+        snap.docs.forEach((doc) {
+          // globals.slide_spec_bird = doc;
+          if (doc["name"] == query) {
+            globals.slide_spec_bird = doc;
+            widget.callback();
+          }
+        });
+
+        // var document = await FirebaseFirestore.instance
+        //     .collection('AllBirdInfo')
+        //     .doc(query)
+        //     .get();
+
+        // final url = document.get("wikiurl");
+        // if (await canLaunch(url))
+        //   await launch(url);
+        // else
+        //   // can't launch url, there is some error
+        //   throw "Could not launch $url";
 
         controller.close();
       },
@@ -172,13 +193,22 @@ class _SearchPageState extends State<SearchPage> {
                               },
                             ),
                             onTap: () {
-                              setState(() {
+                              setState(() async {
                                 putSearchTermFirst(term);
-                                selectedTerm = term;
-                                if (selectedTerm!.toLowerCase() ==
-                                    "pied kingfisher") {
-                                  widget.callback();
-                                }
+
+                                QuerySnapshot snap = await FirebaseFirestore
+                                    .instance
+                                    .collection('AllBirdInfo')
+                                    .get();
+
+                                selectedTerm = term.toLowerCase().toTitleCase();
+                                snap.docs.forEach((doc) {
+                                  // globals.slide_spec_bird = doc;
+                                  if (doc["name"] == selectedTerm) {
+                                    globals.slide_spec_bird = doc;
+                                    widget.callback();
+                                  }
+                                });
                               });
                               controller.close();
                             },
