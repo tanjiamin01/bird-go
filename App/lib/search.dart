@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SearchPage extends StatefulWidget {
   final Function callback;
@@ -12,10 +15,10 @@ class _SearchPageState extends State<SearchPage> {
   static const historyLength = 5;
 
   List<String> _searchHistory = [
-    'bird1',
-    'bird2',
-    'bird3',
-    'bird4',
+    'Brown Tailed Mynah',
+    'Blue Jay',
+    'Black Hawk',
+    'Chinese Yellow Sparrow',
   ];
 
   late List<String> filteredSearchHistory;
@@ -93,15 +96,27 @@ class _SearchPageState extends State<SearchPage> {
           filteredSearchHistory = filterSearchTerms(filter: query);
         });
       },
-      onSubmitted: (query) {
+      onSubmitted: (query) async {
         setState(() {
           addSearchTerm(query);
           selectedTerm = query;
         });
         // @Bryan
-        if (query.toLowerCase() == "pied kingfisher") {
-          widget.callback();
-        }
+        QuerySnapshot snap =
+            await FirebaseFirestore.instance.collection('AllBirdInfo').get();
+
+        var document = await FirebaseFirestore.instance
+            .collection('AllBirdInfo')
+            .doc(query)
+            .get();
+
+        final url = document.get("wikiurl");
+        if (await canLaunch(url))
+          await launch(url);
+        else
+          // can't launch url, there is some error
+          throw "Could not launch $url";
+
         controller.close();
       },
       builder: (context, transition) {
