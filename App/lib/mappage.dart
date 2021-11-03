@@ -92,6 +92,9 @@ class _MapPageState extends State<MapPage> {
     QuerySnapshot snap2 =
         await FirebaseFirestore.instance.collection('locations').get();
 
+    QuerySnapshot snap3 =
+    await (FirebaseFirestore.instance.collection('AllBirdInfo').get());
+
     var document = await FirebaseFirestore.instance
         .collection('Birds')
         .doc('Little Tern')
@@ -113,6 +116,15 @@ class _MapPageState extends State<MapPage> {
               double.parse(map.putIfAbsent('lng', () => '0'))),
           icon: pinLocationIcon,
           onTap: () {
+
+            snap3.docs.forEach((doc) {
+              // globals.slide_spec_bird = doc;
+              if (doc["name"] == map['name']) {
+                globals.slide_spec_bird = doc;
+              }
+            }
+            );
+
             setState(() {
               allBirdsWidgetIsVisible = false;
               specificBirdGalleryWidgetIsVisible = true;
