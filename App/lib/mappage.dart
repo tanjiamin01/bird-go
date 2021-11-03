@@ -93,15 +93,7 @@ class _MapPageState extends State<MapPage> {
         await FirebaseFirestore.instance.collection('locations').get();
 
     QuerySnapshot snap3 =
-    await (FirebaseFirestore.instance.collection('AllBirdInfo').get());
-
-    var document = await FirebaseFirestore.instance
-        .collection('Birds')
-        .doc('Little Tern')
-        .get();
-
-    // var document = await FirebaseFirestore.instance.doc('Birds/Little Tern').get();
-    print(document['name']);
+    await FirebaseFirestore.instance.collection('AllBirdInfo').get();
 
     setState(() {
       _markers.clear();
@@ -624,8 +616,7 @@ class SpecificBirdGallery extends StatelessWidget {
                                                   .get('rarity');
                                           i++)
                                         Icon(Icons.star),
-                                      // Icon(Icons.star),
-                                      // Icon(Icons.star),
+
                                       Text('spotted 1h ago',
                                           style: TextStyle(
                                               fontSize: 15, color: Colors.grey))
@@ -662,6 +653,26 @@ class SpecificBirdGallery extends StatelessWidget {
                                     ],
                                   ),
                                   Text('Abundance: Rare'),
+
+                               // Column(children: <Widget>[
+                               //   if (globals.slide_spec_bird.get('rarity') == 1)
+                               //     Text("Abundance: Common"),
+                               //   if (globals.slide_spec_bird.get('rarity') == 2)
+                               //     Text("Abundance: Uncommon"),
+                               //   if (globals.slide_spec_bird.get('rarity') == 2)
+                               //     Text("Abundance: Rare"),
+                               // ],
+                               // ),
+
+                                  // Row(
+                                  //   children: [
+                                  //     if (globals.slide_spec_bird.get('rarity') == 1) {
+                                  //       return Text("Common");
+                                  //     }
+                                  //   ]
+                                  // )
+
+
                                   Text('Status: Vistor'),
                                   Row(
                                     children: [
