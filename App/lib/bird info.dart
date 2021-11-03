@@ -101,7 +101,7 @@ class BirdInfo extends StatelessWidget {
                           color: Colors.black,
                           // decoration: TextDecoration.underline,
                         ),
-                        text: bird.get("name"),
+                        text: bird.get('name'),
                       ),
                     ],
                   ),

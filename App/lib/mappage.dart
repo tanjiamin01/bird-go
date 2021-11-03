@@ -7,10 +7,12 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:googlemapstry/predictionpage.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 //import 'src/allBirds.dart';
 import 'list of bird.dart';
 import 'search.dart';
 import 'src/locations.dart' as locations;
+
 //import 'src/specificBirdGallery.dart';
 import 'src/topThreeBirds.dart';
 import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
@@ -18,11 +20,14 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'globals.dart' as globals;
+
 StreamController<int> streamController = StreamController<int>();
 StreamController<int> streamController2 = StreamController<int>.broadcast();
 
 class MapPage extends StatefulWidget {
   const MapPage(this.stream);
+
   final Stream<int> stream;
 
   @override
@@ -32,6 +37,7 @@ class MapPage extends StatefulWidget {
 class _MapPageState extends State<MapPage> {
   late BitmapDescriptor pinLocationIcon;
   late BitmapDescriptor blueLocationIcon;
+
   // @Bryan
   final int num_species = 401;
 
@@ -71,6 +77,7 @@ class _MapPageState extends State<MapPage> {
     pinLocationIcon = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(devicePixelRatio: 2.5), 'assets/marker.png');
   }
+
   void setBlueMapPin() async {
     blueLocationIcon = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(devicePixelRatio: 2.5), 'assets/redflag.png');
@@ -84,7 +91,6 @@ class _MapPageState extends State<MapPage> {
 
     setState(() {
       _markers.clear();
-
 
       for (var i = 0; i < snap.size; i++) {
         var map = (snap.docs[i].data() as LinkedHashMap)!
@@ -110,8 +116,9 @@ class _MapPageState extends State<MapPage> {
       }
       _markers["NTU"] = Marker(
         markerId: MarkerId("NTU"),
-        position: LatLng(1.347432,103.6831),
-        icon: blueLocationIcon, // BitmapDescriptor.defaultMarker,
+        position: LatLng(1.347432, 103.6831),
+        icon: blueLocationIcon,
+        // BitmapDescriptor.defaultMarker,
         onTap: () {
           setState(() {
             allBirdsWidgetIsVisible = true;
@@ -126,7 +133,7 @@ class _MapPageState extends State<MapPage> {
 
       _markers["SDC"] = Marker(
         markerId: MarkerId("SDC"),
-        position: LatLng(1.3327,103.6789),
+        position: LatLng(1.3327, 103.6789),
         icon: blueLocationIcon,
         infoWindow: InfoWindow(
           title: "Singapore Discovery Center",
@@ -135,7 +142,7 @@ class _MapPageState extends State<MapPage> {
 
       _markers["WCP"] = Marker(
         markerId: MarkerId("WCP"),
-        position: LatLng(1.2914,103.7667),
+        position: LatLng(1.2914, 103.7667),
         icon: blueLocationIcon,
         infoWindow: InfoWindow(
           title: "West Coast Park",
@@ -144,7 +151,7 @@ class _MapPageState extends State<MapPage> {
 
       _markers["CNP"] = Marker(
         markerId: MarkerId("CNP"),
-        position: LatLng(1.3716796,103.779897),
+        position: LatLng(1.3716796, 103.779897),
         icon: blueLocationIcon,
         infoWindow: InfoWindow(
           title: "Chestnut Nature Park",
@@ -153,7 +160,7 @@ class _MapPageState extends State<MapPage> {
 
       _markers["USRP"] = Marker(
         markerId: MarkerId("USRP"),
-        position: LatLng(1.4009,103.8070),
+        position: LatLng(1.4009, 103.8070),
         icon: blueLocationIcon,
         infoWindow: InfoWindow(
           title: "Upper Seletar Reservoir Park",
@@ -162,7 +169,7 @@ class _MapPageState extends State<MapPage> {
 
       _markers["WWP"] = Marker(
         markerId: MarkerId("WWP"),
-        position: LatLng(1.4530,103.7803),
+        position: LatLng(1.4530, 103.7803),
         icon: blueLocationIcon,
         infoWindow: InfoWindow(
           title: "Woodlands Waterfront Park",
@@ -171,7 +178,7 @@ class _MapPageState extends State<MapPage> {
 
       _markers["HP"] = Marker(
         markerId: MarkerId("HP"),
-        position: LatLng(1.2791,103.7999),
+        position: LatLng(1.2791, 103.7999),
         icon: blueLocationIcon,
         infoWindow: InfoWindow(
           title: "Hort Park",
@@ -180,7 +187,7 @@ class _MapPageState extends State<MapPage> {
 
       _markers["SBG"] = Marker(
         markerId: MarkerId("SBG"),
-        position: LatLng(1.3138,103.8159),
+        position: LatLng(1.3138, 103.8159),
         icon: blueLocationIcon,
         infoWindow: InfoWindow(
           title: "Singapore Botanic Gardens",
@@ -189,7 +196,7 @@ class _MapPageState extends State<MapPage> {
 
       _markers["SP"] = Marker(
         markerId: MarkerId("SP"),
-        position: LatLng(1.4617,103.8369),
+        position: LatLng(1.4617, 103.8369),
         icon: blueLocationIcon,
         infoWindow: InfoWindow(
           title: "Sembawang Park",
@@ -198,7 +205,7 @@ class _MapPageState extends State<MapPage> {
 
       _markers["JCP"] = Marker(
         markerId: MarkerId("JCP"),
-        position: LatLng(1.36535,103.876795),
+        position: LatLng(1.36535, 103.876795),
         icon: blueLocationIcon,
         infoWindow: InfoWindow(
           title: "Japanese Cemetary Park",
@@ -207,7 +214,7 @@ class _MapPageState extends State<MapPage> {
 
       _markers["PP"] = Marker(
         markerId: MarkerId("PP"),
-        position: LatLng(1.3777,103.8977),
+        position: LatLng(1.3777, 103.8977),
         icon: blueLocationIcon,
         infoWindow: InfoWindow(
           title: "Punggol Park",
@@ -216,7 +223,7 @@ class _MapPageState extends State<MapPage> {
 
       _markers["PWP"] = Marker(
         markerId: MarkerId("PWP"),
-        position: LatLng(1.4111,103.9045),
+        position: LatLng(1.4111, 103.9045),
         icon: blueLocationIcon,
         infoWindow: InfoWindow(
           title: "Punggol Waterway Park",
@@ -225,24 +232,13 @@ class _MapPageState extends State<MapPage> {
 
       _markers["CBP"] = Marker(
         markerId: MarkerId("CBP"),
-        position: LatLng(1.4111,103.9045),
+        position: LatLng(1.4111, 103.9045),
         icon: blueLocationIcon,
         infoWindow: InfoWindow(
           title: "Changi Beach Park",
         ),
       );
-
-
-
-
-
-
-
-
-
-
     });
-
   }
 
   @override
@@ -331,9 +327,12 @@ class _MapPageState extends State<MapPage> {
                 child: const Icon(Icons.lightbulb_outline_rounded)),
           ),
         ),
+
         Visibility(
             visible: specificBirdGalleryWidgetIsVisible,
-            child: SpecificBirdGallery(streamController2.stream)),
+            child: SpecificBirdGallery()),
+        // child: SpecificBirdGallery(spec_bird: globals.slide_spec_bird)),
+        // child: SpecificBirdGallery(streamController2.stream)),
         Visibility(visible: allBirdsWidgetIsVisible, child: AllBirds()),
         Visibility(
             visible: topThreeBirdsWidgetIsVisible, child: TopThreeBirds()),
@@ -372,319 +371,361 @@ class _MapPageState extends State<MapPage> {
   }
 }
 
-class SpecificBirdGallery extends StatefulWidget {
+// class SpecificBirdGallery extends StatefulWidget {
+class SpecificBirdGallery extends StatelessWidget {
+  // Stream<QuerySnapshot> _birdOccurrenceStream = FirebaseFirestore.instance
+  //     .collection('birds')
+  //     .where('name', isEqualTo: globals.slide_spec_bird.get('name'))
+  //     .snapshots();
+
   //const SpecificBirdGallery({Key? key}) : super(key: key);
-  const SpecificBirdGallery(this.stream);
-  final Stream<int> stream;
 
-  @override
-  State<SpecificBirdGallery> createState() => _SpecificBirdGalleryState();
-}
+  // SpecificBirdGallery({Key? key, required this.spec_bird}) : super(key: key);
+  // final QueryDocumentSnapshot spec_bird;
 
-class _SpecificBirdGalleryState extends State<SpecificBirdGallery> {
-  Stream<QuerySnapshot> all_bird_species = FirebaseFirestore.instance
-      .collection('AllBirdInfo')
-      .orderBy('rarity', descending: true)
-      .snapshots();
+  // const SpecificBirdGallery(this.stream);
+  // final Stream<int> stream;
 
-  int birdIndex = 2;
+//   @override
+//   State<SpecificBirdGallery> createState() => _SpecificBirdGalleryState();
+// }
 
-  void mySetState(int index2) {
-    setState(() {
-      birdIndex = index2;
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    widget.stream.listen((index2) {
-      mySetState(index2);
-    });
-  }
+// class _SpecificBirdGalleryState extends State<SpecificBirdGallery> {
+//   Stream<QuerySnapshot> all_bird_species = FirebaseFirestore.instance
+//       .collection('AllBirdInfo')
+//       .orderBy('rarity', descending: true)
+//       .snapshots();
+//
+//   int birdIndex = 2;
+//
+//   void mySetState(int index2) {
+//     setState(() {
+//       birdIndex = index2;
+//     });
+//   }
+//
+//   @override
+//   void initState() {
+//     super.initState();
+//     widget.stream.listen((index2) {
+//       mySetState(index2);
+//     });
+//   }
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<QuerySnapshot>(
-        stream: all_bird_species,
-        builder: (
-          BuildContext context,
-          AsyncSnapshot<QuerySnapshot> snapshot,
-        ) {
-          if (snapshot.hasError) {
-            return Text('Error');
-          }
+    // Stream<QuerySnapshot> _allBirdSpeciesStream =
+    // FirebaseFirestore.instance.collection('AllBirdInfo').where('name', isEqualTo: spec_bird.get('name')).snapshots();
 
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Text('...Loading...');
-          }
+    // return StreamBuilder<QuerySnapshot>(
+    //     stream: _allBirdSpeciesStream,
+    //     builder: (
+    //       BuildContext context,
+    //       AsyncSnapshot<QuerySnapshot> snapshot,
+    //     ) {
+    //       if (snapshot.hasError) {
+    //         return Text('Error');
+    //       }
+    //
+    //       if (snapshot.connectionState == ConnectionState.waiting) {
+    //         return Text('...Loading...');
+    //       }
+    //
+    //       final data = snapshot.requireData;
 
-          final data = snapshot.requireData;
-          return SlidingUpPanel(
-              minHeight: 220,
-              maxHeight: 630,
-              panel: Stack(
-                children: <Widget>[
-                  Column(
-                    children: [
-                      Icon(Icons.drag_handle),
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            height: 200,
-                            width: MediaQuery.of(context).size.width * 0.5,
-                            child: Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                                margin: EdgeInsets.all(10),
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[birdIndex]['imgurl']),
-                                        fit: BoxFit.cover))),
+    return SlidingUpPanel(
+        minHeight: 220,
+        maxHeight: 630,
+        panel: Stack(
+          children: <Widget>[
+            Column(
+              children: [
+                Icon(Icons.drag_handle),
+                Row(
+                  children: <Widget>[
+                    Container(
+                      height: 200,
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100),
                           ),
-                          Container(
-                            height: 200,
-                            width: MediaQuery.of(context).size.width * 0.5,
-                            child: Container(
-                              margin: EdgeInsets.all(10),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text(data.docs[birdIndex]['name'],
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          color: Color(0xFF345071),
-                                          fontWeight: FontWeight.bold)),
-                                  Text(
-                                    data.docs[birdIndex]['sciname'],
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        color: Color(0xFF75E6E7),
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      for (int i = 0; i < data.docs[birdIndex]['rarity']; i++) Icon(Icons.star),
-                                      // Icon(Icons.star),
-                                      // Icon(Icons.star),
-                                      Text('spotted 1h ago',
-                                          style: TextStyle(
-                                              fontSize: 15, color: Colors.grey))
-                                    ],
-                                  ),
-                                  Text('Abundance: Rare'),
-                                  Text('Status: Vistor'),
-                                  Row(
-                                    children: [
-                                      Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 10, 10, 0),
-                                          child: Text('82%',
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  color: Color(0xFF75E6E7),
-                                                  fontWeight:
-                                                      FontWeight.bold))),
-                                      Container(
-                                        margin:
-                                            EdgeInsets.fromLTRB(0, 10, 0, 0),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text('chance of appearing',
-                                                style: TextStyle(
-                                                    color: Color(0xFF3E9DAD))),
-                                            Text('in this location',
-                                                style: TextStyle(
-                                                    color: Color(0xFF3E9DAD)))
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  RichText(
-                                    text: TextSpan(children: [
-                                      TextSpan(
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                            decoration:
-                                                TextDecoration.underline,
-                                          ),
-                                          text: 'More Info',
-                                          recognizer: TapGestureRecognizer()
-                                            ..onTap = () async {
-                                              const url =
-                                                  'https://en.wikipedia.org/wiki/Pied_kingfisher';
-                                              if (await canLaunch(url)) {
-                                                await launch(url);
-                                              } else {
-                                                throw 'Could not launch $url';
-                                              }
-                                            })
-                                    ]),
-                                  )
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                  Positioned(
-                    top: 220,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width * 0.2,
-                      margin: EdgeInsets.all(10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text('Gallery',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Color(0xFF3E9DAD),
-                                  fontWeight: FontWeight.bold)),
-                          Container(
-                              margin: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                              child: Text(
-                                  'Photos by other users in the same location',
-                                  style: TextStyle(
-                                      fontSize: 10, color: Colors.grey)))
-                        ],
-                      ),
+                          margin: EdgeInsets.all(10),
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image(
+                                  image: NetworkImage(
+                                      globals.slide_spec_bird.get('imgurl')),
+                                  // image: NetworkImage(
+                                  //     data.docs[birdIndex]['imgurl']),
+                                  fit: BoxFit.cover))),
                     ),
-                  ),
-                  Positioned(
-                    top: 210,
-                    right: 0,
-                    child: SizedBox(
-                        height: 500,
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        child: Container(
-                          child: GridView.count(
-                            primary: false,
-                            padding: const EdgeInsets.all(20),
-                            crossAxisSpacing: 10,
-                            mainAxisSpacing: 10,
-                            crossAxisCount: 3,
-                            children: <Widget>[
-                              Container(
-                                // padding: const EdgeInsets.all(8),
-                                // color: Colors.teal[100],
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                      image:
-                                          NetworkImage(data.docs[0]['imgurl']),
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[1]['imgurl']),
-                                        fit: BoxFit.cover)),
-                              ),
-                              Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[2]['imgurl']),
-                                        fit: BoxFit.cover)),
-                              ),
-                              Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[3]['imgurl']),
-                                        fit: BoxFit.cover)),
-                              ),
-                              Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[4]['imgurl']),
-                                        fit: BoxFit.cover)),
-                              ),
-                              Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[5]['imgurl']),
-                                        fit: BoxFit.cover)),
-                              ),
-                              Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[6]['imgurl']),
-                                        fit: BoxFit.cover)),
-                              ),
-                              Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[7]['imgurl']),
-                                        fit: BoxFit.cover)),
-                              ),
-                              Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[8]['imgurl']),
-                                        fit: BoxFit.cover)),
-                              ),
-                              Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[9]['imgurl']),
-                                        fit: BoxFit.cover)),
-                              ),
-                              Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[10]['imgurl']),
-                                        fit: BoxFit.cover)),
-                              ),
-                              Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[11]['imgurl']),
-                                        fit: BoxFit.cover)),
-                              ),
-                            ],
-                          ),
-                        )),
-                  ),
-                ],
-              ));
-        });
+                    Container(
+                      height: 200,
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      child: Container(
+                        margin: EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(globals.slide_spec_bird.get('name'),
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: Color(0xFF345071),
+                                    fontWeight: FontWeight.bold)),
+                            Text(
+                              globals.slide_spec_bird.get('sciname'),
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF75E6E7),
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                for (int i = 0;
+                                    i < globals.slide_spec_bird.get('rarity');
+                                    i++)
+                                  Icon(Icons.star),
+                                // Icon(Icons.star),
+                                // Icon(Icons.star),
+                                Text('spotted 1h ago',
+                                    style: TextStyle(
+                                        fontSize: 15, color: Colors.grey))
+
+                                //TRIED DYNAMIC SOMEHOW GOT ERROR, NO TIME DEBUG YET
+                                // Expanded(
+                                //   child: StreamBuilder<QuerySnapshot>(
+                                //       stream: _birdOccurrenceStream,
+                                //       builder: (
+                                //         context,
+                                //         AsyncSnapshot<QuerySnapshot> snapshot,
+                                //       ) {
+                                //         if (snapshot.hasError) {
+                                //           return Text('Error');
+                                //         }
+                                //
+                                //         if (snapshot.connectionState ==
+                                //             ConnectionState.waiting) {
+                                //           return Text('...Loading...');
+                                //         }
+                                //
+                                //         final bird_occurrence =
+                                //             snapshot.requireData;
+                                //
+                                //         return new Scaffold(
+                                //             body: Column(
+                                //           children: [
+                                //             Text(
+                                //                 'spotted ${bird_occurrence.docs[0]['timestamp']} '),
+                                //           ],
+                                //         ));
+                                //       }),
+                                // ),
+                              ],
+                            ),
+                            Text('Abundance: Rare'),
+                            Text('Status: Vistor'),
+                            Row(
+                              children: [
+                                Container(
+                                    margin: EdgeInsets.fromLTRB(0, 10, 10, 0),
+                                    child: Text('82%',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color(0xFF75E6E7),
+                                            fontWeight: FontWeight.bold))),
+                                Container(
+                                  margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('chance of appearing',
+                                          style: TextStyle(
+                                              color: Color(0xFF3E9DAD))),
+                                      Text('in this location',
+                                          style: TextStyle(
+                                              color: Color(0xFF3E9DAD)))
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            RichText(
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                    text: 'More Info',
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () async {
+                                        const url =
+                                            'https://en.wikipedia.org/wiki/Pied_kingfisher';
+                                        if (await canLaunch(url)) {
+                                          await launch(url);
+                                        } else {
+                                          throw 'Could not launch $url';
+                                        }
+                                      })
+                              ]),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+            Positioned(
+              top: 220,
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.2,
+                margin: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text('Gallery',
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Color(0xFF3E9DAD),
+                            fontWeight: FontWeight.bold)),
+                    Container(
+                        margin: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                        child: Text(
+                            'Photos by other users in the same location',
+                            style: TextStyle(fontSize: 10, color: Colors.grey)))
+                  ],
+                ),
+              ),
+            ),
+            // Positioned(
+            //   top: 210,
+            //   right: 0,
+            //   child: SizedBox(
+            //       height: 500,
+            //       width: MediaQuery.of(context).size.width * 0.8,
+            //       child: Container(
+            //         child: GridView.count(
+            //           primary: false,
+            //           padding: const EdgeInsets.all(20),
+            //           crossAxisSpacing: 10,
+            //           mainAxisSpacing: 10,
+            //           crossAxisCount: 3,
+            //           children: <Widget>[
+            //             Container(
+            //               // padding: const EdgeInsets.all(8),
+            //               // color: Colors.teal[100],
+            //               child: ClipRRect(
+            //                   borderRadius: BorderRadius.circular(20),
+            //                   child: Image(
+            //                     image:
+            //                         NetworkImage(data.docs[0]['imgurl']),
+            //                     fit: BoxFit.cover,
+            //                   )),
+            //             ),
+            //             Container(
+            //               child: ClipRRect(
+            //                   borderRadius: BorderRadius.circular(20),
+            //                   child: Image(
+            //                       image: NetworkImage(
+            //                           data.docs[1]['imgurl']),
+            //                       fit: BoxFit.cover)),
+            //             ),
+            //             Container(
+            //               child: ClipRRect(
+            //                   borderRadius: BorderRadius.circular(20),
+            //                   child: Image(
+            //                       image: NetworkImage(
+            //                           data.docs[2]['imgurl']),
+            //                       fit: BoxFit.cover)),
+            //             ),
+            //             Container(
+            //               child: ClipRRect(
+            //                   borderRadius: BorderRadius.circular(20),
+            //                   child: Image(
+            //                       image: NetworkImage(
+            //                           data.docs[3]['imgurl']),
+            //                       fit: BoxFit.cover)),
+            //             ),
+            //             Container(
+            //               child: ClipRRect(
+            //                   borderRadius: BorderRadius.circular(20),
+            //                   child: Image(
+            //                       image: NetworkImage(
+            //                           data.docs[4]['imgurl']),
+            //                       fit: BoxFit.cover)),
+            //             ),
+            //             Container(
+            //               child: ClipRRect(
+            //                   borderRadius: BorderRadius.circular(20),
+            //                   child: Image(
+            //                       image: NetworkImage(
+            //                           data.docs[5]['imgurl']),
+            //                       fit: BoxFit.cover)),
+            //             ),
+            //             Container(
+            //               child: ClipRRect(
+            //                   borderRadius: BorderRadius.circular(20),
+            //                   child: Image(
+            //                       image: NetworkImage(
+            //                           data.docs[6]['imgurl']),
+            //                       fit: BoxFit.cover)),
+            //             ),
+            //             Container(
+            //               child: ClipRRect(
+            //                   borderRadius: BorderRadius.circular(20),
+            //                   child: Image(
+            //                       image: NetworkImage(
+            //                           data.docs[7]['imgurl']),
+            //                       fit: BoxFit.cover)),
+            //             ),
+            //             Container(
+            //               child: ClipRRect(
+            //                   borderRadius: BorderRadius.circular(20),
+            //                   child: Image(
+            //                       image: NetworkImage(
+            //                           data.docs[8]['imgurl']),
+            //                       fit: BoxFit.cover)),
+            //             ),
+            //             Container(
+            //               child: ClipRRect(
+            //                   borderRadius: BorderRadius.circular(20),
+            //                   child: Image(
+            //                       image: NetworkImage(
+            //                           data.docs[9]['imgurl']),
+            //                       fit: BoxFit.cover)),
+            //             ),
+            //             Container(
+            //               child: ClipRRect(
+            //                   borderRadius: BorderRadius.circular(20),
+            //                   child: Image(
+            //                       image: NetworkImage(
+            //                           data.docs[10]['imgurl']),
+            //                       fit: BoxFit.cover)),
+            //             ),
+            //             Container(
+            //               child: ClipRRect(
+            //                   borderRadius: BorderRadius.circular(20),
+            //                   child: Image(
+            //                       image: NetworkImage(
+            //                           data.docs[11]['imgurl']),
+            //                       fit: BoxFit.cover)),
+            //             ),
+            //           ],
+            //         ),
+            //       )),
+            // ),
+          ],
+        ));
+    // });
   }
 }
 
@@ -744,8 +785,9 @@ class AllBirds extends StatelessWidget {
                           // color: Colors.teal[100],
                           child: InkWell(
                             onTap: () {
-                              streamController.add(0);
-                              streamController2.add(0);
+                              globals.slide_spec_bird = data.docs[0];
+                              // streamController.add(0);
+                              // streamController2.add(0);
                             },
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
@@ -758,8 +800,9 @@ class AllBirds extends StatelessWidget {
                         Container(
                           child: InkWell(
                             onTap: () {
-                              streamController.add(0);
-                              streamController2.add(1);
+                              globals.slide_spec_bird = data.docs[1];
+                              // streamController.add(0);
+                              // streamController2.add(1);
                             },
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
@@ -769,74 +812,135 @@ class AllBirds extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                  image: NetworkImage(data.docs[2]['imgurl']),
-                                  fit: BoxFit.cover)),
+                          child: InkWell(
+                            onTap: () {
+                              globals.slide_spec_bird = data.docs[2];
+                              // streamController.add(0);
+                              // streamController2.add(1);
+                            },
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image(
+                                    image: NetworkImage(data.docs[2]['imgurl']),
+                                    fit: BoxFit.cover)),
+                          ),
+                        ),
+                        // Container(
+                        //   child: ClipRRect(
+                        //       borderRadius: BorderRadius.circular(20),
+                        //       child: Image(
+                        //           image: NetworkImage(data.docs[2]['imgurl']),
+                        //           fit: BoxFit.cover)),
+                        // ),
+                        Container(
+                          child: InkWell(
+                            onTap: () {
+                              globals.slide_spec_bird = data.docs[3];
+                            },
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image(
+                                    image: NetworkImage(data.docs[3]['imgurl']),
+                                    fit: BoxFit.cover)),
+                          ),
                         ),
                         Container(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                  image: NetworkImage(data.docs[3]['imgurl']),
-                                  fit: BoxFit.cover)),
+                          child: InkWell(
+                            onTap: () {
+                              globals.slide_spec_bird = data.docs[4];
+                            },
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image(
+                                    image: NetworkImage(data.docs[4]['imgurl']),
+                                    fit: BoxFit.cover)),
+                          ),
                         ),
                         Container(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                  image: NetworkImage(data.docs[4]['imgurl']),
-                                  fit: BoxFit.cover)),
+                          child: InkWell(
+                            onTap: () {
+                              globals.slide_spec_bird = data.docs[5];
+                            },
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image(
+                                    image: NetworkImage(data.docs[5]['imgurl']),
+                                    fit: BoxFit.cover)),
+                          ),
                         ),
                         Container(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                  image: NetworkImage(data.docs[5]['imgurl']),
-                                  fit: BoxFit.cover)),
+                          child: InkWell(
+                            onTap: () {
+                              globals.slide_spec_bird = data.docs[6];
+                            },
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image(
+                                    image: NetworkImage(data.docs[6]['imgurl']),
+                                    fit: BoxFit.cover)),
+                          ),
                         ),
                         Container(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                  image: NetworkImage(data.docs[6]['imgurl']),
-                                  fit: BoxFit.cover)),
+                          child: InkWell(
+                            onTap: () {
+                              globals.slide_spec_bird = data.docs[7];
+                            },
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image(
+                                    image: NetworkImage(data.docs[7]['imgurl']),
+                                    fit: BoxFit.cover)),
+                          ),
                         ),
                         Container(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                  image: NetworkImage(data.docs[7]['imgurl']),
-                                  fit: BoxFit.cover)),
+                          child: InkWell(
+                            onTap: () {
+                              globals.slide_spec_bird = data.docs[8];
+                            },
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image(
+                                    image: NetworkImage(data.docs[8]['imgurl']),
+                                    fit: BoxFit.cover)),
+                          ),
                         ),
                         Container(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                  image: NetworkImage(data.docs[8]['imgurl']),
-                                  fit: BoxFit.cover)),
+                          child: InkWell(
+                            onTap: () {
+                              globals.slide_spec_bird = data.docs[9];
+                            },
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image(
+                                    image: NetworkImage(data.docs[9]['imgurl']),
+                                    fit: BoxFit.cover)),
+                          ),
                         ),
                         Container(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                  image: NetworkImage(data.docs[9]['imgurl']),
-                                  fit: BoxFit.cover)),
+                          child: InkWell(
+                            onTap: () {
+                              globals.slide_spec_bird = data.docs[10];
+                            },
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image(
+                                    image:
+                                        NetworkImage(data.docs[10]['imgurl']),
+                                    fit: BoxFit.cover)),
+                          ),
                         ),
                         Container(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                  image: NetworkImage(data.docs[10]['imgurl']),
-                                  fit: BoxFit.cover)),
-                        ),
-                        Container(
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                  image: NetworkImage(data.docs[11]['imgurl']),
-                                  fit: BoxFit.cover)),
+                          child: InkWell(
+                            onTap: () {
+                              globals.slide_spec_bird = data.docs[11];
+                            },
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image(
+                                    image:
+                                        NetworkImage(data.docs[11]['imgurl']),
+                                    fit: BoxFit.cover)),
+                          ),
                         ),
                       ],
                     ),

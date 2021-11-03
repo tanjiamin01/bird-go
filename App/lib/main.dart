@@ -12,6 +12,8 @@ import 'search.dart';
 import 'list of bird.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:async';
+import 'globals.dart' as globals;
+
 
 // void main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +22,7 @@ import 'dart:async';
 // }
 
 Future<void> main() async {
+  globals.slide_spec_bird;
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
