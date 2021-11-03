@@ -580,8 +580,9 @@ class SpecificBirdGallery extends StatelessWidget {
                                           text: 'More Info',
                                           recognizer: TapGestureRecognizer()
                                             ..onTap = () async {
-                                              const url =
-                                                  'https://en.wikipedia.org/wiki/Pied_kingfisher';
+                                              var url =
+                                                  globals.slide_spec_bird
+                                                  .get('wikiurl');
                                               if (await canLaunch(url)) {
                                                 await launch(url);
                                               } else {
@@ -1080,8 +1081,8 @@ class TopThreeBirds extends StatelessWidget {
                                 child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20),
                                     child: Image(
-                                        image:
-                                            NetworkImage(data.docs[1]['imgurl']),
+                                        image: NetworkImage(
+                                            data.docs[1]['imgurl']),
                                         fit: BoxFit.cover)),
                               )),
                         ),
@@ -1120,8 +1121,8 @@ class TopThreeBirds extends StatelessWidget {
                                 child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20),
                                     child: Image(
-                                        image:
-                                            NetworkImage(data.docs[2]['imgurl']),
+                                        image: NetworkImage(
+                                            data.docs[2]['imgurl']),
                                         fit: BoxFit.cover)),
                               )),
                         ),
