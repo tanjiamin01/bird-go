@@ -87,11 +87,23 @@ class _MapPageState extends State<MapPage> {
 
   Future<void> _onMapCreated(GoogleMapController controller) async {
     QuerySnapshot snap =
+        await FirebaseFirestore.instance.collection('Birds').get();
+
+    QuerySnapshot snap2 =
         await FirebaseFirestore.instance.collection('locations').get();
+
+    var document = await FirebaseFirestore.instance
+        .collection('Birds')
+        .doc('Little Tern')
+        .get();
+
+    // var document = await FirebaseFirestore.instance.doc('Birds/Little Tern').get();
+    print(document['name']);
 
     setState(() {
       _markers.clear();
 
+      //uploads
       for (var i = 0; i < snap.size; i++) {
         var map = (snap.docs[i].data() as LinkedHashMap)!
             .map((a, b) => MapEntry(a as String, b.toString() as String));
@@ -103,8 +115,8 @@ class _MapPageState extends State<MapPage> {
           onTap: () {
             setState(() {
               allBirdsWidgetIsVisible = false;
-              specificBirdGalleryWidgetIsVisible = false;
-              topThreeBirdsWidgetIsVisible = true;
+              specificBirdGalleryWidgetIsVisible = true;
+              topThreeBirdsWidgetIsVisible = false;
             });
           },
           infoWindow: InfoWindow(
@@ -114,130 +126,30 @@ class _MapPageState extends State<MapPage> {
         );
         _markers[map.putIfAbsent('name', () => 'Err')] = marker;
       }
-      _markers["NTU"] = Marker(
-        markerId: MarkerId("NTU"),
-        position: LatLng(1.347432, 103.6831),
-        icon: blueLocationIcon,
-        // BitmapDescriptor.defaultMarker,
-        onTap: () {
-          setState(() {
-            allBirdsWidgetIsVisible = true;
-            specificBirdGalleryWidgetIsVisible = false;
-            topThreeBirdsWidgetIsVisible = false;
-          });
-        },
-        infoWindow: InfoWindow(
-          title: "Nanyang Technological University",
-        ),
-      );
 
-      _markers["SDC"] = Marker(
-        markerId: MarkerId("SDC"),
-        position: LatLng(1.3327, 103.6789),
-        icon: blueLocationIcon,
-        infoWindow: InfoWindow(
-          title: "Singapore Discovery Center",
-        ),
-      );
-
-      _markers["WCP"] = Marker(
-        markerId: MarkerId("WCP"),
-        position: LatLng(1.2914, 103.7667),
-        icon: blueLocationIcon,
-        infoWindow: InfoWindow(
-          title: "West Coast Park",
-        ),
-      );
-
-      _markers["CNP"] = Marker(
-        markerId: MarkerId("CNP"),
-        position: LatLng(1.3716796, 103.779897),
-        icon: blueLocationIcon,
-        infoWindow: InfoWindow(
-          title: "Chestnut Nature Park",
-        ),
-      );
-
-      _markers["USRP"] = Marker(
-        markerId: MarkerId("USRP"),
-        position: LatLng(1.4009, 103.8070),
-        icon: blueLocationIcon,
-        infoWindow: InfoWindow(
-          title: "Upper Seletar Reservoir Park",
-        ),
-      );
-
-      _markers["WWP"] = Marker(
-        markerId: MarkerId("WWP"),
-        position: LatLng(1.4530, 103.7803),
-        icon: blueLocationIcon,
-        infoWindow: InfoWindow(
-          title: "Woodlands Waterfront Park",
-        ),
-      );
-
-      _markers["HP"] = Marker(
-        markerId: MarkerId("HP"),
-        position: LatLng(1.2791, 103.7999),
-        icon: blueLocationIcon,
-        infoWindow: InfoWindow(
-          title: "Hort Park",
-        ),
-      );
-
-      _markers["SBG"] = Marker(
-        markerId: MarkerId("SBG"),
-        position: LatLng(1.3138, 103.8159),
-        icon: blueLocationIcon,
-        infoWindow: InfoWindow(
-          title: "Singapore Botanic Gardens",
-        ),
-      );
-
-      _markers["SP"] = Marker(
-        markerId: MarkerId("SP"),
-        position: LatLng(1.4617, 103.8369),
-        icon: blueLocationIcon,
-        infoWindow: InfoWindow(
-          title: "Sembawang Park",
-        ),
-      );
-
-      _markers["JCP"] = Marker(
-        markerId: MarkerId("JCP"),
-        position: LatLng(1.36535, 103.876795),
-        icon: blueLocationIcon,
-        infoWindow: InfoWindow(
-          title: "Japanese Cemetary Park",
-        ),
-      );
-
-      _markers["PP"] = Marker(
-        markerId: MarkerId("PP"),
-        position: LatLng(1.3777, 103.8977),
-        icon: blueLocationIcon,
-        infoWindow: InfoWindow(
-          title: "Punggol Park",
-        ),
-      );
-
-      _markers["PWP"] = Marker(
-        markerId: MarkerId("PWP"),
-        position: LatLng(1.4111, 103.9045),
-        icon: blueLocationIcon,
-        infoWindow: InfoWindow(
-          title: "Punggol Waterway Park",
-        ),
-      );
-
-      _markers["CBP"] = Marker(
-        markerId: MarkerId("CBP"),
-        position: LatLng(1.4111, 103.9045),
-        icon: blueLocationIcon,
-        infoWindow: InfoWindow(
-          title: "Changi Beach Park",
-        ),
-      );
+      //ebirds
+      for (var i = 0; i < snap2.size; i++) {
+        var map2 = (snap2.docs[i].data() as LinkedHashMap)!
+            .map((a, b) => MapEntry(a as String, b.toString() as String));
+        final marker = Marker(
+          markerId: MarkerId(map2.putIfAbsent('name', () => 'Err')),
+          position: LatLng(double.parse(map2.putIfAbsent('lat', () => '0')),
+              double.parse(map2.putIfAbsent('lng', () => '0'))),
+          icon: blueLocationIcon,
+          onTap: () {
+            setState(() {
+              allBirdsWidgetIsVisible = true;
+              specificBirdGalleryWidgetIsVisible = false;
+              topThreeBirdsWidgetIsVisible = false;
+            });
+          },
+          infoWindow: InfoWindow(
+            title: map2.putIfAbsent('address', () => 'Err'),
+            snippet: map2.putIfAbsent('name', () => 'Err'),
+          ),
+        );
+        _markers[map2.putIfAbsent('address', () => 'Err')] = marker;
+      }
     });
   }
 
@@ -321,8 +233,11 @@ class _MapPageState extends State<MapPage> {
                 backgroundColor: Color(0xffFEAA9c),
                 onPressed: () {
                   // change to map page
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => PredPage(streamController.stream)));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              PredPage(streamController.stream)));
                 },
                 child: const Icon(Icons.lightbulb_outline_rounded)),
           ),
@@ -424,7 +339,7 @@ class _PredPageState extends State<PredPage> {
 
   Future<void> _onMapCreated(GoogleMapController controller) async {
     QuerySnapshot snap =
-    await FirebaseFirestore.instance.collection('predMax3').get();
+        await FirebaseFirestore.instance.collection('predMax3').get();
     setState(() {
       _markers.clear();
       for (var i = 0; i < snap.size; i++) {
@@ -438,8 +353,8 @@ class _PredPageState extends State<PredPage> {
           onTap: () {
             setState(() {
               allBirdsWidgetIsVisible = false;
-              specificBirdGalleryWidgetIsVisible = false;
-              topThreeBirdsWidgetIsVisible = true;
+              specificBirdGalleryWidgetIsVisible = true;
+              topThreeBirdsWidgetIsVisible = false;
             });
           },
           infoWindow: InfoWindow(
@@ -778,8 +693,7 @@ class SpecificBirdGallery extends StatelessWidget {
                                           text: 'More Info',
                                           recognizer: TapGestureRecognizer()
                                             ..onTap = () async {
-                                              var url =
-                                                  globals.slide_spec_bird
+                                              var url = globals.slide_spec_bird
                                                   .get('wikiurl');
                                               if (await canLaunch(url)) {
                                                 await launch(url);
