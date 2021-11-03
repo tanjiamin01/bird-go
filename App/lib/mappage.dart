@@ -751,101 +751,173 @@ class SpecificBirdGallery extends StatelessWidget {
                               Container(
                                 // padding: const EdgeInsets.all(8),
                                 // color: Colors.teal[100],
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                      image:
-                                          NetworkImage(data.docs[0]['imgurl']),
-                                      fit: BoxFit.cover,
-                                    )),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[0];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                        image:
+                                            NetworkImage(data.docs[0]['imgurl']),
+                                        fit: BoxFit.cover,
+                                      )),
+                                ),
                               ),
                               Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[1]['imgurl']),
-                                        fit: BoxFit.cover)),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[1];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                          image: NetworkImage(
+                                              data.docs[1]['imgurl']),
+                                          fit: BoxFit.cover)),
+                                ),
                               ),
                               Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[2]['imgurl']),
-                                        fit: BoxFit.cover)),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[2];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                          image: NetworkImage(
+                                              data.docs[2]['imgurl']),
+                                          fit: BoxFit.cover)),
+                                ),
                               ),
                               Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[3]['imgurl']),
-                                        fit: BoxFit.cover)),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[3];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                          image: NetworkImage(
+                                              data.docs[3]['imgurl']),
+                                          fit: BoxFit.cover)),
+                                ),
                               ),
                               Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[4]['imgurl']),
-                                        fit: BoxFit.cover)),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[4];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                          image: NetworkImage(
+                                              data.docs[4]['imgurl']),
+                                          fit: BoxFit.cover)),
+                                ),
                               ),
                               Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[5]['imgurl']),
-                                        fit: BoxFit.cover)),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[5];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                          image: NetworkImage(
+                                              data.docs[5]['imgurl']),
+                                          fit: BoxFit.cover)),
+                                ),
                               ),
                               Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[6]['imgurl']),
-                                        fit: BoxFit.cover)),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[6];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                          image: NetworkImage(
+                                              data.docs[6]['imgurl']),
+                                          fit: BoxFit.cover)),
+                                ),
                               ),
                               Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[7]['imgurl']),
-                                        fit: BoxFit.cover)),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[7];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                          image: NetworkImage(
+                                              data.docs[7]['imgurl']),
+                                          fit: BoxFit.cover)),
+                                ),
                               ),
                               Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[8]['imgurl']),
-                                        fit: BoxFit.cover)),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[8];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                          image: NetworkImage(
+                                              data.docs[8]['imgurl']),
+                                          fit: BoxFit.cover)),
+                                ),
                               ),
                               Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[9]['imgurl']),
-                                        fit: BoxFit.cover)),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[9];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                          image: NetworkImage(
+                                              data.docs[9]['imgurl']),
+                                          fit: BoxFit.cover)),
+                                ),
                               ),
                               Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[10]['imgurl']),
-                                        fit: BoxFit.cover)),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[10];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                          image: NetworkImage(
+                                              data.docs[10]['imgurl']),
+                                          fit: BoxFit.cover)),
+                                ),
                               ),
                               Container(
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[11]['imgurl']),
-                                        fit: BoxFit.cover)),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[11];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                          image: NetworkImage(
+                                              data.docs[11]['imgurl']),
+                                          fit: BoxFit.cover)),
+                                ),
                               ),
                             ],
                           ),
