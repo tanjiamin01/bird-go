@@ -322,7 +322,7 @@ class _MapPageState extends State<MapPage> {
                 onPressed: () {
                   // change to map page
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => PredPage()));
+                      MaterialPageRoute(builder: (context) => PredPage(streamController.stream)));
                 },
                 child: const Icon(Icons.lightbulb_outline_rounded)),
           ),
@@ -368,6 +368,204 @@ class _MapPageState extends State<MapPage> {
         ),
       ),
     );
+  }
+}
+
+class PredPage extends StatefulWidget {
+  // const PredPage({Key? key}) : super(key: key);
+  const PredPage(this.stream);
+
+  final Stream<int> stream;
+
+  @override
+  _PredPageState createState() => _PredPageState();
+}
+
+class _PredPageState extends State<PredPage> {
+  late BitmapDescriptor pinLocationIcon;
+
+  bool allBirdsWidgetIsVisible = false;
+  bool topThreeBirdsWidgetIsVisible = true;
+  bool specificBirdGalleryWidgetIsVisible = false;
+
+  void mySetState(int index) {
+    List booleanList = [true, false];
+    setState(() {
+      specificBirdGalleryWidgetIsVisible = booleanList[index];
+      topThreeBirdsWidgetIsVisible = booleanList[index + 1];
+      allBirdsWidgetIsVisible = booleanList[index + 1];
+    });
+  }
+
+  // @Bryan
+  void callbackFunction() {
+    setState(() {
+      allBirdsWidgetIsVisible = false;
+      topThreeBirdsWidgetIsVisible = false;
+      specificBirdGalleryWidgetIsVisible = true;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    setCustomMapPin();
+    widget.stream.listen((index) {
+      mySetState(index);
+    });
+  }
+
+  void setCustomMapPin() async {
+    pinLocationIcon = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(devicePixelRatio: 2.5), 'assets/marker.png');
+  }
+
+  final Map<String, Marker> _markers = {};
+
+  Future<void> _onMapCreated(GoogleMapController controller) async {
+    QuerySnapshot snap =
+    await FirebaseFirestore.instance.collection('predMax3').get();
+    setState(() {
+      _markers.clear();
+      for (var i = 0; i < snap.size; i++) {
+        var map = (snap.docs[i].data() as LinkedHashMap)!
+            .map((a, b) => MapEntry(a as String, b.toString() as String));
+        final marker = Marker(
+          markerId: MarkerId(map.putIfAbsent('name', () => 'Err')),
+          position: LatLng(double.parse(map.putIfAbsent('lat', () => '0')),
+              double.parse(map.putIfAbsent('lng', () => '0'))),
+          icon: pinLocationIcon,
+          onTap: () {
+            setState(() {
+              allBirdsWidgetIsVisible = false;
+              specificBirdGalleryWidgetIsVisible = false;
+              topThreeBirdsWidgetIsVisible = true;
+            });
+          },
+          infoWindow: InfoWindow(
+            title: map.putIfAbsent('name', () => 'Err'),
+            snippet: map.putIfAbsent('quadPred', () => 'Err'),
+          ),
+        );
+        _markers[map.putIfAbsent('name', () => 'Err')] = marker;
+      }
+      /*for (final office in googleOffices.offices) {
+        final marker = Marker(
+          markerId: MarkerId(office.name),
+          position: LatLng(office.lat, office.lng),
+          icon: BitmapDescriptor.defaultMarker, // pinLocationIcon,
+          onTap: () {
+            setState(() {
+              allBirdsWidgetIsVisible = false;
+              specificBirdGalleryWidgetIsVisible = false;
+              topThreeBirdsWidgetIsVisible = true;
+            });
+          },
+          infoWindow: InfoWindow(
+            title: office.name,
+            snippet: office.address,
+          ),
+        );
+        _markers[office.name] = marker;
+      }*/
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Stack(children: [
+          // @Bryan : removed duplicate SearchPage
+          Container(
+            child: GoogleMap(
+              onMapCreated: _onMapCreated,
+              initialCameraPosition: const CameraPosition(
+                target: LatLng(1.3483, 103.6831),
+                zoom: 16,
+              ),
+              markers: _markers.values.toSet(),
+            ),
+          ),
+          // @Bryan : moved SearchPage to bottom
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 80, 10, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          allBirdsWidgetIsVisible = true;
+                          specificBirdGalleryWidgetIsVisible = false;
+                          topThreeBirdsWidgetIsVisible = false;
+                        });
+                      },
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFFFEAA9C))),
+                      child: Text('show all birds',
+                          style: TextStyle(fontSize: 16))),
+                ),
+                SizedBox(width: 10),
+                Expanded(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          specificBirdGalleryWidgetIsVisible = true;
+                          topThreeBirdsWidgetIsVisible = false;
+                          allBirdsWidgetIsVisible = false;
+                        });
+                      },
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFFFEAA9C))),
+                      child: Text('show specific bird',
+                          style: TextStyle(fontSize: 16))),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            left: 10,
+            bottom: 237,
+            child: Builder(
+              builder: (context) => FloatingActionButton(
+                  heroTag: "btn3",
+                  backgroundColor: Color(0xffFEAA9c),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TextfieldGeneralWidget()));
+                  },
+                  child: const Icon(Icons.file_upload_outlined)),
+            ),
+          ),
+          Positioned(
+            right: 10,
+            bottom: 237,
+            child: Builder(
+              builder: (context) => FloatingActionButton(
+                  heroTag: "btn4",
+                  backgroundColor: Color(0xffFEAA9c),
+                  onPressed: () {
+                    // change to map page
+                    Navigator.pop(context);
+                  },
+                  child: const Icon(Icons.remove_red_eye_outlined)),
+            ),
+          ),
+          Visibility(
+              visible: specificBirdGalleryWidgetIsVisible,
+              child: SpecificBirdGallery()),
+          Visibility(visible: allBirdsWidgetIsVisible, child: AllBirds()),
+          Visibility(
+              visible: topThreeBirdsWidgetIsVisible, child: TopThreeBirds()),
+          SearchPage(callbackFunction),
+        ]));
   }
 }
 
