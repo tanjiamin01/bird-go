@@ -14,6 +14,8 @@ import '../photo_copy.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 
 class TextfieldGeneralWidget extends StatefulWidget {
+  final Function uploadCallback;
+  TextfieldGeneralWidget(this.uploadCallback);
   @override
   _TextfieldGeneralWidgetState createState() => _TextfieldGeneralWidgetState();
 }
@@ -742,7 +744,14 @@ class _TextfieldGeneralWidgetState extends State<TextfieldGeneralWidget> {
     if (name != null && position != null && url != null) {
       //var pos = await location.getLocation();
       // await _birdss.add({
-      FirebaseFirestore.instance.collection("Birds").doc(NameController.text).set({
+
+      widget.uploadCallback(position.latitude, position.longitude,
+          NameController.text, description);
+
+      FirebaseFirestore.instance
+          .collection("Birds")
+          .doc(NameController.text)
+          .set({
         "name": NameController.text,
         "timestamp": Timestamp.now(),
         "lat": position.latitude,
@@ -772,7 +781,7 @@ class _TextfieldGeneralWidgetState extends State<TextfieldGeneralWidget> {
                   ),
                 ],
               ));
-    } else if (name != null || position != null || url != null){
+    } else if (name != null || position != null || url != null) {
       await showDialog<String>(
           context: context,
           builder: (BuildContext context) => AlertDialog(

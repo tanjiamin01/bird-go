@@ -62,6 +62,17 @@ class _PredPageState extends State<PredPage> {
     });
   }
 
+  void uploadCallback(double lat, double lng, String name, String desc) {
+    setState(() {
+      _markers[name] = Marker(
+        markerId: MarkerId(name),
+        position: LatLng(lat, lng),
+        icon: pinLocationIcon,
+        infoWindow: InfoWindow(title: name, snippet: desc),
+      );
+    });
+  }
+
   void setCustomMapPin() async {
     pinLocationIcon = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(devicePixelRatio: 2.5), 'assets/marker.png');
@@ -71,7 +82,7 @@ class _PredPageState extends State<PredPage> {
 
   Future<void> _onMapCreated(GoogleMapController controller) async {
     QuerySnapshot snap =
-    await FirebaseFirestore.instance.collection('predMax3').get();
+        await FirebaseFirestore.instance.collection('predMax3').get();
     setState(() {
       _markers.clear();
       for (var i = 0; i < snap.size; i++) {
@@ -186,7 +197,8 @@ class _PredPageState extends State<PredPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => TextfieldGeneralWidget()));
+                            builder: (context) =>
+                                TextfieldGeneralWidget(uploadCallback)));
                   },
                   child: const Icon(Icons.file_upload_outlined)),
             ),
@@ -424,8 +436,7 @@ class SpecificBirdGallery extends StatelessWidget {
                                           text: 'More Info',
                                           recognizer: TapGestureRecognizer()
                                             ..onTap = () async {
-                                              var url =
-                                                  globals.slide_spec_bird
+                                              var url = globals.slide_spec_bird
                                                   .get('wikiurl');
                                               if (await canLaunch(url)) {
                                                 await launch(url);

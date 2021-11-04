@@ -29,7 +29,7 @@ class _SearchPageState extends State<SearchPage> {
     'Masked Finfoot',
     'Plume-toed Swiftlet',
     'Whimbrel',
-    'Asian Koel',
+    'Japanese Tit',
   ];
 
   late List<String> filteredSearchHistory;
@@ -125,18 +125,6 @@ class _SearchPageState extends State<SearchPage> {
             widget.callback();
           }
         });
-
-        // var document = await FirebaseFirestore.instance
-        //     .collection('AllBirdInfo')
-        //     .doc(query)
-        //     .get();
-
-        // final url = document.get("wikiurl");
-        // if (await canLaunch(url))
-        //   await launch(url);
-        // else
-        //   // can't launch url, there is some error
-        //   throw "Could not launch $url";
 
         controller.close();
       },
@@ -257,10 +245,6 @@ class SearchResultsListView extends StatelessWidget {
 
     final fsb = FloatingSearchBar.of(context)!.style;
 
-    // IMPLEMENT BACKEND LOGIC, CALL TO SHOW SPECIFIC BIRD
-    // if (searchTerm == birdName) {
-    //    LOGIC i.e. CALL SHOW SPECIFIC BIRD FUNCTION
-    // }
     return Container();
     ListView(
       padding: EdgeInsets.only(top: fsb.height + fsb.margins.vertical),
@@ -275,54 +259,3 @@ class SearchResultsListView extends StatelessWidget {
     );
   }
 }
-
-
-
-/*
-Widget buildFloatingSearchBar() {
-  return FloatingSearchBar(
-    hint: 'Search...',
-    scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
-    transitionDuration: const Duration(milliseconds: 800),
-    transitionCurve: Curves.easeInOut,
-    physics: const BouncingScrollPhysics(),
-    axisAlignment: 0.0,
-    openAxisAlignment: 0.0,
-    width: 600,
-    debounceDelay: const Duration(milliseconds: 500),
-    onQueryChanged: (query) {
-      // Call your model, bloc, controller here.
-    },
-    // Specify a custom transition to be used for
-    // animating between opened and closed stated.
-    transition: CircularFloatingSearchBarTransition(),
-    actions: [
-      FloatingSearchBarAction(
-        showIfOpened: false,
-        child: CircularButton(
-          icon: const Icon(Icons.search),
-          onPressed: () {},
-        ),
-      ),
-      FloatingSearchBarAction.searchToClear(
-        showIfClosed: false,
-      ),
-    ],
-    builder: (context, transition) {
-      return ClipRRect(
-        borderRadius: BorderRadius.circular(8),
-        child: Material(
-          color: Colors.white,
-          elevation: 4.0,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: Colors.accents.map((color) {
-              return Container(height: 112, color: color);
-            }).toList(),
-          ),
-        ),
-      );
-    },
-  );
-}
-*/

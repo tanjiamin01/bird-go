@@ -83,6 +83,17 @@ class _MapPageState extends State<MapPage> {
         ImageConfiguration(devicePixelRatio: 2.5), 'assets/redflag.png');
   }
 
+  void uploadCallback(double lat, double lng, String name, String desc) {
+    setState(() {
+      _markers[name] = Marker(
+        markerId: MarkerId(name),
+        position: LatLng(lat, lng),
+        icon: pinLocationIcon,
+        infoWindow: InfoWindow(title: name, snippet: desc),
+      );
+    });
+  }
+
   final Map<String, Marker> _markers = {};
 
   Future<void> _onMapCreated(GoogleMapController controller) async {
@@ -121,7 +132,10 @@ class _MapPageState extends State<MapPage> {
               topThreeBirdsWidgetIsVisible = false;
             });
           },
-          infoWindow: InfoWindow(title: map.putIfAbsent('name', () => 'Err')),
+          infoWindow: InfoWindow(
+            title: map.putIfAbsent('name', () => 'Err'),
+            snippet: map.putIfAbsent('description', () => 'Nil'),
+          ),
         );
         _markers[map.putIfAbsent('name', () => 'Err')] = marker;
       }
@@ -225,7 +239,8 @@ class _MapPageState extends State<MapPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => TextfieldGeneralWidget()));
+                          builder: (context) =>
+                              TextfieldGeneralWidget(uploadCallback)));
                 },
                 child: const Icon(Icons.file_upload_outlined)),
           ),
@@ -324,6 +339,17 @@ class _PredPageState extends State<PredPage> {
       allBirdsWidgetIsVisible = false;
       topThreeBirdsWidgetIsVisible = false;
       specificBirdGalleryWidgetIsVisible = true;
+    });
+  }
+
+  void uploadCallback(double lat, double lng, String name, String desc) {
+    setState(() {
+      _markers[name] = Marker(
+        markerId: MarkerId(name),
+        position: LatLng(lat, lng),
+        icon: pinLocationIcon,
+        infoWindow: InfoWindow(title: name, snippet: desc),
+      );
     });
   }
 
@@ -470,7 +496,8 @@ class _PredPageState extends State<PredPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => TextfieldGeneralWidget()));
+                            builder: (context) =>
+                                TextfieldGeneralWidget(uploadCallback)));
                   },
                   child: const Icon(Icons.file_upload_outlined)),
             ),
@@ -604,11 +631,14 @@ class SpecificBirdGallery extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Text(globals.slide_spec_bird.get('name'),
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          color: Color(0xFF345071),
-                                          fontWeight: FontWeight.bold)),
+                                  Center(
+                                    child: Text(
+                                        globals.slide_spec_bird.get('name'),
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            color: Color(0xFF345071),
+                                            fontWeight: FontWeight.bold)),
+                                  ),
                                   Text(
                                     globals.slide_spec_bird.get('sciname'),
                                     style: TextStyle(
