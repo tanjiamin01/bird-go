@@ -619,12 +619,14 @@ class SpecificBirdGallery extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Center(
-                                    child: Text(
-                                        globals.slide_spec_bird.get('name'),
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            color: Color(0xFF345071),
-                                            fontWeight: FontWeight.bold)),
+                                    child: Center(
+                                      child: Text(
+                                          globals.slide_spec_bird.get('name'),
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              color: Color(0xFF345071),
+                                              fontWeight: FontWeight.bold)),
+                                    ),
                                   ),
                                   Text(
                                     globals.slide_spec_bird.get('sciname'),
@@ -703,7 +705,8 @@ class SpecificBirdGallery extends StatelessWidget {
                                       Container(
                                           margin:
                                               EdgeInsets.fromLTRB(0, 10, 10, 0),
-                                          child: Text('82%',
+                                          child: Text(
+                                              '${globals.slide_spec_bird.get('pred')}%',
                                               style: TextStyle(
                                                   fontSize: 20,
                                                   color: Color(0xFF75E6E7),
