@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/limxinyi/OneDrive - Nanyang Technological University/Year 2 Sem 1/CZ2006 Software Engineering/birdGO/App/build/url_launcher/intermediates/incremental/mergeDebugResources/merged.dir/values-sw/values-sw.xml",
+            "outputFile": "/Users/timothyteh/Desktop/birdGO/App/build/url_launcher/intermediates/incremental/mergeDebugResources/merged.dir/values-sw/values-sw.xml",
             "map": [
                 {
-                    "source": "/Users/limxinyi/.gradle/caches/transforms-2/files-2.1/3c8fd1bfddb99a7a7e21faa1397acdb4/core-1.1.0/res/values-sw/values-sw.xml",
+                    "source": "/Users/timothyteh/.gradle/caches/transforms-2/files-2.1/3c8fd1bfddb99a7a7e21faa1397acdb4/core-1.1.0/res/values-sw/values-sw.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "/Users/limxinyi/OneDrive - Nanyang Technological University/Year 2 Sem 1/CZ2006 Software Engineering/birdGO/App/build/url_launcher/intermediates/res/merged/debug/values-sw/values-sw.xml",
+            "outputFile": "/Users/timothyteh/Desktop/birdGO/App/build/url_launcher/intermediates/res/merged/debug/values-sw/values-sw.xml",
             "map": [
                 {
-                    "source": "/Users/limxinyi/.gradle/caches/transforms-2/files-2.1/3c8fd1bfddb99a7a7e21faa1397acdb4/core-1.1.0/res/values-sw/values-sw.xml",
+                    "source": "/Users/timothyteh/.gradle/caches/transforms-2/files-2.1/3c8fd1bfddb99a7a7e21faa1397acdb4/core-1.1.0/res/values-sw/values-sw.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

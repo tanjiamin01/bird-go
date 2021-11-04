@@ -181,46 +181,46 @@ class _MapPageState extends State<MapPage> {
             markers: _markers.values.toSet(),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(10, 80, 10, 0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        allBirdsWidgetIsVisible = true;
-                        specificBirdGalleryWidgetIsVisible = false;
-                        topThreeBirdsWidgetIsVisible = false;
-                      });
-                    },
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            Color(0xFFFEAA9C))),
-                    child:
-                        Text('show all birds', style: TextStyle(fontSize: 16))),
-              ),
-              SizedBox(width: 10),
-              Expanded(
-                child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        specificBirdGalleryWidgetIsVisible = true;
-                        topThreeBirdsWidgetIsVisible = false;
-                        allBirdsWidgetIsVisible = false;
-                      });
-                    },
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            Color(0xFFFEAA9C))),
-                    child: Text('show specific bird',
-                        style: TextStyle(fontSize: 16))),
-              ),
-            ],
-          ),
-        ),
+        // Padding(
+        //   padding: const EdgeInsets.fromLTRB(10, 80, 10, 0),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //     crossAxisAlignment: CrossAxisAlignment.start,
+        //     children: [
+        //       Expanded(
+        //         child: ElevatedButton(
+        //             onPressed: () {
+        //               setState(() {
+        //                 allBirdsWidgetIsVisible = true;
+        //                 specificBirdGalleryWidgetIsVisible = false;
+        //                 topThreeBirdsWidgetIsVisible = false;
+        //               });
+        //             },
+        //             style: ButtonStyle(
+        //                 backgroundColor: MaterialStateProperty.all<Color>(
+        //                     Color(0xFFFEAA9C))),
+        //             child:
+        //                 Text('show all birds', style: TextStyle(fontSize: 16))),
+        //       ),
+        //       SizedBox(width: 10),
+        //       Expanded(
+        //         child: ElevatedButton(
+        //             onPressed: () {
+        //               setState(() {
+        //                 specificBirdGalleryWidgetIsVisible = true;
+        //                 topThreeBirdsWidgetIsVisible = false;
+        //                 allBirdsWidgetIsVisible = false;
+        //               });
+        //             },
+        //             style: ButtonStyle(
+        //                 backgroundColor: MaterialStateProperty.all<Color>(
+        //                     Color(0xFFFEAA9C))),
+        //             child: Text('show specific bird',
+        //                 style: TextStyle(fontSize: 16))),
+        //       ),
+        //     ],
+        //   ),
+        // ),
         Positioned(
           left: 10,
           bottom: 237,

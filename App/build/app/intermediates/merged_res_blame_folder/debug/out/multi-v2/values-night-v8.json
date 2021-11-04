@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/limxinyi/OneDrive - Nanyang Technological University/Year 2 Sem 1/CZ2006 Software Engineering/birdGO/App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/Users/timothyteh/Desktop/birdGO/App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/limxinyi/OneDrive - Nanyang Technological University/Year 2 Sem 1/CZ2006 Software Engineering/birdGO/App/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/Users/timothyteh/Desktop/birdGO/App/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
