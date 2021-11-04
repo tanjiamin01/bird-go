@@ -188,46 +188,6 @@ class _MapPageState extends State<MapPage> {
             markers: _markers.values.toSet(),
           ),
         ),
-        // Padding(
-        //   padding: const EdgeInsets.fromLTRB(10, 80, 10, 0),
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //     crossAxisAlignment: CrossAxisAlignment.start,
-        //     children: [
-        //       Expanded(
-        //         child: ElevatedButton(
-        //             onPressed: () {
-        //               setState(() {
-        //                 allBirdsWidgetIsVisible = true;
-        //                 specificBirdGalleryWidgetIsVisible = false;
-        //                 topThreeBirdsWidgetIsVisible = false;
-        //               });
-        //             },
-        //             style: ButtonStyle(
-        //                 backgroundColor: MaterialStateProperty.all<Color>(
-        //                     Color(0xFFFEAA9C))),
-        //             child:
-        //                 Text('show all birds', style: TextStyle(fontSize: 16))),
-        //       ),
-        //       SizedBox(width: 10),
-        //       Expanded(
-        //         child: ElevatedButton(
-        //             onPressed: () {
-        //               setState(() {
-        //                 specificBirdGalleryWidgetIsVisible = true;
-        //                 topThreeBirdsWidgetIsVisible = false;
-        //                 allBirdsWidgetIsVisible = false;
-        //               });
-        //             },
-        //             style: ButtonStyle(
-        //                 backgroundColor: MaterialStateProperty.all<Color>(
-        //                     Color(0xFFFEAA9C))),
-        //             child: Text('show specific bird',
-        //                 style: TextStyle(fontSize: 16))),
-        //       ),
-        //     ],
-        //   ),
-        // ),
         Positioned(
           left: 10,
           bottom: 237,
@@ -263,20 +223,17 @@ class _MapPageState extends State<MapPage> {
                 child: const Icon(Icons.lightbulb_outline_rounded)),
           ),
         ),
-
         Visibility(
             visible: specificBirdGalleryWidgetIsVisible,
             child: SpecificBirdGallery()),
-        // child: SpecificBirdGallery(spec_bird: globals.slide_spec_bird)),
-        // child: SpecificBirdGallery(streamController2.stream)),
         Visibility(visible: allBirdsWidgetIsVisible, child: AllBirds()),
         Visibility(
             visible: topThreeBirdsWidgetIsVisible, child: TopThreeBirds()),
         SearchPage(callbackFunction),
       ]),
       drawer: Drawer(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: Stack(
+          //crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
               height: 155.0,
@@ -406,25 +363,6 @@ class _PredPageState extends State<PredPage> {
         );
         _markers[map.putIfAbsent('name', () => 'Err')] = marker;
       }
-      /*for (final office in googleOffices.offices) {
-        final marker = Marker(
-          markerId: MarkerId(office.name),
-          position: LatLng(office.lat, office.lng),
-          icon: BitmapDescriptor.defaultMarker, // pinLocationIcon,
-          onTap: () {
-            setState(() {
-              allBirdsWidgetIsVisible = false;
-              specificBirdGalleryWidgetIsVisible = false;
-              topThreeBirdsWidgetIsVisible = true;
-            });
-          },
-          infoWindow: InfoWindow(
-            title: office.name,
-            snippet: office.address,
-          ),
-        );
-        _markers[office.name] = marker;
-      }*/
     });
   }
 
@@ -442,47 +380,6 @@ class _PredPageState extends State<PredPage> {
                 zoom: 16,
               ),
               markers: _markers.values.toSet(),
-            ),
-          ),
-          // @Bryan : moved SearchPage to bottom
-          Padding(
-            padding: const EdgeInsets.fromLTRB(10, 80, 10, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          allBirdsWidgetIsVisible = true;
-                          specificBirdGalleryWidgetIsVisible = false;
-                          topThreeBirdsWidgetIsVisible = false;
-                        });
-                      },
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              Color(0xFFFEAA9C))),
-                      child: Text('show all birds',
-                          style: TextStyle(fontSize: 16))),
-                ),
-                SizedBox(width: 10),
-                Expanded(
-                  child: ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          specificBirdGalleryWidgetIsVisible = true;
-                          topThreeBirdsWidgetIsVisible = false;
-                          allBirdsWidgetIsVisible = false;
-                        });
-                      },
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              Color(0xFFFEAA9C))),
-                      child: Text('show specific bird',
-                          style: TextStyle(fontSize: 16))),
-                ),
-              ],
             ),
           ),
           Positioned(
@@ -534,37 +431,8 @@ class SpecificBirdGallery extends StatelessWidget {
       .orderBy('rarity', descending: true)
       .snapshots();
 
-//   @override
-//   State<SpecificBirdGallery> createState() => _SpecificBirdGalleryState();
-// }
-
-// class _SpecificBirdGalleryState extends State<SpecificBirdGallery> {
-//   Stream<QuerySnapshot> all_bird_species = FirebaseFirestore.instance
-//       .collection('AllBirdInfo')
-//       .orderBy('rarity', descending: true)
-//       .snapshots();
-//
-//   int birdIndex = 2;
-//
-//   void mySetState(int index2) {
-//     setState(() {
-//       birdIndex = index2;
-//     });
-//   }
-//
-//   @override
-//   void initState() {
-//     super.initState();
-//     widget.stream.listen((index2) {
-//       mySetState(index2);
-//     });
-//   }
-
   @override
   Widget build(BuildContext context) {
-    // Stream<QuerySnapshot> _allBirdSpeciesStream =
-    // FirebaseFirestore.instance.collection('AllBirdInfo').where('name', isEqualTo: spec_bird.get('name')).snapshots();
-
     return StreamBuilder<QuerySnapshot>(
         stream: all_bird_species,
         builder: (
@@ -622,6 +490,7 @@ class SpecificBirdGallery extends StatelessWidget {
                                     child: Center(
                                       child: Text(
                                           globals.slide_spec_bird.get('name'),
+                                          textAlign: TextAlign.center,
                                           style: TextStyle(
                                               fontSize: 20,
                                               color: Color(0xFF345071),
@@ -647,40 +516,9 @@ class SpecificBirdGallery extends StatelessWidget {
                                                   .get('rarity');
                                           i++)
                                         Icon(Icons.star),
-
                                       Text('spotted 1h ago',
                                           style: TextStyle(
                                               fontSize: 15, color: Colors.grey))
-
-                                      //TRIED DYNAMIC SOMEHOW GOT ERROR, NO TIME DEBUG YET
-                                      // Expanded(
-                                      //   child: StreamBuilder<QuerySnapshot>(
-                                      //       stream: _birdOccurrenceStream,
-                                      //       builder: (
-                                      //         context,
-                                      //         AsyncSnapshot<QuerySnapshot> snapshot,
-                                      //       ) {
-                                      //         if (snapshot.hasError) {
-                                      //           return Text('Error');
-                                      //         }
-                                      //
-                                      //         if (snapshot.connectionState ==
-                                      //             ConnectionState.waiting) {
-                                      //           return Text('...Loading...');
-                                      //         }
-                                      //
-                                      //         final bird_occurrence =
-                                      //             snapshot.requireData;
-                                      //
-                                      //         return new Scaffold(
-                                      //             body: Column(
-                                      //           children: [
-                                      //             Text(
-                                      //                 'spotted ${bird_occurrence.docs[0]['timestamp']} '),
-                                      //           ],
-                                      //         ));
-                                      //       }),
-                                      // ),
                                     ],
                                   ),
                                   Column(
@@ -705,13 +543,15 @@ class SpecificBirdGallery extends StatelessWidget {
                                       Container(
                                           margin:
                                               EdgeInsets.fromLTRB(0, 10, 10, 0),
-                                          child: Text(
-                                              '${globals.slide_spec_bird.get('pred')}%',
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  color: Color(0xFF75E6E7),
-                                                  fontWeight:
-                                                      FontWeight.bold))),
+                                          child: SingleChildScrollView(
+                                            child: Text(
+                                                '${globals.slide_spec_bird.get('pred')}%',
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    color: Color(0xFF75E6E7),
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                          )),
                                       Container(
                                         margin:
                                             EdgeInsets.fromLTRB(0, 10, 0, 0),
@@ -719,10 +559,12 @@ class SpecificBirdGallery extends StatelessWidget {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text('chance of appearing',
+                                            Text('chance of bird',
+                                                textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                     color: Color(0xFF3E9DAD))),
-                                            Text('in this location',
+                                            Text('appearing',
+                                                textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                     color: Color(0xFF3E9DAD)))
                                           ],
@@ -804,14 +646,15 @@ class SpecificBirdGallery extends StatelessWidget {
                                   // color: Colors.teal[100],
                                   child: InkWell(
                                     onTap: () {
-                                      globals.slide_spec_bird = data.docs[i];
+                                      globals.slide_spec_bird =
+                                          data.docs[i + 20];
                                       streamController.add(0);
                                     },
                                     child: ClipRRect(
                                         borderRadius: BorderRadius.circular(20),
                                         child: Image(
                                           image: NetworkImage(
-                                              data.docs[i]['imgurl']),
+                                              data.docs[i + 20]['imgurl']),
                                           fit: BoxFit.cover,
                                         )),
                                   ),
@@ -833,12 +676,6 @@ class AllBirds extends StatelessWidget {
       .collection('AllBirdInfo')
       .orderBy('rarity', descending: true)
       .snapshots();
-
-  // int j = 0;
-  // Stream<QuerySnapshot> _allLocations = FirebaseFirestore.instance
-  //     .collection('locations')
-  //     .where('address', isEqualTo: globals.slide_flag_bird.get('address'))
-  //     .snapshots();
 
   @override
   Widget build(BuildContext context) {
