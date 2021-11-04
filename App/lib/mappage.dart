@@ -344,6 +344,9 @@ class _PredPageState extends State<PredPage> {
   Future<void> _onMapCreated(GoogleMapController controller) async {
     QuerySnapshot snap =
         await FirebaseFirestore.instance.collection('predMax3').get();
+    QuerySnapshot allBirdInfoSnap =
+    await FirebaseFirestore.instance.collection('AllBirdInfo').get();
+
     setState(() {
       _markers.clear();
       for (var i = 0; i < snap.size; i++) {
@@ -355,6 +358,15 @@ class _PredPageState extends State<PredPage> {
               double.parse(map.putIfAbsent('lng', () => '0'))),
           icon: pinLocationIcon,
           onTap: () {
+
+            allBirdInfoSnap.docs.forEach((doc) {
+              // globals.slide_spec_bird = doc;
+              if (doc["name"] == map['name']) {
+                globals.slide_spec_bird = doc;
+              }
+            }
+            );
+
             setState(() {
               allBirdsWidgetIsVisible = false;
               specificBirdGalleryWidgetIsVisible = true;
