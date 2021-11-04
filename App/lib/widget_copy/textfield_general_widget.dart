@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:googlemapstry/mappage.dart';
 import 'package:location/location.dart';
 import 'package:flutter/material.dart';
 import 'package:googlemapstry/widget_copy/button_widget.dart';
@@ -565,22 +566,46 @@ class _TextfieldGeneralWidgetState extends State<TextfieldGeneralWidget> {
                 ButtonWidget(
                   text: 'Submit',
                   onClicked: () async {
-                    final String? name = NameController.text;
-                    final String? description = DescriptionController.text;
-                    if (name != null && position != null && url != null) {
-                      //var pos = await location.getLocation();
-                      await _birdss.add({
-                        "name": NameController.text,
-                        "timestamp": Timestamp.now(),
-                        "lat": position.latitude,
-                        'lng': position.longitude,
-                        'imgurl': url,
-                        'description': description
-                      });
-                    }
-                    print('Email: ${NameController.text}');
-                    //print('Password: ${password}');
-                    print('Description: ${DescriptionController.text}');
+                    await uploadForm();
+                    // final String? name = NameController.text;
+                    // final String? description = DescriptionController.text;
+                    // if (name != null && position != null && url != null) {
+                    //   //var pos = await location.getLocation();
+                    //   await _birdss.add({
+                    //     "name": NameController.text,
+                    //     "timestamp": Timestamp.now(),
+                    //     "lat": position.latitude,
+                    //     'lng': position.longitude,
+                    //     'imgurl': url,
+                    //     'description': description
+                    //   });
+                    // }
+                    // // print('Email: ${NameController.text}');
+                    // // //print('Password: ${password}');
+                    // // print('Description: ${DescriptionController.text}');
+                    // // await uploadForm();
+                    // await showDialog<String>(
+                    //     context: context,
+                    //     builder: (BuildContext context) => AlertDialog(
+                    //           title: const Text('Submitted Successfully!'),
+                    //           content: const Text(
+                    //               'Thank you for your submission!\nHappy Birdwatching :)'),
+                    //           actions: <Widget>[
+                    //             // TextButton(
+                    //             //   onPressed: () =>
+                    //             //       Navigator.pop(context, 'Cancel'),
+                    //             //   child: const Text('Cancel'),
+                    //             // ),
+                    //             TextButton(
+                    //               onPressed: () => Navigator.push(
+                    //                   context,
+                    //                   MaterialPageRoute(
+                    //                       builder: (context) => MapPage(
+                    //                           streamController.stream))),
+                    //               child: const Text('OK'),
+                    //             ),
+                    //           ],
+                    //         ));
                   },
                 ),
               ],
@@ -709,5 +734,63 @@ class _TextfieldGeneralWidgetState extends State<TextfieldGeneralWidget> {
     }
 
     //Upload to Firebase
+  }
+
+  uploadForm() async {
+    final String? name = NameController.text;
+    final String? description = DescriptionController.text;
+    if (name != null && position != null && url != null) {
+      //var pos = await location.getLocation();
+      await _birdss.add({
+        "name": NameController.text,
+        "timestamp": Timestamp.now(),
+        "lat": position.latitude,
+        'lng': position.longitude,
+        'imgurl': url,
+        'description': description
+      });
+      await showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+                title: const Text('Submitted Successfully!'),
+                content: const Text(
+                    'Thank you for your submission!\n\nHappy Birdwatching :)'),
+                actions: <Widget>[
+                  // TextButton(
+                  //   onPressed: () =>
+                  //       Navigator.pop(context, 'Cancel'),
+                  //   child: const Text('Cancel'),
+                  // ),
+                  TextButton(
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                MapPage(streamController.stream))),
+                    child: const Text('OK'),
+                  ),
+                ],
+              ));
+    } else if (name != null || position != null || url != null){
+      await showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+                title: const Text('Upload Failed!'),
+                content: const Text('Please fill up the required inputs!'),
+                actions: <Widget>[
+                  // TextButton(
+                  //   onPressed: () =>
+                  //       Navigator.pop(context, 'Cancel'),
+                  //   child: const Text('Cancel'),
+                  // ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('OK'),
+                  ),
+                ],
+              ));
+    }
   }
 }
