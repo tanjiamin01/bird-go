@@ -141,6 +141,15 @@ class _MapPageState extends State<MapPage> {
               double.parse(map2.putIfAbsent('lng', () => '0'))),
           icon: blueLocationIcon,
           onTap: () {
+
+            snap2.docs.forEach((doc) {
+              // globals.slide_spec_bird = doc;
+              if (doc["name"] == map2['name']) {
+                globals.slide_flag_bird = doc;
+              }
+            }
+            );
+
             setState(() {
               allBirdsWidgetIsVisible = true;
               specificBirdGalleryWidgetIsVisible = false;
@@ -847,8 +856,8 @@ class AllBirds extends StatelessWidget {
                       Container(
                           margin: EdgeInsets.all(10),
                           child: Center(
-                              child: Text(
-                            'All birds in NTU',
+                              child: Text( globals.slide_flag_bird.get('address'),
+                            // 'All birds in NTU',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ))),
                     ],

@@ -4,6 +4,8 @@ import 'bird info.dart';
 import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class BirdList extends StatelessWidget {
   // const BirdList({Key? key}) : super(key: key);
@@ -24,7 +26,16 @@ class BirdList extends StatelessWidget {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Text('...Loading...');
+          // return Center(
+          //   child: Container(
+          //     child: Image.asset('loading.gif'),
+          //   ),
+          // );
+
+          return Text('...Loading...',
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, fontSize: 20, color: Colors.grey),
+          );
         }
 
         final data = snapshot.requireData;

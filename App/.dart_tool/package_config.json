@@ -422,6 +422,12 @@
       "languageVersion": "1.19"
     },
     {
+      "name": "loading_gifs",
+      "rootUri": "file:///Users/limxinyi/flutter/.pub-cache/hosted/pub.dartlang.org/loading_gifs-0.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "location",
       "rootUri": "file:///Users/limxinyi/flutter/.pub-cache/hosted/pub.dartlang.org/location-4.3.0",
       "packageUri": "lib/",
@@ -674,7 +680,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-11-04T03:58:02.947727Z",
+  "generated": "2021-11-04T04:43:33.493546Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }

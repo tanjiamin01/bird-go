@@ -51,6 +51,7 @@ dependencies:
   flutter_staggered_grid_view: ^0.4.0
   url_launcher: ^6.0.10
   flutter_form_builder: ^7.0.0
+  loading_gifs: ^0.3.0
 
 
 dev_dependencies:
@@ -88,6 +89,8 @@ flutter:
     - assets/canva-photo-editor.png
     - assets/predMax3.json
     - assets/redflag.png
+    - assets/loading.gif
+    - assets/large_loading.gif
 
   # To add assets to your application, add an assets section, like this:
   # assets:

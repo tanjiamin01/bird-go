@@ -48,18 +48,21 @@ class BirdInfo extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           //IMAGE
-          Padding(
-            padding: EdgeInsets.all(0.0),
-            child: FadeInImage.memoryNetwork(
-              placeholder: kTransparentImage,
+          Container(
+              height: 360,
+              alignment: Alignment(0.0, 0.0),
+            // padding: EdgeInsets.all(1),
+            child: FittedBox(
+              child: FadeInImage.assetNetwork(
+              alignment: Alignment(0.0, 0.0),
+              placeholder: 'assets/loading.gif',
               image: bird.get('imgurl'),
               // image: 'https://cdn.download.ams.birds.cornell.edu/api/v1/asset/202984001/1800',
-              fit: BoxFit.fitWidth, // After image load
+              fit: BoxFit.fill,
+              // height: 250.0,// After image load
             ),
-            // child: Image.asset(
-            //   'assets/bird1.jpeg',
-            // ),
-          ),
+            fit: BoxFit.fill,)
+            ),
 
           //COMMON NAME
           Padding(
