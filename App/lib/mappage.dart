@@ -529,23 +529,10 @@ class _PredPageState extends State<PredPage> {
 
 // class SpecificBirdGallery extends StatefulWidget {
 class SpecificBirdGallery extends StatelessWidget {
-  // Stream<QuerySnapshot> _birdOccurrenceStream = FirebaseFirestore.instance
-  //     .collection('birds')
-  //     .where('name', isEqualTo: globals.slide_spec_bird.get('name'))
-  //     .snapshots();
-
   Stream<QuerySnapshot> all_bird_species = FirebaseFirestore.instance
       .collection('AllBirdInfo')
       .orderBy('rarity', descending: true)
       .snapshots();
-
-  //const SpecificBirdGallery({Key? key}) : super(key: key);
-
-  // SpecificBirdGallery({Key? key, required this.spec_bird}) : super(key: key);
-  // final QueryDocumentSnapshot spec_bird;
-
-  // const SpecificBirdGallery(this.stream);
-  // final Stream<int> stream;
 
 //   @override
 //   State<SpecificBirdGallery> createState() => _SpecificBirdGalleryState();
@@ -694,27 +681,23 @@ class SpecificBirdGallery extends StatelessWidget {
                                       // ),
                                     ],
                                   ),
-                                  Text('Abundance: Rare'),
-
-                                  // Column(children: <Widget>[
-                                  //   if (globals.slide_spec_bird.get('rarity') == 1)
-                                  //     Text("Abundance: Common"),
-                                  //   if (globals.slide_spec_bird.get('rarity') == 2)
-                                  //     Text("Abundance: Uncommon"),
-                                  //   if (globals.slide_spec_bird.get('rarity') == 2)
-                                  //     Text("Abundance: Rare"),
-                                  // ],
-                                  // ),
-
-                                  // Row(
-                                  //   children: [
-                                  //     if (globals.slide_spec_bird.get('rarity') == 1) {
-                                  //       return Text("Common");
-                                  //     }
-                                  //   ]
-                                  // )
-
-                                  Text('Status: Vistor'),
+                                  Column(
+                                    children: <Widget>[
+                                      if (globals.slide_spec_bird
+                                              .get('rarity') ==
+                                          1)
+                                        Text("Abundance: Common"),
+                                      if (globals.slide_spec_bird
+                                              .get('rarity') ==
+                                          2)
+                                        Text("Abundance: Uncommon"),
+                                      if (globals.slide_spec_bird
+                                              .get('rarity') ==
+                                          3)
+                                        Text("Abundance: Rare"),
+                                    ],
+                                  ),
+                                  Text('Status: Visitor'),
                                   Row(
                                     children: [
                                       Container(
@@ -847,6 +830,12 @@ class AllBirds extends StatelessWidget {
       .collection('AllBirdInfo')
       .orderBy('rarity', descending: true)
       .snapshots();
+
+  // int j = 0;
+  // Stream<QuerySnapshot> _allLocations = FirebaseFirestore.instance
+  //     .collection('locations')
+  //     .where('address', isEqualTo: globals.slide_flag_bird.get('address'))
+  //     .snapshots();
 
   @override
   Widget build(BuildContext context) {
