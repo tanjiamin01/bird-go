@@ -34,7 +34,7 @@ class BirdList extends StatelessWidget {
 
           return Text('...Loading...',
             textAlign: TextAlign.center,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, fontSize: 20, color: Colors.grey),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, fontSize: 24, color: Colors.grey),
           );
         }
 

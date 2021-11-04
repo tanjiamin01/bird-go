@@ -741,7 +741,8 @@ class _TextfieldGeneralWidgetState extends State<TextfieldGeneralWidget> {
     final String? description = DescriptionController.text;
     if (name != null && position != null && url != null) {
       //var pos = await location.getLocation();
-      await _birdss.add({
+      // await _birdss.add({
+      FirebaseFirestore.instance.collection("Birds").doc(NameController.text).set({
         "name": NameController.text,
         "timestamp": Timestamp.now(),
         "lat": position.latitude,
