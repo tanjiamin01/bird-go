@@ -26,10 +26,10 @@ class _SearchPageState extends State<SearchPage> {
   static const historyLength = 5;
 
   List<String> _searchHistory = [
-    'Brown Tailed Mynah',
-    'Blue Jay',
-    'Black Hawk',
-    'Chinese Yellow Sparrow',
+    'Masked Finfoot',
+    'Plume-toed Swiftlet',
+    'Whimbrel',
+    'Asian Koel',
   ];
 
   late List<String> filteredSearchHistory;

@@ -93,7 +93,7 @@ class _MapPageState extends State<MapPage> {
         await FirebaseFirestore.instance.collection('locations').get();
 
     QuerySnapshot snap3 =
-    await FirebaseFirestore.instance.collection('AllBirdInfo').get();
+        await FirebaseFirestore.instance.collection('AllBirdInfo').get();
 
     setState(() {
       _markers.clear();
@@ -108,14 +108,12 @@ class _MapPageState extends State<MapPage> {
               double.parse(map.putIfAbsent('lng', () => '0'))),
           icon: pinLocationIcon,
           onTap: () {
-
             snap3.docs.forEach((doc) {
               // globals.slide_spec_bird = doc;
               if (doc["name"] == map['name']) {
                 globals.slide_spec_bird = doc;
               }
-            }
-            );
+            });
 
             setState(() {
               allBirdsWidgetIsVisible = false;
@@ -123,10 +121,7 @@ class _MapPageState extends State<MapPage> {
               topThreeBirdsWidgetIsVisible = false;
             });
           },
-          infoWindow: InfoWindow(
-            title: map.putIfAbsent('name', () => 'Err'),
-            snippet: map.putIfAbsent('address', () => 'Err'),
-          ),
+          infoWindow: InfoWindow(title: map.putIfAbsent('name', () => 'Err')),
         );
         _markers[map.putIfAbsent('name', () => 'Err')] = marker;
       }
@@ -141,14 +136,12 @@ class _MapPageState extends State<MapPage> {
               double.parse(map2.putIfAbsent('lng', () => '0'))),
           icon: blueLocationIcon,
           onTap: () {
-
             snap2.docs.forEach((doc) {
               // globals.slide_spec_bird = doc;
               if (doc["name"] == map2['name']) {
                 globals.slide_flag_bird = doc;
               }
-            }
-            );
+            });
 
             setState(() {
               allBirdsWidgetIsVisible = true;
@@ -354,7 +347,7 @@ class _PredPageState extends State<PredPage> {
     QuerySnapshot snap =
         await FirebaseFirestore.instance.collection('predMax3').get();
     QuerySnapshot allBirdInfoSnap =
-    await FirebaseFirestore.instance.collection('AllBirdInfo').get();
+        await FirebaseFirestore.instance.collection('AllBirdInfo').get();
 
     setState(() {
       _markers.clear();
@@ -367,14 +360,12 @@ class _PredPageState extends State<PredPage> {
               double.parse(map.putIfAbsent('lng', () => '0'))),
           icon: pinLocationIcon,
           onTap: () {
-
             allBirdInfoSnap.docs.forEach((doc) {
               // globals.slide_spec_bird = doc;
               if (doc["name"] == map['name']) {
                 globals.slide_spec_bird = doc;
               }
-            }
-            );
+            });
 
             setState(() {
               allBirdsWidgetIsVisible = false;
@@ -675,15 +666,15 @@ class SpecificBirdGallery extends StatelessWidget {
                                   ),
                                   Text('Abundance: Rare'),
 
-                               // Column(children: <Widget>[
-                               //   if (globals.slide_spec_bird.get('rarity') == 1)
-                               //     Text("Abundance: Common"),
-                               //   if (globals.slide_spec_bird.get('rarity') == 2)
-                               //     Text("Abundance: Uncommon"),
-                               //   if (globals.slide_spec_bird.get('rarity') == 2)
-                               //     Text("Abundance: Rare"),
-                               // ],
-                               // ),
+                                  // Column(children: <Widget>[
+                                  //   if (globals.slide_spec_bird.get('rarity') == 1)
+                                  //     Text("Abundance: Common"),
+                                  //   if (globals.slide_spec_bird.get('rarity') == 2)
+                                  //     Text("Abundance: Uncommon"),
+                                  //   if (globals.slide_spec_bird.get('rarity') == 2)
+                                  //     Text("Abundance: Rare"),
+                                  // ],
+                                  // ),
 
                                   // Row(
                                   //   children: [
@@ -692,7 +683,6 @@ class SpecificBirdGallery extends StatelessWidget {
                                   //     }
                                   //   ]
                                   // )
-
 
                                   Text('Status: Vistor'),
                                   Row(
@@ -792,24 +782,24 @@ class SpecificBirdGallery extends StatelessWidget {
                             mainAxisSpacing: 10,
                             crossAxisCount: 3,
                             children: <Widget>[
-                              for (int i = 0; i < 12; i++) 
-                              Container(
-                                // padding: const EdgeInsets.all(8),
-                                // color: Colors.teal[100],
-                                child: InkWell(
-                                  onTap: () {
-                                    globals.slide_spec_bird = data.docs[i];
-                                    streamController.add(0);
-                                  },
-                                  child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(20),
-                                      child: Image(
-                                        image:
-                                            NetworkImage(data.docs[i]['imgurl']),
-                                        fit: BoxFit.cover,
-                                      )),
+                              for (int i = 0; i < 12; i++)
+                                Container(
+                                  // padding: const EdgeInsets.all(8),
+                                  // color: Colors.teal[100],
+                                  child: InkWell(
+                                    onTap: () {
+                                      globals.slide_spec_bird = data.docs[i];
+                                      streamController.add(0);
+                                    },
+                                    child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image(
+                                          image: NetworkImage(
+                                              data.docs[i]['imgurl']),
+                                          fit: BoxFit.cover,
+                                        )),
+                                  ),
                                 ),
-                              ),
                             ],
                           ),
                         )),
@@ -856,7 +846,8 @@ class AllBirds extends StatelessWidget {
                       Container(
                           margin: EdgeInsets.all(10),
                           child: Center(
-                              child: Text( globals.slide_flag_bird.get('address'),
+                              child: Text(
+                            globals.slide_flag_bird.get('address'),
                             // 'All birds in NTU',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ))),
@@ -871,24 +862,24 @@ class AllBirds extends StatelessWidget {
                       mainAxisSpacing: 10,
                       crossAxisCount: 3,
                       children: <Widget>[
-                        for (int i = 0; i < 12; i++) 
-                        Container(
-                          // padding: const EdgeInsets.all(8),
-                          // color: Colors.teal[100],
-                          child: InkWell(
-                            onTap: () {
-                              globals.slide_spec_bird = data.docs[i];
-                              streamController.add(0);
-                              // streamController2.add(0);
-                            },
-                            child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Image(
-                                  image: NetworkImage(data.docs[i]['imgurl']),
-                                  fit: BoxFit.cover,
-                                )),
+                        for (int i = 0; i < 12; i++)
+                          Container(
+                            // padding: const EdgeInsets.all(8),
+                            // color: Colors.teal[100],
+                            child: InkWell(
+                              onTap: () {
+                                globals.slide_spec_bird = data.docs[i];
+                                streamController.add(0);
+                                // streamController2.add(0);
+                              },
+                              child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image(
+                                    image: NetworkImage(data.docs[i]['imgurl']),
+                                    fit: BoxFit.cover,
+                                  )),
+                            ),
                           ),
-                        ),
                       ],
                     ),
                   )
@@ -939,46 +930,46 @@ class TopThreeBirds extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    for (int i = 0; i < 3; i++) 
-                    Expanded(
-                        child: Column(
-                      children: [
-                        Container(
-                          height: 130,
-                          width: MediaQuery.of(context).size.width * 0.33,
-                          child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(100),
-                              ),
-                              margin: EdgeInsets.all(10),
-                              child: InkWell(
-                                onTap: () {
-                                  globals.slide_spec_bird = data.docs[i];
-                                  streamController.add(0);
-                                },
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image(
-                                        image: NetworkImage(
-                                            data.docs[i]['imgurl']),
-                                        fit: BoxFit.cover)),
-                              )),
-                        ),
-                        Text(
-                          data.docs[i]['name'],
-                          style: birdname_style,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            for (int i = 0; i < data.docs[i]['rarity']; i++)
-                              star,
-                          ],
-                        ),
-                        Text('spotted 1h ago', style: spotted_style),
-                      ],
-                    )),
+                    for (int i = 0; i < 3; i++)
+                      Expanded(
+                          child: Column(
+                        children: [
+                          Container(
+                            height: 130,
+                            width: MediaQuery.of(context).size.width * 0.33,
+                            child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                margin: EdgeInsets.all(10),
+                                child: InkWell(
+                                  onTap: () {
+                                    globals.slide_spec_bird = data.docs[i];
+                                    streamController.add(0);
+                                  },
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image(
+                                          image: NetworkImage(
+                                              data.docs[i]['imgurl']),
+                                          fit: BoxFit.cover)),
+                                )),
+                          ),
+                          Text(
+                            data.docs[i]['name'],
+                            style: birdname_style,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              for (int i = 0; i < data.docs[i]['rarity']; i++)
+                                star,
+                            ],
+                          ),
+                          Text('spotted 1h ago', style: spotted_style),
+                        ],
+                      )),
                   ],
                 ),
               ],
