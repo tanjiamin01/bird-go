@@ -64,13 +64,13 @@ $ python3 testingPredHotspotMax.py
 - Use a simple neural net to train on this dataset
 
 
-### Tech Stack
+## Tech Stack
 BirdGO is built on the flutterfire stack, and uses python to parse code from the eBirds API.
 
 
 ## Team
 Bryan Ong, Chua Yong Xuan, Tan Jia Min, Timothy Teh, Lim Xin Yi, Jared Tan
-
+---
 Nanyang Technological University | SCSE
 
 2021/2022
