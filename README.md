@@ -47,7 +47,7 @@ BirdGO is built on the flutterfire stack, and uses python to parse code from the
 The predictions are calculated simply by using a 1/2^x, where x is the number of years since the occurence. Data is filtered by the time period (which is considered a bimonthly cycle, which is considered a high enough resolution to accurately pick out the likelyhood of birds occuring). 
 
 ### General Prediction Accuracy
-***86.341% Accuracy*** based on 398 birds. Tested on the year 2020, by training the algorithm on years before 2020. Success is calculated based on if bird is sighted in 2020 within the allocated time period.
+Achieved ***86.341% Accuracy*** based on 398 birds. Tested on the year 2020, by training the algorithm on years before 2020. Success is calculated based on if bird is sighted in 2020 within the allocated time period.
 To run this test, use
 ``` 
 $ python3 BirdPredictAlgo2.py # Generate predictions based on data < 2020
@@ -71,7 +71,5 @@ $ python3 testingPredHotspotMax.py
 ---
 Bryan Ong, Chua Yong Xuan, Tan Jia Min, Timothy Teh, Lim Xin Yi, Jared Tan
 
-Nanyang Technological University
-SCSE
-2021/2022
-CZ2006 Software Engineering
+Nanyang Technological University | SCSE
+2021/2022 | CZ2006 Software Engineering
