@@ -70,6 +70,7 @@ BirdGO is built on the flutterfire stack, and uses python to parse code from the
 
 ## Team
 Bryan Ong, Chua Yong Xuan, Tan Jia Min, Timothy Teh, Lim Xin Yi, Jared Tan
+
 ---
 Nanyang Technological University | SCSE
 
