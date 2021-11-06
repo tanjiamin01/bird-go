@@ -19,6 +19,7 @@ import 'package:googlemapstry/widget_copy/textfield_general_widget.dart';
 import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:geolocator/geolocator.dart';
 
 import 'globals.dart' as globals;
 
@@ -186,6 +187,8 @@ class _MapPageState extends State<MapPage> {
               zoom: 16,
             ),
             markers: _markers.values.toSet(),
+            myLocationButtonEnabled: false,
+            myLocationEnabled: true,
           ),
         ),
         Positioned(
@@ -232,38 +235,32 @@ class _MapPageState extends State<MapPage> {
         SearchPage(callbackFunction),
       ]),
       drawer: Drawer(
-        child: Column(
+        child: Stack(
+          //crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Stack(
-            //crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                height: 155.0,
-                child: DrawerHeader(
-                  decoration: BoxDecoration(
-                    // color: Colors.blue.shade100,
-                    image: DecorationImage(
-                        fit: BoxFit.fitWidth,
-                        image: AssetImage('assets/canva-photo-editor.png')),
-                  ),
-                  padding: const EdgeInsets.fromLTRB(16.0, 30.0, 16.0, 5.0),
-                  child: Flexible(
-                    child: new Text(
-                      "ALL BIRDS IN SINGAPORE (${num_species})",
-                      softWrap: true,
-                      textAlign: TextAlign.left,
-                      style: new TextStyle(fontSize: 30, color: Colors.white),
-                      textDirection: TextDirection.ltr,
-                    ),
+            Container(
+              height: 155.0,
+              child: DrawerHeader(
+                decoration: BoxDecoration(
+                  // color: Colors.blue.shade100,
+                  image: DecorationImage(
+                      fit: BoxFit.fitWidth,
+                      image: AssetImage('assets/canva-photo-editor.png')),
+                ),
+                padding: const EdgeInsets.fromLTRB(16.0, 30.0, 16.0, 5.0),
+                child: Flexible(
+                  child: new Text(
+                    "ALL BIRDS IN SINGAPORE (${num_species})",
+                    softWrap: true,
+                    textAlign: TextAlign.left,
+                    style: new TextStyle(fontSize: 30, color: Colors.white),
+                    textDirection: TextDirection.ltr,
                   ),
                 ),
               ),
-              ],
             ),
-              Expanded(child: BirdList()),
-            ],
-          // ),
-      // ],
+            Expanded(child: BirdList()),
+          ],
         ),
       ),
     );
@@ -386,6 +383,8 @@ class _PredPageState extends State<PredPage> {
                 zoom: 16,
               ),
               markers: _markers.values.toSet(),
+              myLocationButtonEnabled: false,
+              myLocationEnabled: true,
             ),
           ),
           Positioned(

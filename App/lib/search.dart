@@ -180,23 +180,22 @@ class _SearchPageState extends State<SearchPage> {
                                 });
                               },
                             ),
-                            onTap: () {
-                              setState(() async {
+                            onTap: () async {
+                              setState(() {
                                 putSearchTermFirst(term);
-
-                                QuerySnapshot snap = await FirebaseFirestore
-                                    .instance
-                                    .collection('AllBirdInfo')
-                                    .get();
-
-                                selectedTerm = term.toLowerCase().toTitleCase();
-                                snap.docs.forEach((doc) {
-                                  // globals.slide_spec_bird = doc;
-                                  if (doc["name"] == selectedTerm) {
-                                    globals.slide_spec_bird = doc;
-                                    widget.callback();
-                                  }
-                                });
+                                selectedTerm = term;
+                              });
+                              QuerySnapshot snap = await FirebaseFirestore
+                                  .instance
+                                  .collection('AllBirdInfo')
+                                  .get();
+                              snap.docs.forEach((doc) {
+                                // globals.slide_spec_bird = doc;
+                                if (doc['name'] ==
+                                    selectedTerm!.toLowerCase().toTitleCase()) {
+                                  globals.slide_spec_bird = doc;
+                                  widget.callback();
+                                }
                               });
                               controller.close();
                             },
