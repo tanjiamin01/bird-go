@@ -7,9 +7,6 @@
 ## What is BirdGO?
 BirdGO is a companion app to both budding and experienced birdwatchers alike! Use BirdGO to track recent bird sightings, share your own sightings, and see predictions for the most likely birds in sectors.
 
-## Tech Stack
-BirdGO is built on the flutterfire stack, and uses python to parse code from the eBirds API.
-
 # Functions
 
 1. **Fully functional and interactive map**
@@ -43,7 +40,6 @@ BirdGO is built on the flutterfire stack, and uses python to parse code from the
 
 
 ## Predictions
----
 The predictions are calculated simply by using a 1/2^x, where x is the number of years since the occurence. Data is filtered by the time period (which is considered a bimonthly cycle, which is considered a high enough resolution to accurately pick out the likelyhood of birds occuring). 
 
 ### General Prediction Accuracy
@@ -67,9 +63,15 @@ $ python3 testingPredHotspotMax.py
 - Refine the model, and use statistical methods to build a better prediction equation
 - Use a simple neural net to train on this dataset
 
+
+### Tech Stack
+BirdGO is built on the flutterfire stack, and uses python to parse code from the eBirds API.
+
+
 ## Team
----
 Bryan Ong, Chua Yong Xuan, Tan Jia Min, Timothy Teh, Lim Xin Yi, Jared Tan
 
-Nanyang Technological University | SCSE
-2021/2022 | CZ2006 Software Engineering
+Nanyang Technological University
+SCSE
+2021/2022
+CZ2006 Software Engineering
